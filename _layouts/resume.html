@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-  {% include resume-head.html %}
+  {% include head.html %}
 
-  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+  <body class="theme-default">
 
     <div class="wrapper">
 
       <header class="page-header">
 
-        {% if site.resume_avatar == 'true' %}
+        {% if site.avatar == 'true' %}
         <img src="images/avatar.jpg" alt="my photo" class="avatar">
         {% endif %}
 
@@ -19,7 +19,7 @@
 
           <h2 class="header-title">{{ site.resume_title }}</h2>
 
-          {% include resume-icon-links.html %}
+          {% include icon-links.html %}
         </div>
 
         <div class="executive-summary">
@@ -132,7 +132,7 @@
       {% endif %}
 
       <footer class="page-footer">
-        <p class="footer-line">Styles for this page made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork the project here: <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
+        <p class="footer-line">Styles for this site were based on <a href="https://github.com/jglovier/resume-template">this project</a> by <a href="http://twitter.com/jglovier">@jglovier</a>.</p>
       </footer>
 
     </div>

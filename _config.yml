@@ -1,24 +1,19 @@
+
 # Site settings
 title: theTizzo was here
-# email: your-email@domain.com
 description: >
   This a fancy blog that is for fancy code.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://thetizzo.com" # the base hostname & protocol for your site
-twitter_username: thetizzo
-github_username:  thetizzo
+baseurl: ""
+url: "http://thetizzo.com"
+avatar: "true"
 
-# Build settings
-markdown: kramdown
-sass:
-  sass_dir: _sass
-  style: compressed
-
-destination: public
-exclude: ["CNAME", "Rakefile", "README.md", "public"]
-
+# Social Links
+social_links:
+  github_url:            "https://github.com/thetizzo"
+  twitter_url:           "http://twitter.com/thetizzo"
+  linkedin_url:          "https://www.linkedin.com/in/thetizzo"
+  
 # Resume settings
-resume_avatar:                  "true"
 resume_name:                    "Manrock"
 resume_title:                   "Earth Crusher"
 resume_contact_email:           "j.m.taylor1@gmail.com"
@@ -39,17 +34,11 @@ resume_section_experience:      true
 # resume_section_links:           true
 # resume_section_associations:    true
 
-# Resume social links
-# uncomment the options you wish to display, and add your own URL
-resume_social_links:
-  resume_github_url:            "https://github.com/thetizzo"
-  resume_twitter_url:           "http://twitter.com/thetizzo"
-  resume_linkedin_url:          "https://www.linkedin.com/in/thetizzo"
-  resume_website_url:           "http://thetizzo.com"
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
 
-# Design settings
-resume_theme:                   default
-
-# Note: when editing locally, remember to restart
-# your Jekyll server when you edit this file. Changes
-# to _config.yml are only recognized when the server starts
+destination: public
+exclude: ["CNAME", "Rakefile", "README.md", "public"]

@@ -14,7 +14,7 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# destination: public
+destination: public
 exclude: ["CNAME", "Rakefile", "README.md", "public"]
 
 # Resume settings

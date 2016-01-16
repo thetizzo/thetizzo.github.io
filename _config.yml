@@ -10,3 +10,46 @@ github_username:  thetizzo
 
 # Build settings
 markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+destination: public
+exclude: ["CNAME", "Rakefile", "README.md", "public"]
+
+# Resume settings
+resume_avatar:                  "true"
+resume_name:                    "Manrock"
+resume_title:                   "Earth Crusher"
+resume_contact_email:           "j.m.taylor1@gmail.com"
+
+# use "yes" to display the email contact button,
+# "no" to display an "I'm not looking for work" message,
+# or remove the resume_looking_for_work option entirely
+# to leave blank
+resume_looking_for_work:        "no"
+
+# Decide which sections to use
+# comment out to hide
+resume_section_experience:      true
+# resume_section_education:       true
+# resume_section_projects:        true
+# resume_section_skills:          true
+# resume_section_recognition:     true
+# resume_section_links:           true
+# resume_section_associations:    true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  resume_github_url:            "https://github.com/thetizzo"
+  resume_twitter_url:           "http://twitter.com/thetizzo"
+  resume_linkedin_url:          "https://www.linkedin.com/in/thetizzo"
+  resume_website_url:           "http://thetizzo.com"
+
+# Design settings
+resume_theme:                   default
+
+# Note: when editing locally, remember to restart
+# your Jekyll server when you edit this file. Changes
+# to _config.yml are only recognized when the server starts

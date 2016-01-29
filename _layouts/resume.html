@@ -10,17 +10,17 @@
       {% include header.html %}
 
       <div class="executive-summary">
-        <p>Manrock look to crush earth.  Manrock available for earth crushing work on contract basis.</p>
+        <p></p>
       </div>
 
-      {% if site.resume_looking_for_work == 'yes' %}
-      <a href="mailto:{{ site.resume_contact_email }}" class="contact-button">Contact me</a>
-      {% elsif site.resume_looking_for_work == 'no' %}
+      {% if site.resume.looking_for_work == 'yes' %}
+      <a href="mailto:{{ site.resume.contact_email }}" class="contact-button">Contact me</a>
+      {% elsif site.resume.looking_for_work == 'no' %}
       <a class="contact-button not-looking">I'm not looking for work right now.</a>
       {% else %}
       {% endif %}
 
-      {% if site.resume_section_experience %}
+      {% if site.resume.section_experience %}
       <!-- begin Experience -->
       <section class="content-section">
 
@@ -29,34 +29,82 @@
         </header>
 
         <div class="resume-item">
-          <h3 class="resume-item-title">ExxonMobil</h3>
-          <h4 class="resume-item-details">Senior VP of Global Dynamic Earth Crushing Systems &bull; Nov, 1980 &mdash; Present</h4>
-          <p class="resume-item-copy">Manrock do work to head department of earth crushers and streamline global earth crushing operations.</p>
-          <ul class="resume-item-list">
-            <li>Manrock improved earth crushing yield, year over year</li>
-            <li>Manrock lead upgrade effort for Earth Crushing System in Asia/Pacific region</li>
-            <li>Manrock improve employee morale by threatening with crushings until morale improve</li>
-          </ul>
-
+          <h3 class="resume-item-title">
+            <a href="https://www.tendrilinc.com/" target="_blank">
+              Tendril
+              <small><i class="fa fa-link fa-fw"></i></small>
+            </a>
+          </h3>
+          <h4 class="resume-item-details">Senior Software Engineer &bull; March, 2015 &mdash; Present</h4>
+          <p class="resume-item-copy">
+            At Tendril, I work on a Rails based web portal that enables energy utilities to
+            engage their customers and enable them to save energy.
+          </p>
         </div><!-- end of resume-item -->
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">
+            <a href="https://www.mobilecause.com/" target="_blank">
+              MobileCause
+              <small><i class="fa fa-link fa-fw"></i></small>
+            </a>
+          </h3>
+          <h4 class="resume-item-details">Senior Software Engineer &amp; Architect &bull; April, 2012 &mdash; March, 2015</h4>
+          <ul class="resume-item-list">
+            <li>Worked on an SMS message based fundraising platform that included 3 Ruby on Rails applications and a Java based messaging aggregator and router.</li>
+            <li>
+              Worked primarily on the Rails application that serves as the
+              central administrative interface for the standard rate SMS
+              messaging platform. This included tools for the customer's
+              administrator to manage sending messages, manage lists of
+              constituents, and get reports. This application also handled the
+              processing of incoming messages, donations, and serving mobile web
+              pages to constituents.
+            </li>
+            <li>
+              Worked on the Java based messaging aggregator and router. This is
+              our interface to either a Carrier directly or a messaging
+              aggregator service which allows us to send SMS messages to the
+              mobile phone endpoint. The work I did on this platform was working
+              on integrating to the <a href="http://www.danalinc.com/" target="_blank">Danal API</a>
+              to make them our back end billing platform for the Carrier Billed product.
+            </li>
+            <li>Implemented a RabbitMQ based message queue to offload certain types of work (sending emails, processing file uploads) to improve the performance of the system.</li>
+            <li>
+              Led the effort to convert the UI of the main Rails application
+              from custom CSS to Bootstrap to increase the maintainability of
+              the site as well as reduce time and effort needed to build new pages.
+            </li>
+          </ul>
+        </div><!-- end of resume-item -->
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">
+            <a href="http://www.avaya.com/usa/" target="_blank">
+              Avaya
+              <small><i class="fa fa-link fa-fw"></i></small>
+            </a>
+          </h3>
+          <h4 class="resume-item-details">Student Intership &bull; June, 2005 &mdash; December, 2005</h4>
+          <h4 class="resume-item-details">Application Developer &bull; December, 2005 &mdash; January, 2007</h4>
+          <h4 class="resume-item-details">Application Manager &bull; January, 2007 &mdash; April, 2012</h4>
+          <ul class="resume-item-list">
+            <li>Developer for Product Model Wrapper: Involves working on MFC based application written in C++; working on interface between product model API and application.</li>
+            <li>Lead developer for four product models: Involves estimating level of effort for development work; managing and maintaining separate code bases throughout multiple release cycles; working with CSEs and other developers to ensure the successful deployment of the models; managing regression test suite for each model.</li>
+            <li>Developer for 20+ different product models: Involves interacting with Lead Developers and CSEs for those models to understand functional specs; working with Testers to fix bugs and ensure a high level of quality; unit testing.</li>
+            <li>On-boarding of new developers: Tutoring new developers on processes, code architecture, and understanding functional specs; managed computer environment setup and installation.</li>
+            <li>Maintenance of development environment: Maintained home grown development environment used by a team of 11 developers. This was written in VB.Net using Visual Studio 2008.</li>
+            <li>Maintaining UI rendering engine for Product Model UI: Maintained home grown VB.Net DLL for rendering user interfaces for product models; Involved writing code to get COM based Product Model Wrapper to work with .NET UI; debugging to fix issues; managing code base in source control for use with multiple developers.</li>
+            <li>Configuration System Engineer (CSE) role: Involves working with product managers to gather and analyze business and technical requirements; writing and managing functional specification documents for product models.</li>
+            <li>Build delivery script: Developed a Ruby script to deploy the Product Model Wrapper builds to the Test environments. Involves copying files to server via FTP, editing the version number in a file, and invoking a script on the server.</li>
+          </ul>
+        </div>
 
       </section>
       <!-- end Experience -->
       {% endif %}
 
-      {% if site.resume_section_education %}
-      <!-- begin Education -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Education</h2>
-        </header>
-
-      </section>
-      <!-- end Education -->
-      {% endif %}
-
-      {% if site.resume_section_projects %}
+      {% if site.resume.section_projects %}
       <!-- begin Projects -->
       <section class="content-section">
 
@@ -68,7 +116,7 @@
       <!-- end Projects -->
       {% endif %}
 
-      {% if site.resume_section_skills %}
+      {% if site.resume.section_skills %}
       <!-- begin Skills -->
       <section class="content-section">
 
@@ -76,35 +124,41 @@
           <h2>Skills</h2>
         </header>
 
+        <ul class="resume-item-list">
+          <li><a href="#">Backbone.js</a></li>
+          <li>Ansible</li>
+          <li>Capistrano</li>
+          <li>Highcharts</li>
+          <li>Postgres</li>
+          <li>MySQL</li>
+          <li>Redis</li>
+          <li>Resque</li>
+          <li>RabbitMQ</li>
+        </ul>
+
       </section>
       <!-- end Skills -->
       {% endif %}
 
-      {% if site.resume_section_recognition %}
-      <!-- begin Recognition -->
+      {% if site.resume.section_education %}
+      <!-- begin Education -->
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Recognition</h2>
+          <h2>Education</h2>
         </header>
 
-      </section>
-      <!-- end Recognition -->
-      {% endif %}
-
-      {% if site.resume_section_associations %}
-      <!-- begin Associations -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Associations</h2>
-        </header>
+        <div class="resume-item">
+          <h4 class="resume-item-title">University of Colorado</h4>
+          <h5 class="resume-item-details">Bachelor of Science in Electrical &amp; Computer Engineering</h5>
+          <p class="resume-item-copy">Graduated in December of 2005</p>
+        </div>
 
       </section>
-      <!-- end Associations -->
+      <!-- end Education -->
       {% endif %}
 
-      {% if site.resume_section_links %}
+      {% if site.resume.section_links %}
       <!-- begin Links -->
       <section class="content-section">
 

@@ -12,27 +12,21 @@ social_links:
   github_url:            "https://github.com/thetizzo"
   twitter_url:           "http://twitter.com/thetizzo"
   linkedin_url:          "https://www.linkedin.com/in/thetizzo"
-  
+
 # Resume settings
-resume_name:                    "Manrock"
-resume_title:                   "Earth Crusher"
-resume_contact_email:           "j.m.taylor1@gmail.com"
+resume:
+  name:                    "Jason Taylor"
+  title:                   "Software Engineer"
+  contact_email:           "resume@thetizzo.com"
 
-# use "yes" to display the email contact button,
-# "no" to display an "I'm not looking for work" message,
-# or remove the resume_looking_for_work option entirely
-# to leave blank
-resume_looking_for_work:        "no"
+  looking_for_work:        "yes"
 
-# Decide which sections to use
-# comment out to hide
-resume_section_experience:      true
-# resume_section_education:       true
-# resume_section_projects:        true
-# resume_section_skills:          true
-# resume_section_recognition:     true
-# resume_section_links:           true
-# resume_section_associations:    true
+  # sections
+  section_experience:      true
+  section_education:       true
+  section_projects:        true
+  section_skills:          true
+  section_links:           true
 
 # Build settings
 markdown: kramdown

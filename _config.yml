@@ -19,14 +19,14 @@ resume:
   title:                   "Software Engineer"
   contact_email:           "resume@thetizzo.com"
 
-  looking_for_work:        "yes"
+  looking_for_work:        "no"
 
   # sections
   section_experience:      true
   section_education:       true
   section_projects:        true
-  section_skills:          true
-  section_links:           true
+  section_skills:          false
+  section_links:           false
 
 # Build settings
 markdown: kramdown

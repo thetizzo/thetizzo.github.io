@@ -1,0 +1,40 @@
+.icon-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: 4px;
+  text-align: center;
+  border-top: 2px solid #c7c7c7;
+  padding-top: .4rem;
+
+  @include media_larger_than_mobile {
+    float: right;
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .icon-link-item {
+    display: inline-block;
+    margin-left: 5px;
+    text-decoration: none;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: none;
+        color: #9c9c9c;
+      }
+    }
+  }
+}
+
+.twitter-blue {
+  color: $twitter-blue;
+}
+
+.linkedin-blue {
+  color: $linkedin-blue;
+}

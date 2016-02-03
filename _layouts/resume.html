@@ -7,14 +7,7 @@
 
     <div class="wrapper">
 
-      {% include header.html %}
-
-      <div class="executive-summary">
-        <p>
-          My overall goal is to build tools &amp; applications that make a happy difference in
-          the lives of users.
-        </p>
-      </div>
+      {% include resume_header.html %}
 
       {% if site.resume.looking_for_work == 'yes' %}
       <a href="mailto:{{ site.resume.contact_email }}" class="contact-button">Contact me</a>

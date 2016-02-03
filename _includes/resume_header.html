@@ -1,0 +1,21 @@
+<header class="page-header">
+  {% if site.avatar == 'true' %}
+  <a href="{{ site.baseurl }}/">
+    <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo" class="avatar">
+  </a>
+  {% endif %}
+
+  <h1 class="header-name">{{ site.resume.name }}</h1>
+
+  <div class="title-bar">
+    <h2 class="header-title">{{ site.resume.title }}</h2>
+    {% include icon-links.html %}
+  </div>
+
+  <div class="executive-summary">
+    <p>
+      My overall goal is to build tools &amp; applications that make a happy difference in
+      the lives of users.
+    </p>
+  </div>
+</header>

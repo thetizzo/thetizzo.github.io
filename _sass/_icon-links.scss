@@ -33,8 +33,16 @@
 
 .twitter-blue {
   color: $twitter-blue;
+
+  &:hover {
+    color: #9c9c9c;
+  }
 }
 
 .linkedin-blue {
   color: $linkedin-blue;
+  
+  &:hover {
+    color: #9c9c9c;
+  }
 }

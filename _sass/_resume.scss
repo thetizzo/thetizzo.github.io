@@ -135,6 +135,23 @@
   }
 
   .resume-item-copy { margin: .75rem 0 0; }
+
+  .resume-skill-list {
+
+    .resume-skill-section {
+      margin: 0 25px 0 auto;
+      display: inline-block;
+      vertical-align: top;
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+    }
+  }
 }
 
 // footer styles

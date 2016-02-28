@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  How I Built This Site
+category: howto
 ---
 
 One day recently, I decided to start a blog. I've tried this several times in the past but the project always seems to die when it comes to figuring out what technology to use or how to host it.

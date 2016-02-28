@@ -2,6 +2,12 @@
 // ---------------------------------------/
 
 // Colors
+$background-color: #F5F5F5;
+$title-color: #6991AC;
+$site-header-color: #C3D7DF;
+$accent-color: #D75C37;
+$text-color: #67727A;
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
@@ -9,9 +15,6 @@ $grey-color-dark:  darken($grey-color, 25%);
 // These are official brand colors according to their respective websites
 $twitter-blue: #55acee;
 $linkedin-blue: #0077b5;
-
-// Styles
-$text_color:        black;
 
 // For code syntax highlighting
 $spacing-unit:     30px;

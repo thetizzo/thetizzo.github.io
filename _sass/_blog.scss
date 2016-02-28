@@ -1,0 +1,16 @@
+
+.post {
+  h4, h5, h6 {
+    color: $accent-color;
+  }
+
+  .post-title {
+    color: $title-color;
+    margin: 0;
+  }
+
+  .post-meta {
+    color: $accent-color;
+    margin: 0;
+  }
+}

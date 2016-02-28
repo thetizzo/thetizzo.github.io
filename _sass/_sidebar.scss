@@ -1,0 +1,19 @@
+
+.sidebar {
+  float: right;
+  padding: 20px;
+  min-width: 25%;
+  max-width: 25%;
+  text-align: center;
+  border: 2px solid $accent-color;
+  @include border-radius(40px);
+
+  h4, h5, h6 {
+    color: $title-color;
+    // color: $site-header-color;
+  }
+
+  .about-me {
+    text-align: left;
+  }
+}

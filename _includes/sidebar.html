@@ -1,0 +1,22 @@
+<div class="sidebar">
+  {% if site.avatar == 'true' %}
+  <a href="{{ site.baseurl }}/">
+    <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo" class="site-avatar">
+  </a>
+  {% endif %}
+
+  <h4>About Me</h4>
+  <p class="about-me">
+    Hi, my name is Jason &amp; I'm a developer working on making stuff for the Internet. I currently
+    work for <a href="https://www.tendrilinc.com/">Tendril</a>.
+  </p>
+
+  <h4>Find Me Here</h4>
+  {% include icon-links.html %}
+
+</div>
+<!--
+
+  <h1 class="header-name">theTizzo Industries</h1>
+
+-->

@@ -7,7 +7,7 @@
 }
 
 html {
-  background: white;
+  background: $background-color;
 }
 
 body{
@@ -17,14 +17,33 @@ body{
   line-height: 1.5;
 }
 
+h1, h2, h3,
+h4, h5, h6 {
+  margin: 0;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
 .wrapper:before,
 .wrapper:after { content:""; display:table; }
 .wrapper:after { clear: both; }
 .wrapper {
-  max-width: 728px;
-  padding: 0 24px;
-  margin: 0 auto;
-  zoom: 1;
+  max-width: calc(1000px - (30px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 30px;
+}
+
+.content {
+  float: left;
+  min-width: 70%;
+  max-width: 70%;
 }
 
 // clearfix (now called group,

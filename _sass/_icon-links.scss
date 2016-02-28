@@ -9,7 +9,6 @@
   padding-top: .4rem;
 
   @include media_larger_than_mobile {
-    float: right;
     border-top: none;
     padding-top: 0;
   }
@@ -41,7 +40,7 @@
 
 .linkedin-blue {
   color: $linkedin-blue;
-  
+
   &:hover {
     color: #9c9c9c;
   }

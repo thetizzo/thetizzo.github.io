@@ -70,4 +70,8 @@ This isn't strictly necessary because the code for the site is all public anyway
 
 I signed up for a [CloudFlare](https://www.cloudflare.com/) account because they have a [free plan](https://www.cloudflare.com/plans/) that provides SSL.  This was super easy, they even scraped all my existing DNS records automatically.
 
-For the rest of the set up I followed this [post](https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/)
+For the rest of the set up I followed this [post](https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/) and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.
+
+#### Have fun
+
+Hopefully this was helpful.  Good luck and have fun with your new, highly advanced GitHub page. 

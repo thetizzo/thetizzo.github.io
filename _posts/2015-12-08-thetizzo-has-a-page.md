@@ -7,7 +7,7 @@ date:   2015-12-07
 This is my first post.  Not sure what to say here. Mostly just getting the site
 set up.
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 def hello_world
   puts "Hello world!"
 end

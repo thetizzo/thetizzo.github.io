@@ -1,12 +1,7 @@
 // Variables
 // ---------------------------------------/
 
-$container-width: 980px !default;
-$grid-gutter:     10px !default;
-
 // Colors
-$white:             #fff;
-$black:             #333;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
@@ -16,16 +11,7 @@ $twitter-blue: #55acee;
 $linkedin-blue: #0077b5;
 
 // Styles
-$text_color:        $black;
-
-// Font stack
-$body-font: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !default;
-
-// The base body size
-$body-font-size: 13px !default;
-
-// Monospace font stack
-$mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
+$text_color:        black;
 
 // For code syntax highlighting
 $spacing-unit:     30px;

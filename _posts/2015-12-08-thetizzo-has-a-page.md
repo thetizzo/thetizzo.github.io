@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "theTizzo has a page!"
+title:  theTizzo has a page!
 date:   2015-12-07
 ---
 

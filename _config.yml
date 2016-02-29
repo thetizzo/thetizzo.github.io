@@ -4,15 +4,15 @@ title: theTizzo was here
 description: >
   This a fancy blog that is for fancy code.
 baseurl: ""
-url: "http://thetizzo.com"
+url: "https://thetizzo.com"
 avatar: "true"
 
 # Social Links
 social_links:
   github_url:            "https://github.com/thetizzo"
-  twitter_url:           "http://twitter.com/thetizzo"
+  twitter_url:           "https://twitter.com/thetizzo"
   linkedin_url:          "https://www.linkedin.com/in/thetizzo"
-  resume_url:            "http://thetizzo.com/resume"
+  resume_url:            "https://thetizzo.com/resume"
 
 # Resume settings
 resume:

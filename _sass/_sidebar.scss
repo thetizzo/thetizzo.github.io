@@ -21,22 +21,22 @@
     p {
       margin: 0;
     }
-  }
-}
+    
+    .sidebar-links {
+      text-align: center;
 
-.sidebar-links {
-  text-align: center;
+      .sidebar-link-item {
+        padding: 3px 0;
 
-  .sidebar-link-item {
-    padding: 3px 0;
+        a {
+          color: #333;
+          text-decoration: none;
 
-    a {
-      color: #333;
-      text-decoration: none;
-
-      &:hover {
-        border-bottom: none;
-        color: #9c9c9c;
+          &:hover {
+            border-bottom: none;
+            color: #9c9c9c;
+          }
+        }
       }
     }
   }

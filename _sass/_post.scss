@@ -6,6 +6,15 @@
   .post-title {
     color: $title-color;
     margin: 0;
+
+    .post-link {
+      color: $title-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
   }
 
   .post-meta {

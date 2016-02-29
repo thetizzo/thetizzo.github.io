@@ -23,3 +23,21 @@
     }
   }
 }
+
+.sidebar-links {
+  text-align: center;
+
+  .sidebar-link-item {
+    padding: 3px 0;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: none;
+        color: #9c9c9c;
+      }
+    }
+  }
+}

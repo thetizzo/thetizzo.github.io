@@ -30,6 +30,12 @@ h4, h5, h6 {
   float: left !important;
 }
 
+.content {
+  float: left;
+  min-width: 70%;
+  max-width: 70%;
+}
+
 .wrapper:before,
 .wrapper:after { content:""; display:table; }
 .wrapper:after { clear: both; }
@@ -38,12 +44,6 @@ h4, h5, h6 {
   margin-right: auto;
   margin-left: auto;
   padding: 0 30px;
-}
-
-.content {
-  float: left;
-  min-width: 70%;
-  max-width: 70%;
 }
 
 // clearfix (now called group,

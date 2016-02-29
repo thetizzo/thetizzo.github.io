@@ -1,18 +1,24 @@
 <div class="sidebar">
   {% if site.avatar == 'true' %}
-  <a href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo" class="site-avatar">
-  </a>
+    <div class="sidebar-avatar">
+      <a href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo" class="site-avatar">
+      </a>
+    </div>
   {% endif %}
 
-  <h4>About Me</h4>
-  <p class="about-me">
-    Hi, my name is Jason &amp; I'm a developer working on making stuff for the Internet in mostly Ruby &amp; Rails.
-    I currently work for <a href="https://www.tendrilinc.com/">Tendril</a>.
-  </p>
+  <div class="sidebar-section">
+    <h4>About Me</h4>
+    <p>
+      Hi, my name is Jason &amp; I'm a developer working on making stuff for the Internet in mostly Ruby &amp; Rails.
+      I currently work for <a href="https://www.tendrilinc.com/">Tendril</a>.
+    </p>
+  </div>
 
-  <h4>Find Me Here</h4>
-  {% include icon-links.html %}
+  <div class="sidebar-section">
+    <h4>Find Me Here</h4>
+    {% include icon-links.html %}
+  </div>
 
   <!-- <h4>Subscribe</h4> -->
   <!-- <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a> -->

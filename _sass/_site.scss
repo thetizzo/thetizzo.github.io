@@ -2,7 +2,7 @@
   background-color: $site-header-color;
   min-height: 60px;
   position: relative;
-  border-bottom: 2px dashed $accent-color;
+  border-bottom: 2px solid $accent-color;
   margin-bottom: 20px;
 
   .site-title {
@@ -28,6 +28,7 @@
   overflow: hidden;
   margin: 0 auto;
   @include border-radius(100px);
+  border: 2px solid $accent-color;
 }
 
 .site-footer {

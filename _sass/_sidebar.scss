@@ -5,15 +5,21 @@
   min-width: 25%;
   max-width: 25%;
   text-align: center;
-  border: 2px solid $accent-color;
-  @include border-radius(40px);
+  @include border-radius(20px);
+  background-color: rgba(195, 215, 223, 0.5);
 
-  h4, h5, h6 {
-    color: $title-color;
-    // color: $site-header-color;
-  }
-
-  .about-me {
+  .sidebar-section {
     text-align: left;
+    padding: 20px 0;
+
+    h4, h5, h6 {
+      color: $title-color;
+      margin: 0 0 10px 0;
+      border-bottom: 2px dashed $accent-color;
+    }
+
+    p {
+      margin: 0;
+    }
   }
 }

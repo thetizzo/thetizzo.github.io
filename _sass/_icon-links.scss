@@ -18,12 +18,12 @@
     margin-left: 5px;
 
     a {
-      color: #333;
+      color: black;
       text-decoration: none;
 
       &:hover {
         border-bottom: none;
-        color: #9c9c9c;
+        color: $text-color;
       }
     }
   }
@@ -33,7 +33,7 @@
   color: $twitter-blue;
 
   &:hover {
-    color: #9c9c9c;
+    color: $text-color;
   }
 }
 
@@ -41,6 +41,14 @@
   color: $linkedin-blue;
 
   &:hover {
-    color: #9c9c9c;
+    color: $text-color;
+  }
+}
+
+.rss-orange {
+  color: $rss-orange;
+
+  &:hover {
+    color: $text-color;
   }
 }

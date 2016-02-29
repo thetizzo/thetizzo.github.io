@@ -21,7 +21,7 @@
     p {
       margin: 0;
     }
-    
+
     .sidebar-links {
       text-align: center;
 
@@ -29,12 +29,12 @@
         padding: 3px 0;
 
         a {
-          color: #333;
+          color: black;
           text-decoration: none;
 
           &:hover {
             border-bottom: none;
-            color: #9c9c9c;
+            color: $text-color;
           }
         }
       }

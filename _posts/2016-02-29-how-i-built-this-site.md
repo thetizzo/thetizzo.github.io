@@ -2,6 +2,7 @@
 layout: post
 title:  How I Built This Site
 category: howto
+date: 2016-02-29
 ---
 
 One day recently, I decided to start a blog. I've tried this several times in the past but the project always seems to die when it comes to figuring out what technology to use or how to host it.
@@ -38,13 +39,13 @@ At this point you can go to `localhost:4000` and see the default Jekyll site.
 
 #### Integrating a theme
 
-If you want, you can start writing blogs posts right away, but I wanted to change the theme of the site make it my own. Jekyll lets you build anything so you could use custom CSS to design the site any way you want or you can download a pre-made theme, which are available from several places.
+If you want, you can start writing blogs posts right away, but I wanted to change the theme of the site make it my own. Jekyll lets you build anything so you could use Sass to design the site any way you want or you can download a pre-made theme, which are available from several places.
 
 I decided to use a pre-made theme because I figured that working through integrating that theme with my site would be a great way to gain a better understanding of how to work with Jekyll.
 
 I found [this](https://github.com/jglovier/resume-template) theme on [jekyllthemes.org](http://jekyllthemes.org/) and thought it was a nice, clean look that would be a good starting place for my site.
 
-This theme is set up to be it's own standalone site for a résumé so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was `resume.html` which looks like this:
+This theme is set up to be it's own standalone site so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was `resume.html` which looks like this:
 
 {% highlight ruby %}
 ---
@@ -72,7 +73,7 @@ I was then able to build a resume page using this theme while leaving the rest o
 
 #### Using Font Awesome with Jekyll
 
-I personally love [Font Awesome](https://fortawesome.github.io/Font-Awesome/). If you haven't heard of Font Awesome, it's a set of icons that you can easily include in your site.  The reason I love them is that they are included as a font to your site so you can easily customize them with CSS.
+I personally love [Font Awesome](https://fortawesome.github.io/Font-Awesome/). If you haven't heard of Font Awesome, it's a set of icons that you can easily include in your site.  They are included as a font to your site so you can easily customize them with CSS.
 
 Font Awesome offers a CDN to serve the assets so including them in a project is super easy.  I simply added the following line to `_includes/head.html`:
 
@@ -94,7 +95,7 @@ That's it!
 
 #### Adding Google Analytics
 
-To add Google Analytics to the site I created a file named `_includes/google_analytics.html` and put the code snippet that Google gives you when you sign up for Analytics which looks something like this:
+To add Google Analytics to the site I created a file, `_includes/google_analytics.html`, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:
 
 {% highlight html %}
 <script>

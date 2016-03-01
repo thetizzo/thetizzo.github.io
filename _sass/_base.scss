@@ -32,7 +32,6 @@ h4, h5, h6 {
 
 .content {
   float: left;
-  min-width: 70%;
   max-width: 70%;
 }
 
@@ -44,6 +43,16 @@ h4, h5, h6 {
   margin-right: auto;
   margin-left: auto;
   padding: 0 30px;
+}
+
+@include media_mobile {
+  .content {
+    min-width: 100%;
+  }
+
+  .wrapper {
+    padding: 0 15px 15px 15px;
+  }
 }
 
 // clearfix (now called group,

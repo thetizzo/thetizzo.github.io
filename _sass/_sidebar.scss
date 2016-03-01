@@ -41,3 +41,10 @@
     }
   }
 }
+
+
+@include media_mobile {
+  .sidebar {
+    min-width: 100%;
+  }
+}

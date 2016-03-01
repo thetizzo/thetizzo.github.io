@@ -7,6 +7,7 @@
   text-align: center;
   border-top: 2px solid #c7c7c7;
   padding-top: .4rem;
+  float: right;
 
   @include media_larger_than_mobile {
     border-top: none;
@@ -50,5 +51,11 @@
 
   &:hover {
     color: $text-color;
+  }
+}
+
+@include media_mobile {
+  .icon-links {
+    float: none;
   }
 }

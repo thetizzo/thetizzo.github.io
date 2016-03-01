@@ -4,7 +4,7 @@
 
 Start jekyll:
 
-`jekyll serve --watch`
+`jekyll serve`
 
 View in the browser:
 

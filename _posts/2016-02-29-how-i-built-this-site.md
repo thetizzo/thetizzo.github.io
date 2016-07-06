@@ -128,6 +128,6 @@ For the rest of the set up I followed this [post](https://www.benburwell.com/pos
 
 #### Have fun!
 ```
-test
+require 'ruby'
 ```
 Hopefully this was helpful.  Good luck and have fun with your new, highly advanced GitHub page.

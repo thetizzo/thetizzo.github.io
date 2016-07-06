@@ -127,5 +127,7 @@ I signed up for a [CloudFlare](https://www.cloudflare.com/) account because they
 For the rest of the set up I followed this [post](https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/) and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.
 
 #### Have fun!
-
+```
+test
+```
 Hopefully this was helpful.  Good luck and have fun with your new, highly advanced GitHub page.

@@ -5,31 +5,31 @@ category: howto
 date: 2016-07-05
 ---
 
-I'm building a hybrid iOS app using Rails 5 with Turbolinks 5.  I also wanted to use Devise (v4.2) for authentication as I would in a normal Rails app.  This presented some challenges because Turbolinks documenation recommends that you handle form submissions with AJAX and this is not how Devise works out of the box.
+I'm building a hybrid iOS app using Rails 5 with Turbolinks 5.  I also wanted to use Devise (v4.2) for authentication as I would in a normal Rails app.  This presented some challenges because [Turbolinks documentation](https://github.com/turbolinks/turbolinks#redirecting-after-a-form-submission) recommends that you handle form submissions with XHR and this is not how Devise works out of the box.
+
+In order to make this work, we will need to use customized Devise views, custom Devise controllers, and a conveniently placed Javascript event listener.
 
 #### Using Custom Views
 
+To use custom views with Devise, you need to set turn on scoped views in your `config/devise.rb` file like so:
 
-To use custom views you need to set `config.scoped_views = true` in your `config/devise.rb` file. Then run `rails generate devise:views users` to have Devise generate the views in `app/views/users` or manually copy the views to that directory.
+```ruby
+config.scoped_views = true
+```
 
-In order to enable the forms to make AJAX requests to the server we will need to use our own set of views so that we can add the `remote: true` flag to each form.
-
-{% highlight erb %}
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
-  ...the rest of the form...
-{% endhighlight %}
+Then run `rails generate devise:views users` to have Devise generate the views in `app/views/users` or manually copy the views to that directory.
 
 #### Using Semi-Custom Controllers
 
 To make both sides of the AJAX forms work we will also need controllers that are capable of responding to JS requests.  First, tell Devise that we are going to use our own controllers by modifying the routes file like this:
 
-{% highlight ruby %}
+```ruby
 devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
-{% endhighlight %}
+```
 
 Then we need to make our own controllers that have the ability to respond to JS:
 
-{% highlight ruby %}
+```ruby
 class RegistrationsController < Devise::RegistrationsController
   respond_to :js
 end
@@ -37,12 +37,19 @@ end
 class SessionsController < Devise::SessionsController
   respond_to :js
 end
-{% endhighlight %}
+```
 
 That's surprisingly it for controllers. The rest is still handled by Devise.
 
 
 #### Building the Sign Up Flow
+
+In order to enable the forms to make AJAX requests to the server we will need to use our own set of views so that we can add the `remote: true` flag to each form.
+
+```erb
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
+  ...the rest of the form...
+```
 
 To get the sign up flow to work we need both sides of the form.  Happy path sign up, which has been covered many other blogs and is fairly easy to get working, and the errors side of the form where we need to display some errors on the page and present the user with the form again.
 

@@ -29,11 +29,11 @@ For personal GitHub Pages, the site will automatically be served using the maste
 
 To get Jekyll set up I ran these 3 steps:
 
-{% highlight bash %}
+```shell
 $ gem install jekyll
 $ jekyll new thetizzo.github.io
 $ jekyll serve
-{% endhighlight %}
+```
 
 At this point you can go to `localhost:4000` and see the default Jekyll site.
 
@@ -47,11 +47,11 @@ I found [this](https://github.com/jglovier/resume-template) theme on [jekyllthem
 
 This theme is set up to be it's own standalone site so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was `resume.html` which looks like this:
 
-{% highlight ruby %}
+```markdown
 ---
 layout: resume
 ---
-{% endhighlight %}
+```
 
 That's really it.  In Jekyll, anything at the top of a file between the dashes is called [Front Matter](https://jekyllrb.com/docs/frontmatter/) and can be used to pass variables and defaults into a page.  
 
@@ -59,7 +59,7 @@ Since I'm using a theme, I just need the front matter for `resume.html` to point
 
 I then copied over the rest of the theme to the appropriate places, making sure to namespace all the files to keep the two different themes (default and resume) separate until I was ready to combine them.  It looked something like this:
 
-{% highlight bash %}
+```shell
 resume-template -> my_project
 
 {% raw %}_config.yml contents{% endraw %} -> {% raw %}_config.yml{% endraw %}
@@ -67,7 +67,7 @@ resume-template -> my_project
 {% raw %}css/main.scss{% endraw %} -> {% raw %}css/resume-main.scss{% endraw %}
 {% raw %}_sass/*.scss{% endraw %} -> {% raw %}_sass/resume-*.scss{% endraw %}
 {% raw %}_includes/*.html{% endraw %} -> {% raw %}_includes/resume-*.html{% endraw %}
-{% endhighlight %}
+```
 
 I was then able to build a resume page using this theme while leaving the rest of the existing site alone. Once that was finished, I merged the styles from the resume page into the default layout by removing the default theme styles and removing the namespace for the resume styles and files so they would apply everywhere on the site.
 
@@ -77,9 +77,9 @@ I personally love [Font Awesome](https://fortawesome.github.io/Font-Awesome/). I
 
 Font Awesome offers a CDN to serve the assets so including them in a project is super easy.  I simply added the following line to `_includes/head.html`:
 
-{% highlight html %}
+```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-{% endhighlight %}
+```
 
 #### Setting up a custom domain
 
@@ -87,9 +87,9 @@ Another nice thing about GitHub Pages is that they offer a super easy way to put
 
 I will let [GitHub's own instructions](https://help.github.com/articles/using-a-custom-domain-with-github-pages/) speak for themselves on this matter but basically all I had to do was add a CNAME record through my DNS provider for `thetizzo.com` to point at `thetizzo.github.io` and add a file called `CNAME` to the root of the project that looks like this:
 
-{% highlight bash %}
+```shell
 thetizzo.com
-{% endhighlight %}
+```
 
 That's it!
 
@@ -97,7 +97,7 @@ That's it!
 
 To add Google Analytics to the site I created a file, `_includes/google_analytics.html`, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:
 
-{% highlight html %}
+```html
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -107,16 +107,16 @@ To add Google Analytics to the site I created a file, `_includes/google_analytic
   ga('create', '<your tracking ID number>', 'auto');
   ga('send', 'pageview');
 </script>
-{% endhighlight %}
+```
 
 Then included that file in `_includes/head.html`:
 
-{% highlight html %}
+```liquid
 <head>
   ...
   {% raw %}{% include google_analytics.html %}{% endraw %}
 </head>
-{% endhighlight %}
+```
 
 #### Adding SSL
 

@@ -42,48 +42,66 @@ end
 That's surprisingly it for controllers. The rest is still handled by Devise.
 
 
-#### Building the Sign Up Flow
+#### Building the Registration Flow
 
-In order to enable the forms to make AJAX requests to the server we will need to use our own set of views so that we can add the `remote: true` flag to each form.
+To get the registration flow to work we need both sides of the form: happy path registrations, which have been covered by many other blogs and are fairly easy to get working, and the non-happy path side where we need to display some errors on the form.
+
+In order to enable the registration form to send requests to the server as AJAX we will need to add the `remote: true` flag to the form:
 
 ```erb
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
   ...the rest of the form...
 ```
 
-To get the sign up flow to work we need both sides of the form.  Happy path sign up, which has been covered many other blogs and is fairly easy to get working, and the errors side of the form where we need to display some errors on the page and present the user with the form again.
+At this point you can submit the form with valid inputs and the user should get created on the back end but the page won't redirect to the `after_sign_in_path` like you would normally expect from Devise.  You may even see a MissingTemplate error for the create view.  To solve this we need to create a `create.js.erb` file in `app/views/users` that can execute some code to tell Turbolinks what to do on on the client.  (Note: I got this from [@packagethief's](https://github.com/packagethief) answer to this [GitHub Issue.](https://github.com/turbolinks/turbolinks/issues/85))
 
-On the form side we need to add the remote flag to the form like this:
-
-
-At this point you should be able to submit the form with valid inputs and have the user get created on the back end but the page won't redirect the the `after_sign_in_path` like you would normally expect from Devise.  You may even see a MissingTemplate error for the create view.  To solve this we need to create a `create.js.erb` file that can execute some code to tell Turbolinks what to do on on the client.  I got this from [@packagethief's](https://github.com/packagethief) answer to this [GitHub Issue.](https://github.com/turbolinks/turbolinks/issues/85)
-
-{% highlight erb %}
+```erb
 <% if resource.valid? %>
   Turbolinks.clearCache()
   Turbolinks.visit("<%= controller.after_sign_in_path_for(resource) %>", { action: 'replace' })
 <% else %>
   $('form#new_user').replaceWith("<%=j render 'users/registrations/form' %>")
 <% end %>
-{% endhighlight %}
+```
 
-The else is for dealing with the error case which we will cover right now.
+If the resource (Devise-speak for the user instance in this case) comes back as valid then we want to tell Turbolinks to clear the cache and [perform a visit](https://github.com/turbolinks/turbolinks#each-navigation-is-a-visit).  If the resource is not valid then we have experienced an error and need to show the relevant error messages which is easily done by replacing the existing form on the page with a newly rendered version of the form which includes the error messages.
 
-For errors, we have to re-render the form with the relevant flash messages.  Since the Devise RegistrationsController responds with a 200 status HTTP code in both success and error cases, the error case can also use the `create.js.erb` code to render the form with the relevant errors.
+It's important to note that in order to render just the form itself for the error case, I have extracted it into its own partial.
 
-One caveat here is that we have to extract the form to a partial so that we can render just the form and let Turbolinks handle replacing it in the DOM.
+Using the `create.js.erb` for both success and error cases works for registrations because the Devise controller returns a 200 HTTP status for both cases so Rails will render the create view in either case.  This is not true for log in which leads us to...
 
-At the end of this project I had 3 files in `views/users/registrations`; `_form.html.erb`,
-`create.js.erb`, and `new.html.haml`.  
+## Building the Log In Flow
 
-## Log In Flow
+First, we need to add `remote: true` to the form like we did for registrations:
+
+```erb
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
+```
+
+And we also need a `create.js.erb` but this time it is only for the happy path because the error case for log in returns a 401 HTTP status so Rails will not render the create view for errors.  My `create.js.erb` for login does just a basic Turbolinks visit to the `after_sign_in_path_for`.
+
+```javascript
+Turbolinks.visit("<%= controller.after_sign_in_path_for(resource) %>")
+```
+
+For errors, things get a little more interesting.  Since Devise returns a 401 status and returns just the error message text to the browser then we need to add a listener for the `ajax:error` event to handle this properly. I embedded this listener in the view which I don't love but not sure how to do this in a "better" way because this will be the only form that it ever applies to.  The listener looks like this:
+
+```javascript
+$('form#new_user').on('ajax:error', function(event, xhr, status, error) {
+  $('#login-alerts').replaceWith("<div id='login-alerts' class='alert alert-danger'>" + xhr.responseText + "</div>")
+});
+```
+
+Notice that this replaces a div with an id of "login-alerts" with a similar div that includes the error message text.  However since there are still some cases where we want to show normal Rails server-rendered errors on this form we still need to include a way to render those from the server.
+
+```erb
+<div id="login-alerts">
+  <%= render partial: 'shared/alerts', locals: {errors: resource.errors.full_messages} %>
+</div>
+```
 
 
-* remote true on form
 * error listener on form
-* create.js.erb
-* controller
-* xhr response on fail is a 401 so you need to add the listener to handle that kind of error
 * need to render xhr alerts as well as regular alerts on the resource (example of regular, after log out flash message)
 
 * SessionsController

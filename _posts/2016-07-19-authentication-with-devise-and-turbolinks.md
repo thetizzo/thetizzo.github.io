@@ -5,7 +5,7 @@ category: howto
 date: 2016-07-19
 ---
 
-I'm building a hybrid iOS app using Rails 5 with Turbolinks 5.  I also wanted to use Devise (v4.2) for authentication as I would in a normal Rails app.  This presented some challenges because [Turbolinks documentation](https://github.com/turbolinks/turbolinks#redirecting-after-a-form-submission) recommends that you handle form submissions with XHR and this is not how Devise works out of the box.
+I'm building a hybrid iOS app using Rails 5 with [Turbolinks 5](https://github.com/turbolinks/turbolinks).  I also wanted to use [Devise](https://github.com/plataformatec/devise) (v4.2) for authentication as I would in a normal Rails app.  This presented some challenges because [Turbolinks documentation](https://github.com/turbolinks/turbolinks#redirecting-after-a-form-submission) recommends that you handle form submissions with XHR and this is not how Devise works out of the box.
 
 In order to make this work, we will need to use customized Devise views, custom Devise controllers, and a conveniently placed Javascript event listener.
 

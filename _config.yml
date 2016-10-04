@@ -36,5 +36,8 @@ sass:
   sass_dir: _sass
   style: compressed
 
+gems:
+  - jekyll-gist
+  
 destination: public
 exclude: ["CNAME", "Rakefile", "README.md", "public"]

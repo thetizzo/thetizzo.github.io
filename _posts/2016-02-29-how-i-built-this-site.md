@@ -9,7 +9,7 @@ One day recently, I decided to start a blog. I've tried this several times in th
 
 I’ve tried several platforms; Wordpress, Blogger, and even building the Classic Rails Blog™️ more than once. All of those solutions seem to require a ton of work just to maintain the site.  What I really want is something that is easy to set up, host, and will allow me to spend time on more interesting problems.
 
-#### GitHub Pages to the rescue!
+## GitHub Pages to the rescue!
 
 [Github Pages](https://pages.github.com/) came to my attention and at first glance it seemed easy to use so I decided to try it out. GitHub offers an automatic page generator for Pages sites that you can access in `Settings > Options > GitHub Pages` but this doesn't seem to offer as much flexibility for the theme and layout of the site as I wanted.
 
@@ -17,7 +17,7 @@ Fortunately, GitHub Pages has support for [Jekyll](http://jekyllrb.com/) which i
 
 Here's what I had to do to make this work:
 
-#### Setting up a GitHub Page
+## Setting up a GitHub Page
 
 The first thing I did to set this up was to create a git repo named `<your-github-username>.github.io`.
 
@@ -25,7 +25,7 @@ In my case this was `thetizzo.github.io`. It is important to make sure that your
 
 For personal GitHub Pages, the site will automatically be served using the master branch of this repository.  It's shocking how quickly changes will show up on the actual site once you push them to GitHub.  It often doesn't take more than a few seconds.
 
-#### Setting up Jekyll
+## Setting up Jekyll
 
 To get Jekyll set up I ran these 3 steps:
 
@@ -37,7 +37,7 @@ $ jekyll serve
 
 At this point you can go to `localhost:4000` and see the default Jekyll site.
 
-#### Integrating a theme
+## Integrating a theme
 
 If you want, you can start writing blogs posts right away, but I wanted to change the theme of the site make it my own. Jekyll lets you build anything so you could use Sass to design the site any way you want or you can download a pre-made theme, which are available from several places.
 
@@ -71,7 +71,7 @@ resume-template -> my_project
 
 I was then able to build a resume page using this theme while leaving the rest of the existing site alone. Once that was finished, I merged the styles from the resume page into the default layout by removing the default theme styles and removing the namespace for the resume styles and files so they would apply everywhere on the site.
 
-#### Using Font Awesome with Jekyll
+## Using Font Awesome with Jekyll
 
 I personally love [Font Awesome](https://fortawesome.github.io/Font-Awesome/). If you haven't heard of Font Awesome, it's a set of icons that you can easily include in your site.  They are included as a font to your site so you can easily customize them with CSS.
 
@@ -81,7 +81,7 @@ Font Awesome offers a CDN to serve the assets so including them in a project is 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 ```
 
-#### Setting up a custom domain
+## Setting up a custom domain
 
 Another nice thing about GitHub Pages is that they offer a super easy way to put your own custom domain on the site.  This is nice because it gives you the performance benefits of GitHub's CDN but also let's the site have the feel of a completely custom website.
 
@@ -93,7 +93,7 @@ thetizzo.com
 
 That's it!
 
-#### Adding Google Analytics
+## Adding Google Analytics
 
 To add Google Analytics to the site I created a file, `_includes/google_analytics.html`, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:
 
@@ -118,7 +118,7 @@ Then included that file in `_includes/head.html`:
 </head>
 ```
 
-#### Adding SSL
+## Adding SSL
 
 This isn't strictly necessary because the code for the site is all public anyway but it's more fun to have an HTTPS site.
 
@@ -126,6 +126,6 @@ I signed up for a [CloudFlare](https://www.cloudflare.com/) account because they
 
 For the rest of the set up I followed this [post](https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/) and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.
 
-#### Have fun!
+## Have fun!
 
 Hopefully this was helpful.  Good luck and have fun with your new, highly advanced GitHub page.

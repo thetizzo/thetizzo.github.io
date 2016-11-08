@@ -8,11 +8,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    autoprefixer-rails (6.5.1.1)
-      execjs
-    bootstrap (4.0.0.alpha5)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -138,7 +133,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap
   github-pages
 
 BUNDLED WITH

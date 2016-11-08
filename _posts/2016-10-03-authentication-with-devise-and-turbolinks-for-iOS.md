@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Authentication with Devise 4.2 and Turbolinks 5 for iOS
+title:  Authentication with Devise &amp; Turbolinks for iOS
 category: howto
 date: 2016-10-03
 ---

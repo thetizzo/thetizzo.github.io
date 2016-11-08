@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% for post in site.posts %}
+  <section>
+  {% include post-title.html title=post.title date=post.date %}
+
+    <p class="text-justify">{{ post.excerpt }}</p>
+
+    <footer class="text-xs-center">
+      <a href="{{post.url}}" class="btn btn-outline-primary">Continue Reading</a>
+    </footer>
+  </section>
+  <hr/>
+{% endfor %}

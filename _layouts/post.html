@@ -2,12 +2,7 @@
 layout: default
 ---
 <article>
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-    </p>
-  </header>
+  {% include post-title.html title=page.title date=page.date %}
   <div>
     {{ content }}
   </div>

@@ -12,7 +12,7 @@ social_links:
   github_url:            "https://github.com/thetizzo"
   twitter_url:           "https://twitter.com/thetizzo"
   linkedin_url:          "https://www.linkedin.com/in/thetizzo"
-  resume_url:            "https://thetizzo.com/resume"
+  resume_url:            "/resume"
 
 # Resume settings
 resume:
@@ -38,6 +38,6 @@ sass:
 
 gems:
   - jekyll-gist
-  
+
 destination: public
 exclude: ["CNAME", "Rakefile", "README.md", "public"]

@@ -1,20 +1,10 @@
 ---
 ---
 
-// "Reset" styles and SCSS reusable components
-@import "normalize";
-@import "mixins";
-@import "variables";
+@import 'bootstrap';
+@import 'variables';
+@import 'base';
 
-// Generic site base & layout styles
-@import "base";
-
-@import "syntax-highlighting";
-@import "icon-links";
-
-@import "resume";
-@import "post";
-@import "sidebar";
-@import "site";
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+.card-columns {
+  @include media-breakpoint-up(sm) { column-count: 1; }
+}

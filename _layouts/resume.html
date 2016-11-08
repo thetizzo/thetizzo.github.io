@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
-
-  <body class="">
-
-    <div class="wrapper">
-
+  <body>
+    <div>
       {% include resume-header.html %}
 
       {% if site.resume.looking_for_work == 'yes' %}
-      <a href="mailto:{{ site.resume.contact_email }}" class="contact-button">Contact me</a>
+      <a href="mailto:{{ site.resume.contact_email }}">Contact me</a>
       {% endif %}
 
       {% if site.resume.section_experience %}
       <!-- begin Experience -->
-      <section class="content-section">
-
-        <header class="section-header">
+      <section>
+        <header>
           <h2>Experience</h2>
         </header>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title">
+        <div>
+          <h3>
             MobileCause
             <a href="https://www.mobilecause.com/" target="_blank">
               <small><i class="fa fa-link fa-fw"></i></small>
             </a>
           </h3>
-          <h4 class="resume-item-details">Senior Architect &bull; April, 2016 &mdash; Present</h4>
-          <h4 class="resume-item-details">Senior Software Engineer &amp; Architect &bull; April, 2012 &mdash; March, 2015</h4>
-          <p class="resume-item-copy">
+          <h4>Senior Architect &bull; April, 2016 &mdash; Present</h4>
+          <h4>Senior Software Engineer &amp; Architect &bull; April, 2012 &mdash; March, 2015</h4>
+          <p>
             At MobileCause, I worked with a small engineering team to build
             a mobile fundraising platform that helped nonprofit organizations
             increase donations &amp; donor engagement.
           </p>
-          <ul class="resume-item-list">
+          <ul>
             <li>
               Produced a Rails application that empowered nonprofits to run
               fundraising campaigns with configurable donation forms, fundraising
@@ -57,22 +52,22 @@
               API in Ruby. See Projects section below for more details.
             </li>
           </ul>
-        </div><!-- end of resume-item -->
+        </div>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title">
+        <div>
+          <h3>
             Tendril
             <a href="https://www.tendrilinc.com/" target="_blank">
               <small><i class="fa fa-link fa-fw"></i></small>
             </a>
           </h3>
-          <h4 class="resume-item-details">Senior Software Engineer &bull; March, 2015 &mdash; March, 2016</h4>
-          <p class="resume-item-copy">
+          <h4>Senior Software Engineer &bull; March, 2015 &mdash; March, 2016</h4>
+          <p>
             At Tendril, I work on a Rails application that enables energy providers to
             engage their customers by encouraging them to save more energy &amp;
             providing actionable feedback on how to accomplish that goal.
           </p>
-          <ul class="resume-item-list">
+          <ul>
             <li>
               Endeavoring to reduce technical debt within the web portal's code base.
               This includes increasing test coverage, improving error handling, &amp;
@@ -91,22 +86,22 @@
               stability &amp; scaling issues across the whole system.
             </li>
           </ul>
-        </div><!-- end of resume-item -->
+        </div>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title">
+        <div>
+          <h3>
             Avaya
             <a href="http://www.avaya.com/usa/" target="_blank">
               <small><i class="fa fa-link fa-fw"></i></small>
             </a>
           </h3>
-          <h4 class="resume-item-details">Application Manager &bull; January, 2007 &mdash; April, 2012</h4>
-          <h4 class="resume-item-details">Application Developer &bull; June, 2005 &mdash; January, 2007</h4>
-          <p class="resume-item-copy">
+          <h4>Application Manager &bull; January, 2007 &mdash; April, 2012</h4>
+          <h4>Application Developer &bull; June, 2005 &mdash; January, 2007</h4>
+          <p>
             At Avaya, I worked on a sales tool that provided configuration details,
             price estimation, &amp; design assurance for large scale telecommunications systems.
           </p>
-          <ul class="resume-item-list">
+          <ul>
             <li>
               Developer for the Product Model Wrapper. This involved working on an MFC
               based application written in C++, &amp; working on the interface between
@@ -133,71 +128,68 @@
             </li>
           </ul>
         </div>
-
       </section>
       <!-- end Experience -->
       {% endif %}
 
       {% if site.resume.section_projects %}
       <!-- begin Projects -->
-      <section class="content-section">
-
-        <header class="section-header">
+      <section>
+        <header>
           <h2>Projects</h2>
         </header>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title">
+        <div>
+          <h3>
             CardConnect Gem
             <a href="https://rubygems.org/gems/cardconnect" target="_blank">
               <small><i class="fa fa-link fa-fw"></i></small>
             </a>
-            <a href="https://github.com/mobilecause/cardconnect" target="_blank" class="icon-link">
+            <a href="https://github.com/mobilecause/cardconnect" target="_blank">
               <small><i class="fa fa-github fa-fw"></i></small>
             </a>
           </h3>
-          <p class="resume-item-copy">CardConnect API Ruby Wrapper</p>
-        </div><!-- end resume item -->
+          <p>CardConnect API Ruby Wrapper</p>
+        </div>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title">
+        <div>
+          <h3>
             NflData Gem
             <a href="https://rubygems.org/gems/nfl_data" target="_blank">
               <small><i class="fa fa-link fa-fw"></i></small>
             </a>
-            <a href="https://github.com/thetizzo/nfl_data" target="_blank" class="icon-link">
+            <a href="https://github.com/thetizzo/nfl_data" target="_blank">
               <small><i class="fa fa-github fa-fw"></i></small>
             </a>
           </h3>
-          <p class="resume-item-copy">Parse NFL data like a boss</p>
-        </div><!-- end resume item -->
+          <p>Parse NFL data like a boss</p>
+        </div>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title">
+        <div>
+          <h3>
             This Very Site!
             <a href="http://thetizzo.com/" target="_blank">
               <small><i class="fa fa-link fa-fw"></i></small>
             </a>
-            <a href="https://github.com/thetizzo/thetizzo.github.io" target="_blank" class="icon-link">
+            <a href="https://github.com/thetizzo/thetizzo.github.io" target="_blank">
               <small><i class="fa fa-github fa-fw"></i></small>
             </a>
           </h3>
-          <p class="resume-item-copy">Learn more about what it takes to make all the brilliance happen. ;)</p>
-        </div><!-- end resume item -->
+          <p>Learn more about what it takes to make all the brilliance happen. ;)</p>
+        </div>
       </section>
       <!-- end Projects -->
       {% endif %}
 
       {% if site.resume.section_skills %}
       <!-- begin Skills -->
-      <section class="content-section">
-
-        <header class="section-header">
+      <section>
+        <header>
           <h2>Skills</h2>
         </header>
 
-        <div class="resume-skill-list">
-          <div class="resume-skill-section">
+        <div>
+          <div>
             <p><strong>Front End</strong></p>
             <ul>
               <li>JavaScript</li>
@@ -208,7 +200,7 @@
               <li>Bootstrap</li>
             </ul>
           </div>
-          <div class="resume-skill-section">
+          <div>
             <p><strong>Back End</strong></p>
             <ul>
               <li>Ruby</li>
@@ -222,7 +214,7 @@
               <li>Java</li>
             </ul>
           </div>
-          <div class="resume-skill-section">
+          <div>
             <p><strong>Testing</strong></p>
             <ul>
               <li>RSpec</li>
@@ -231,7 +223,7 @@
               <li>Cucumber</li>
             </ul>
           </div>
-          <div class="resume-skill-section">
+          <div>
             <p><strong>Tools</strong></p>
             <ul>
               <li>Ansible</li>
@@ -252,16 +244,15 @@
 
       {% if site.resume.section_education %}
       <!-- begin Education -->
-      <section class="content-section">
-
-        <header class="section-header">
+      <section>
+        <header>
           <h2>Education</h2>
         </header>
 
-        <div class="resume-item">
-          <h4 class="resume-item-title">University of Colorado</h4>
-          <h5 class="resume-item-details">Bachelor of Science in Electrical &amp; Computer Engineering</h5>
-          <p class="resume-item-copy">Graduated in December of 2005</p>
+        <div>
+          <h4>University of Colorado</h4>
+          <h5>Bachelor of Science in Electrical &amp; Computer Engineering</h5>
+          <pGraduated in December of 2005</p>
         </div>
 
       </section>
@@ -270,19 +261,13 @@
 
       {% if site.resume.section_links %}
       <!-- begin Links -->
-      <section class="content-section">
-
-        <header class="section-header">
+      <section>
+        <header>
           <h2>Additional Links</h2>
         </header>
-
       </section>
       <!-- end Links -->
       {% endif %}
-
-
     </div>
-    {% include footer.html %}
   </body>
-
 </html>

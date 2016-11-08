@@ -1,21 +1,39 @@
-<div class="sidebar">
-  {% if site.avatar == 'true' %}
-    <div class="sidebar-avatar">
-      <a href="{{ site.baseurl }}/">
-        <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo" class="site-avatar">
-      </a>
+<div class="card-columns">
+  <div class="card text-xs-center" style="border: none;">
+    <img src="{{ site.baseurl }}/images/avatar.jpg" alt="Tizzo" class="img-fluid img-thumbnail rounded-circle">
+    <div class="card-block">
+      <h4 class="card-title">Welcome to theTizzo Industries</h4>
     </div>
-  {% endif %}
-
-  <div class="sidebar-section">
-    <h4>About Me</h4>
-    <p>
-      Hi, my name is Jason &amp; I'm a developer working on making stuff for the Internet in mostly Ruby &amp; Rails.
-    </p>
   </div>
 
-  <div class="sidebar-section">
-    <h4>Find Me Here</h4>
-    {% include sidebar-links.html %}
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">About Me</h4>
+      <p>
+        Hi, my name is Jason &amp; I'm a developer working on making stuff for the Internet in mostly Ruby &amp; Rails.
+      </p>
+    </div>
+    <div class="card-block">
+      <h4 class="card-title">Find Me Here</h4>
+      {% if site.social_links %}
+        <div>
+          <div>
+            <a href="{{ site.social_links.github_url }}" target="_blank"><i class="fa fa-github fa-lg">GitHub</i></a>
+          </div>
+          <div>
+            <a href="{{ site.social_links.twitter_url }}" target="_blank"><i class="fa fa-twitter fa-lg twitter-blue">Twitter</i></a>
+          </div>
+          <div>
+            <a href="{{ site.social_links.linkedin_url }}" target="_blank"><i class="fa fa-linkedin-square fa-lg linkedin-blue">LinkedIn</i></a>
+          </div>
+          <div>
+            <a href="{{ site.social_links.resume_url }}" target="_blank"><i class="fa fa-link fa-lg">Resume</i></a>
+          </div>
+          <div>
+            <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank"><i class="fa fa-rss fa-lg rss-orange">RSS</i></a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>

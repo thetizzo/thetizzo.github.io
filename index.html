@@ -1,32 +1,22 @@
 ---
 layout: default
 ---
-<div class="post-list">
+<div>
   {% for post in site.posts %}
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <article>
+      <header>
+        <h1>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h1>
 
-        <p class="post-meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <p>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
         </p>
       </header>
 
-      <div class="post-content" itemprop="articleBody">
+      <div>
         {{ post.content }}
       </div>
-
     </article>
-
-    {% unless post == site.posts.last %}
-    <div class="post-divider">
-      <div class="post-divider-top"></div>
-      <div class="post-divider-middle"></div>
-      <div class="post-divider-bottom"></div>
-    </div>
-    {% endunless %}
   {% endfor %}
 </div>

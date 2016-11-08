@@ -2,16 +2,19 @@
 <html>
   {% include head.html %}
   <body>
-    {% include header.html %}
-
-    <div class="wrapper">
-      <div class="content">
-        {{ content }}
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-xs-9">
+          {{ content }}
+        </div>
+        <div class="col-xs-3">
+          {% include sidebar.html %}
+        </div>
       </div>
-      
-      {% include sidebar.html %}
     </div>
 
-    {% include footer.html %}
+    <div>
+      <div>© Jason Taylor &amp; thetizzo.com, 2016</div>
+    </div>
   </body>
 </html>

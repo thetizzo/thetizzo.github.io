@@ -1,66 +1,20 @@
-// Base styles
-// ---------------------------------------/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+  font-family: 'PT Sans', sans-serif;
 }
 
-html {
-  background: $background-color;
+.twitter-blue {
+  color: $twitter-blue;
+  &:hover { color: rgba($twitter-blue, 0.5); }
 }
 
-body{
-  @include sans;
-  color: $text-color;
-  font-size: 17px;
-  line-height: 1.5;
+.linkedin-blue {
+  color: $linkedin-blue;
+  &:hover { color: rgba($linkedin-blue, 0.5); }
 }
 
-h1, h2, h3,
-h4, h5, h6 {
-  margin: 0;
-}
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.pull-left {
-  float: left !important;
-}
-
-.content {
-  float: left;
-  max-width: 70%;
-}
-
-.wrapper:before,
-.wrapper:after { content:""; display:table; }
-.wrapper:after { clear: both; }
-.wrapper {
-  max-width: 1400px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 30px;
-}
-
-@include media_mobile {
-  .content {
-    min-width: 100%;
-  }
-
-  .wrapper {
-    padding: 0 15px 15px 15px;
-  }
+.rss-orange {
+  color: $rss-orange;
+  &:hover { color: rgba($rss-orange, 0.5); }
 }

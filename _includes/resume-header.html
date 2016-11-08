@@ -1,18 +1,18 @@
-<header class="page-header">
+<header>
   {% if site.avatar == 'true' %}
   <a href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo" class="avatar">
+    <img src="{{ site.baseurl }}/images/avatar.jpg" alt="my photo">
   </a>
   {% endif %}
 
-  <h1 class="header-name">{{ site.resume.name }}</h1>
+  <h1>{{ site.resume.name }}</h1>
 
-  <div class="title-bar">
-    <h2 class="header-title">{{ site.resume.title }}</h2>
+  <div>
+    <h2>{{ site.resume.title }}</h2>
     {% include icon-links.html %}
   </div>
 
-  <div class="executive-summary">
+  <div>
     <p>
       My goal is to build tools &amp; applications that have a positive impact
       on the lives of the people who use them.

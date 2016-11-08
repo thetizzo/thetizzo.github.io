@@ -1,21 +1,4 @@
-// Variables
-// ---------------------------------------/
-
-// Colors
-$background-color: #F5F5F5; // rgb(245, 245, 245)
-$title-color: #6991AC; // rgb(105, 145, 172)
-$site-header-color: #C3D7DF; // rgb(195, 215, 223)
-$accent-color: #D75C37; // rgb(215, 92, 55)
-$text-color: #67727A;  // rgb(103, 114, 122)
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
 // These are official brand colors according to their respective websites
 $twitter-blue: #55acee;
 $linkedin-blue: #0077b5;
 $rss-orange: #F26522;
-
-// For code syntax highlighting
-$spacing-unit:     30px;

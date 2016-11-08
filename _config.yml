@@ -3,9 +3,9 @@
 title: theTizzo was here
 description: >
   This a fancy blog that is for fancy code.
-baseurl: ""
 url: "https://thetizzo.com"
 avatar: "true"
+permalink: /:categories/:year/:month/:day/:title
 
 # Social Links
 social_links:

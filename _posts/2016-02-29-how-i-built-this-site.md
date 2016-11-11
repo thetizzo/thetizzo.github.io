@@ -11,9 +11,9 @@ I’ve tried several platforms; Wordpress, Blogger, and even building the Classi
 
 ## GitHub Pages to the rescue!
 
-[Github Pages](https://pages.github.com/) came to my attention and at first glance it seemed easy to use so I decided to try it out. GitHub offers an automatic page generator for Pages sites that you can access in `Settings > Options > GitHub Pages` but this doesn't seem to offer as much flexibility for the theme and layout of the site as I wanted.
+{% include link.html link='https://pages.github.com/' text='Github Pages' %} came to my attention and at first glance it seemed easy to use so I decided to try it out. GitHub offers an automatic page generator for Pages sites that you can access in `Settings > Options > GitHub Pages` but this doesn't seem to offer as much flexibility for the theme and layout of the site as I wanted.
 
-Fortunately, GitHub Pages has support for [Jekyll](http://jekyllrb.com/) which is a static site generator with support for writing blogs in Markdown.
+Fortunately, GitHub Pages has support for {% include link.html link='http://jekyllrb.com/' text='Jekyll' %} which is a static site generator with support for writing blogs in Markdown.
 
 Here's what I had to do to make this work:
 
@@ -29,11 +29,7 @@ For personal GitHub Pages, the site will automatically be served using the maste
 
 To get Jekyll set up I ran these 3 steps:
 
-```shell
-$ gem install jekyll
-$ jekyll new thetizzo.github.io
-$ jekyll serve
-```
+{% gist thetizzo/d6e1ae4afa504144964c8913af28819b %}
 
 At this point you can go to `localhost:4000` and see the default Jekyll site.
 
@@ -43,53 +39,43 @@ If you want, you can start writing blogs posts right away, but I wanted to chang
 
 I decided to use a pre-made theme because I figured that working through integrating that theme with my site would be a great way to gain a better understanding of how to work with Jekyll.
 
-I found [this](https://github.com/jglovier/resume-template) theme on [jekyllthemes.org](http://jekyllthemes.org/) and thought it was a nice, clean look that would be a good starting place for my site.
+I found {% include link.html link='https://github.com/jglovier/resume-template' text='this theme' %} on {% include link.html link='http://jekyllthemes.org/' text='jekyllthemes.org' %} and thought it was a nice, clean look that would be a good starting place for my site.
 
 This theme is set up to be it's own standalone site so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was `resume.html` which looks like this:
 
-```markdown
----
-layout: resume
----
-```
+{% gist thetizzo/16b1f9fda138d26f0db0058da429fcd2 %}
 
-That's really it.  In Jekyll, anything at the top of a file between the dashes is called [Front Matter](https://jekyllrb.com/docs/frontmatter/) and can be used to pass variables and defaults into a page.  
+That's really it.  In Jekyll, anything at the top of a file between the dashes is called {% include link.html link='https://jekyllrb.com/docs/frontmatter/' text='Front Matter' %} and can be used to pass variables and defaults into a page.  
 
 Since I'm using a theme, I just need the front matter for `resume.html` to point to the `_layouts/resume.html` layout file which will end up being the place where the bulk of the page structure is.
 
 I then copied over the rest of the theme to the appropriate places, making sure to namespace all the files to keep the two different themes (default and resume) separate until I was ready to combine them.  It looked something like this:
 
-```shell
-resume-template -> my_project
+```
+    resume-template -> my_project
 
-{% raw %}_config.yml contents{% endraw %} -> {% raw %}_config.yml{% endraw %}
-{% raw %}_layouts/resume.html{% endraw %} -> {% raw %}_layouts/resume.html{% endraw %}
-{% raw %}css/main.scss{% endraw %} -> {% raw %}css/resume-main.scss{% endraw %}
-{% raw %}_sass/*.scss{% endraw %} -> {% raw %}_sass/resume-*.scss{% endraw %}
-{% raw %}_includes/*.html{% endraw %} -> {% raw %}_includes/resume-*.html{% endraw %}
+    {% raw %}_config.yml contents{% endraw %} -> {% raw %}_config.yml{% endraw %}
+    {% raw %}_layouts/resume.html{% endraw %} -> {% raw %}_layouts/resume.html{% endraw %}
+    {% raw %}css/main.scss{% endraw %} -> {% raw %}css/resume-main.scss{% endraw %}
+    {% raw %}_sass/*.scss{% endraw %} -> {% raw %}_sass/resume-*.scss{% endraw %}
+    {% raw %}_includes/*.html{% endraw %} -> {% raw %}_includes/resume-*.html{% endraw %}
 ```
 
 I was then able to build a resume page using this theme while leaving the rest of the existing site alone. Once that was finished, I merged the styles from the resume page into the default layout by removing the default theme styles and removing the namespace for the resume styles and files so they would apply everywhere on the site.
 
 ## Using Font Awesome with Jekyll
 
-I personally love [Font Awesome](https://fortawesome.github.io/Font-Awesome/). If you haven't heard of Font Awesome, it's a set of icons that you can easily include in your site.  They are included as a font to your site so you can easily customize them with CSS.
+I personally love {% include link.html link='https://fortawesome.github.io/Font-Awesome/' text='Font Awesome.'%} If you haven't heard of Font Awesome, it's a set of icons that you can easily include in your site.  They are included as a font to your site so you can easily customize them with CSS.
 
 Font Awesome offers a CDN to serve the assets so including them in a project is super easy.  I simply added the following line to `_includes/head.html`:
 
-```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-```
+{% gist thetizzo/1b780f6ffb8bb82d1bf909889ddb982b %}
 
 ## Setting up a custom domain
 
 Another nice thing about GitHub Pages is that they offer a super easy way to put your own custom domain on the site.  This is nice because it gives you the performance benefits of GitHub's CDN but also let's the site have the feel of a completely custom website.
 
-I will let [GitHub's own instructions](https://help.github.com/articles/using-a-custom-domain-with-github-pages/) speak for themselves on this matter but basically all I had to do was add a CNAME record through my DNS provider for `thetizzo.com` to point at `thetizzo.github.io` and add a file called `CNAME` to the root of the project that looks like this:
-
-```shell
-thetizzo.com
-```
+I will let {% include link.html link='https://help.github.com/articles/using-a-custom-domain-with-github-pages/' text="GitHub's own instructions" %} speak for themselves on this matter but basically all I had to do was add a CNAME record through my DNS provider for `thetizzo.com` to point at `thetizzo.github.io` and add a file called `CNAME` to the root of the project that {% include link.html link='https://github.com/thetizzo/thetizzo.github.io/blob/master/CNAME' text='looks like this.' %}
 
 That's it!
 
@@ -97,34 +83,19 @@ That's it!
 
 To add Google Analytics to the site I created a file, `_includes/google_analytics.html`, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:
 
-```html
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', '<your tracking ID number>', 'auto');
-  ga('send', 'pageview');
-</script>
-```
+{% gist thetizzo/f4098de568ae498764eedf5a816d5eb9 %}
 
 Then included that file in `_includes/head.html`:
 
-```liquid
-<head>
-  ...
-  {% raw %}{% include google_analytics.html %}{% endraw %}
-</head>
-```
+{% gist thetizzo/1a6685822a61b6a7eff850c845da7f12 %}
 
 ## Adding SSL
 
 This isn't strictly necessary because the code for the site is all public anyway but it's more fun to have an HTTPS site.
 
-I signed up for a [CloudFlare](https://www.cloudflare.com/) account because they have a [free plan](https://www.cloudflare.com/plans/) that provides SSL.  This was super easy, they even scraped all my existing DNS records automatically.
+I signed up for a {% include link.html link='https://www.cloudflare.com/' text='CloudFlare' %} account because they have a {% include link.html link='https://www.cloudflare.com/plans/' text='free plan'%} that provides SSL.  This was super easy, they even scraped all my existing DNS records automatically.
 
-For the rest of the set up I followed this [post](https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/) and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.
+For the rest of the set up I followed {% include link.html link='https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/' text='this post'%} and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.
 
 ## Have fun!
 

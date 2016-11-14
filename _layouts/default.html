@@ -2,7 +2,7 @@
 <html>
   {% include head.html %}
   <body>
-    <div class="container mt-3">
+    <div class="container mt-3" style="padding-bottom: 6rem;">
       <div class="row">
         <div class="col-xs-12 col-sm-9">
           {{ content }}
@@ -11,9 +11,9 @@
           {% include sidebar.html %}
         </div>
       </div><!-- end row -->
-      <footer class="text-xs-center mt-3">
-        ©2016 Jason Taylor &amp; {% include link.html link='https://thetizzo.com' text='thetizzo.com' %}
-      </footer>
     </div><!-- end container -->
+    <footer class="navbar navbar-fixed-bottom navbar-dark bg-inverse">
+      <span class="navbar-brand">©2016 Jason Taylor &amp; {% include link.html link='https://thetizzo.com' text='thetizzo.com' %}</span>
+    </footer>
   </body>
 </html>

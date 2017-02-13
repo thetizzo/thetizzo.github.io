@@ -1,19 +1,9 @@
 <header>
-  {% if site.avatar == 'true' %}
-  <img src="/images/avatar.jpg" alt="my photo">
-  {% endif %}
-
   <h1>{{ site.resume.name }}</h1>
-
-  <div>
-    <h2>{{ site.resume.title }}</h2>
-    {% include icon-links.html %}
-  </div>
-
-  <div>
-    <p>
-      My goal is to build tools &amp; applications that have a positive impact
-      on the lives of the people who use them.
-    </p>
-  </div>
+  <h2>{{ site.resume.title }}</h2>
+  {% include icon-links.html %}
+  <p>
+    My goal is to build tools &amp; applications that have a positive impact
+    on the lives of the people who use them.
+  </p>
 </header>

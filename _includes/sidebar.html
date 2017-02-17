@@ -10,11 +10,12 @@
     <div class="card-block">
       <h4 class="card-title">About Me</h4>
       <p>{{ site.bio }}</p>
-      {% if page.url != "/resume" %}
-        <a href="{{ site.social_links.resume_url }}" class="card-link">My Resume</a>
-      {% else %}
-        <a href="/" class="card-link">Home</a>
-      {% endif %}
+      {% unless page.url == "/" %}
+        <a href="/" style="display: block;">Home</a>
+      {% endunless %}
+      {% unless page.url == "/resume" %}
+        <a href="{{ site.social_links.resume_url }}" style="display: block;">Resume</a>
+      {% endunless %}
     </div>
     <div class="card-block">
       <h4 class="card-title">Find Me Here</h4>

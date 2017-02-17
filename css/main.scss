@@ -6,6 +6,10 @@
 @import 'variables';
 @import 'base';
 
+a:hover {
+  cursor: pointer;
+}
+
 .card-columns {
   @include media-breakpoint-up(sm) { column-count: 1; }
 }

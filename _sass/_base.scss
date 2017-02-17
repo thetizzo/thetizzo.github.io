@@ -1,3 +1,7 @@
+.github-black {
+  color: $github-black;
+  &:hover { color: rgba($github-black, 0.5); }
+}
 .twitter-blue {
   color: $twitter-blue;
   &:hover { color: rgba($twitter-blue, 0.5); }

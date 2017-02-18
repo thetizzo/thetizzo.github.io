@@ -5,11 +5,8 @@
 @import 'bootstrap/bootstrap';
 @import 'variables';
 @import 'base';
+@import 'sidebar';
 
 a:hover {
   cursor: pointer;
-}
-
-.card-columns {
-  @include media-breakpoint-up(sm) { column-count: 1; }
 }

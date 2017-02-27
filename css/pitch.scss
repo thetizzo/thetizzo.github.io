@@ -1,0 +1,29 @@
+---
+---
+
+@import url('/assets/fonts/FaktSoftPro-NormalItalic.woff');
+
+html {
+  font-size: 10px; }
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Fakt Soft", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+  color: #283c46;
+  background-color: #f5efe6;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+.container {
+  margin: 6rem auto 10rem;
+  max-width: 45em;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+article { padding: 3rem 6rem 6rem; }
+
+a { color: #000; }

@@ -1,18 +1,15 @@
 ---
 layout: default
 ---
-<div>
+<div id="resume">
   {% include resume-header.html %}
-
-  {% if site.resume.looking_for_work == 'yes' %}
-  <a href="mailto:{{ site.resume.contact_email }}">Contact me</a>
-  {% endif %}
 
   {% if site.resume.section_experience %}
   <!-- begin Experience -->
   <section>
     <header>
       <h2>Experience</h2>
+      <hr>
     </header>
 
     <div>
@@ -30,6 +27,16 @@ layout: default
         increase donations &amp; donor engagement.
       </p>
       <ul>
+        <li>
+          Led upgrade of the Rails stack from Rails 3.2 to Rails 4. This included upgrading the test
+          framework (RSpec 2.x to 3.x) &amp; organizing the upgrade changes so that they could be made
+          incrementally to avoid merging and regression issues that accompany long running branches.
+        </li>
+        <li>
+          Diagnosed &amp; solved performance issues that allowed the application to properly handle increased
+          load during heavy traffic spikes.  The fixes included improving performance in every part of the stack,
+          from view rendering, to workers, to database query optimization.
+        </li>
         <li>
           Produced a Rails application that empowered nonprofits to run
           fundraising campaigns with configurable donation forms, fundraising
@@ -62,23 +69,23 @@ layout: default
       </h3>
       <h4>Senior Software Engineer &bull; March, 2015 &mdash; March, 2016</h4>
       <p>
-        At Tendril, I work on a Rails application that enables energy providers to
+        At Tendril, I worked on a Rails application that enables energy providers to
         engage their customers by encouraging them to save more energy &amp;
         providing actionable feedback on how to accomplish that goal.
       </p>
       <ul>
         <li>
-          Endeavoring to reduce technical debt within the web portal's code base.
-          This includes increasing test coverage, improving error handling, &amp;
-          increasing performance.
+          Reduced technical debt within the web portal's code base.
+          This included increasing test coverage, improving error handling, &amp;
+          improving performance.
         </li>
         <li>
-          Leading the effort to build automated configuration &amp; deploy scripts
+          Led the effort to build automated configuration &amp; deploy scripts
           for the web portal via <a href="http://www.ansible.com/" target="_blank">Ansible</a>.
         </li>
         <li>
-          Primary developer on the Ruby based API wrapper that interacts with
-          the Java microservices back end of the system via HTTP.
+          Primary developer on the Ruby based API client that interacts with
+          the Java microservices back end of the system via a REST API.
         </li>
         <li>
           Member of the Site Reliability Guild which was formed to address
@@ -136,6 +143,7 @@ layout: default
   <section>
     <header>
       <h2>Projects</h2>
+      <hr>
     </header>
 
     <div>
@@ -185,6 +193,7 @@ layout: default
   <section>
     <header>
       <h2>Skills</h2>
+      <hr>
     </header>
     <div class="row">
       <div class="col">
@@ -209,6 +218,7 @@ layout: default
           <li>Redis</li>
           <li>Resque</li>
           <li>RabbitMQ</li>
+          <li>Swift</li>
           <li>Java</li>
         </ul>
       </div>
@@ -218,18 +228,19 @@ layout: default
           <li>RSpec</li>
           <li>Minitest</li>
           <li>Jenkins</li>
+          <li>Travis CI</li>
           <li>Cucumber</li>
         </ul>
       </div>
       <div class="col">
         <p><strong>Tools</strong></p>
         <ul>
-          <li>Ansible</li>
           <li>Capistrano</li>
           <li>Git</li>
           <li>GitHub</li>
           <li>Ubuntu</li>
           <li>CentOS</li>
+          <li>Ansible</li>
           <li>Mac</li>
           <li>JSON</li>
           <li>HTML</li>
@@ -246,6 +257,7 @@ layout: default
   <section>
     <header>
       <h2>Education</h2>
+      <hr>
     </header>
 
     <div>

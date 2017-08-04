@@ -2,6 +2,7 @@
   color: $github-black;
   &:hover { color: rgba($github-black, 0.5); }
 }
+
 .twitter-blue {
   color: $twitter-blue;
   &:hover { color: rgba($twitter-blue, 0.5); }
@@ -15,4 +16,9 @@
 .rss-orange {
   color: $rss-orange;
   &:hover { color: rgba($rss-orange, 0.5); }
+}
+
+.pdf-red {
+  color: $pdf-red;
+  &:hover { color: rgba($pdf-red, 0.5); }
 }

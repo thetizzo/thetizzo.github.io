@@ -1,0 +1,22 @@
+{% assign job = include.job %}
+
+<div class="resume-job mb-5">
+  <h3 class="resume-job-company-name">
+    <a href={{ job.company.website }} target="_blank">{{ job.company.name }}</a>
+  </h3>
+
+  {% for position in job.positions %}
+    <div class="resume-job-position">
+      <span class="resume-job-position-title">{{ position.title }}</span>
+      <span>({{ position.duration }})</span>
+    </div>
+  {% endfor %}
+
+  <p class="resume-job-description">{{ job.description }}</p>
+
+  <ul>
+    {% for accomplishment in job.accomplishments %}
+      <li class="resume-job-accomplishment">{{ accomplishment }}</li>
+    {% endfor %}
+  </ul>
+</div>

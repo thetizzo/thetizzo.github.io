@@ -1,0 +1,13 @@
+{% assign project = include.project %}
+<div class="resume-job">
+  <h3>
+    {{ project.name }}
+    <a href={{ project.website }} target="_blank">
+      <small><i class="fa fa-link fa-fw"></i></small>
+    </a>
+    <a href={{ project.code }} target="_blank">
+      <small><i class="fa fa-github fa-fw"></i></small>
+    </a>
+  </h3>
+  <p>{{ project.description }}</p>
+</div>

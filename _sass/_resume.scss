@@ -1,0 +1,36 @@
+.resume-section-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #BBB;
+  margin-bottom: 10px;
+}
+
+.resume-job {
+  background-color: white;
+  padding: 30px 20px;
+  box-shadow: 5px 5px 20px rgba(204,204,204,0.5);
+}
+
+.resume-job-company-name {
+  font-family: 'Roboto Slab', serif;
+}
+
+.resume-job-position {
+  margin-bottom: 5px;
+}
+
+.resume-job-position-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 5px;
+}
+
+.resume-job-description {
+  padding: 10px 0;
+}
+
+.resume-job-accomplishment {
+  padding-right: 30px;
+  margin-bottom: 20px;
+}

@@ -1,12 +1,17 @@
 ---
 ---
-
 @import 'bootstrap_overrides';
 @import 'bootstrap/bootstrap';
 @import 'variables';
 @import 'base';
 @import 'sidebar';
+@import 'resume';
 
 a:hover {
   cursor: pointer;
+}
+
+body {
+  background-color: #eeedeb;
+  font-family: 'Roboto', sans-serif;
 }

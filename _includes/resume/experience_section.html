@@ -14,9 +14,15 @@
 
   <p class="resume-job-description">{{ job.description }}</p>
 
-  <ul>
-    {% for accomplishment in job.accomplishments %}
-      <li class="resume-job-accomplishment">{{ accomplishment }}</li>
-    {% endfor %}
-  </ul>
+  <div class="collapse" id="accomplishments-{{ forloop.index }}">
+    <ul>
+      {% for accomplishment in job.accomplishments %}
+        <li class="resume-job-accomplishment">{{ accomplishment }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="resume-job-show-more justify-content-center" data-toggle="collapse" data-target="#accomplishments-{{ forloop.index }}">
+    <i class="fa fa-angle-double-down fa-2x"></i>
+  </div>
 </div>

@@ -34,3 +34,17 @@
   padding-right: 30px;
   margin-bottom: 20px;
 }
+
+.resume-job-show-more {
+  width: 100%;
+
+  &::before,
+  &::after {
+    display: inline-block;
+    content: "";
+    border-top: .01rem solid black;
+    width: 42%;
+    margin: 0 1rem;
+    transform: translateY(-0.7rem);
+  }
+}

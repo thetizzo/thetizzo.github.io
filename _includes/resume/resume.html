@@ -41,7 +41,7 @@
         <h5 class="resume-section-title">Experience</h5>
       </header>
 
-      {% for job in site.data.resume.jobs %}
+      {% for job in resume.jobs %}
         {% include resume/experience_section.html job=job %}
       {% endfor %}
     </section>
@@ -53,7 +53,7 @@
         <h5 class="resume-section-title">Open Source</h5>
       </header>
 
-      {% for project in site.data.resume.projects %}
+      {% for project in resume.projects %}
         {% include resume/project_section.html project=project %}
       {% endfor %}
     </section>

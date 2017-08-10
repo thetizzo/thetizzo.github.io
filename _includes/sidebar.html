@@ -1,34 +1,28 @@
-<aside class="card-deck">
-  <div class="card" style="border: none;">
-    <img src="/images/avatar.png" alt="Tizzo" class="img-fluid img-thumbnail">
-    <div class="card-block text-center">
-      <h4 class="card-title">Welcome to theTizzo Industries</h4>
-    </div>
+<aside class="card card-sidebar">
+  <div class="card-block text-center">
+    <h4 class="card-title">Welcome to</h4>
+    <h4 class="card-title">theTizzo Industries</h4>
   </div>
-
-  <div class="card">
+  <div class="card-block">
+    <img src="/images/avatar.png" alt="Tizzo" class="sidebar-image">
+    <p class="mt-3">{{ site.bio }}</p>
+  </div>
+  <div class="card-footer-container">
     <div class="card-block">
-      <h4 class="card-title">About Me</h4>
-      <p>{{ site.bio }}</p>
-      {% unless page.url == "/" %}
-        <a href="/" style="display: block;">Home</a>
-      {% endunless %}
-      {% unless page.url == "/resume" %}
-        <a href="{{ site.social_links.resume_url }}" style="display: block;">Resume</a>
-      {% endunless %}
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">Find Me Here</h4>
+      <h5 class="card-title">REACH OUT &amp; TOUCH ME</h5>
       {% if site.social_links %}
-        <nav class="nav justify-content-center">
-          <a href="{{ site.social_links.github_url }}" class="nav-link" target="_blank">
+        <nav class="nav justify-content-left">
+          <a href="{{ site.social_links.github_url }}" class="nav-link" style="padding-left:0;" target="_blank">
             <i class="fa fa-github fa-2x github-black"></i>
           </a>
           <a href="{{ site.social_links.twitter_url }}" class="nav-link" target="_blank">
-            <i class="fa fa-twitter fa-2x twitter-blue"></i>
+            <i class="fa fa-twitter fa-2x"></i>
           </a>
           <a href="{{ site.social_links.linkedin_url }}" class="nav-link" target="_blank">
             <i class="fa fa-linkedin-square fa-2x linkedin-blue"></i>
+          </a>
+          <a href="{{ site.social_links.linkedin_url }}" class="nav-link" target="_blank">
+            <i class="fa fa-envelope-o fa-2x linkedin-blue"></i>
           </a>
           <a href="/feed.xml" class="nav-link" target="_blank">
             <i class="fa fa-rss fa-2x rss-orange"></i>

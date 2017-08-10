@@ -26,18 +26,22 @@
     <!-- End Favicon -->
   </head>
   <body>
-    <div class="container mt-3" style="padding-bottom: 6rem;">
+    {% include header.html %}
+
+    <div class="container mt-5" style="padding-bottom: 6rem;">
       <div class="row">
         <div class="col-xs-12 col-lg-8">
           {{ content }}
         </div>
         <div class="col-xs-12 col-lg-4">
-          {% include resume/resume_sidebar.html %}
+          {% include sidebar.html %}
           <!-- {% include sidebar.html %} -->
         </div>
       </div><!-- end row -->
     </div><!-- end container -->
-    {% include foot.html %}
+
+    {% include footer.html %}
+
     {% if layout.js_includes %}
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

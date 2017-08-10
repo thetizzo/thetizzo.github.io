@@ -1,0 +1,30 @@
+<div class="header-bar">
+  <span class="display-4">{{ site.data.resume.name }}</span>
+  <span class="text-muted">{{ site.data.resume.title }}</span>
+  <span class="pull-right">
+    {% if site.social_links %}
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="{{ site.social_links.github_url}}" class="nav-link" target="_blank">
+            <i class="fa fa-github fa-2x" style="color: white;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ site.social_links.linkedin_url}}" class="nav-link" target="_blank">
+            <i class="fa fa-linkedin-square fa-2x" style="color: white;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ site.social_links.twitter_url}}" class="nav-link" target="_blank">
+            <i class="fa fa-twitter fa-2x" style="color: white;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" id="download-pdf" class="nav-link">
+            <i class="fa fa-file-pdf-o fa-2x" style="color: white;"></i>
+          </a>
+        </li>
+      </ul>
+    {% endif %}
+  </span>
+</div>

@@ -4,3 +4,16 @@
     <p class="mt-3">{{ site.bio }}</p>
   </div>
 </aside>
+{% if site.data.resume.section_skills %}
+  <section class="mt-4">
+    <h5 class="resume-section-title"><small>Skills &amp; Amazing Feats</small></h5>
+    <div class="resume-job">
+      {% for skill in site.data.resume.skills %}
+        <h5 class="resume-section-title"><small>{{ skill.category }}</small></h5>
+        {% for name in skill.names %}
+          <p>{{name}}</p>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

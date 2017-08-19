@@ -112,3 +112,9 @@ projects:
     website: /
     code: https://github.com/thetizzo/thetizzo.github.io
     description: Learn more about what it takes to make all the brilliance happen. ;)
+
+skills:
+  - category: Front End
+    names:
+      - JavaScript
+      - CoffeeScript

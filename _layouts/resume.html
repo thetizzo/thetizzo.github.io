@@ -1,6 +1,11 @@
 ---
 layout: default
 js_includes:
-- resume/resume.js
+  - pdfmake.min.js
+  - vfs_fonts.js
+  - resume/resume.js
 ---
 {% include resume/resume.html %}
+<div hidden id="resumeJson">
+  {{ site.data.resume }}
+</div>

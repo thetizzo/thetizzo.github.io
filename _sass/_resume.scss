@@ -6,37 +6,42 @@
   margin-bottom: 10px;
 }
 
-.resume-job {
+.resume-card {
   background-color: white;
   padding: 30px 20px;
-  box-shadow: 5px 5px 20px rgba(204,204,204,0.5);
+  box-shadow: $base-box-shadow;
+
+  h5.blue {
+    color: #007bff;
+  }
 }
 
-.resume-job-company-name {
+.resume-card-company-name {
   font-family: 'Roboto Slab', serif;
 }
 
-.resume-job-position {
+.resume-card-position {
   margin-bottom: 5px;
 }
 
-.resume-job-position-title {
+.resume-card-position-title {
   font-weight: bold;
   font-size: 1.1rem;
   margin-right: 5px;
 }
 
-.resume-job-description {
+.resume-card-description {
   padding: 10px 0;
 }
 
-.resume-job-accomplishment {
+.resume-card-accomplishment {
   padding-right: 30px;
   margin-bottom: 20px;
 }
 
-.resume-job-show-more {
+.resume-card-show-more {
   width: 100%;
+  cursor: pointer;
 
   &::before,
   &::after {
@@ -44,7 +49,31 @@
     content: "";
     border-top: .01rem solid black;
     width: 42%;
-    margin: 0 1rem;
-    transform: translateY(-0.7rem);
+    margin: 0 1em;
+    transform: translateY(-0.7em);
+  }
+}
+
+.card-deck {
+  margin-left: 0;
+
+  .card {
+    margin-left: 0;
+    box-shadow: $base-box-shadow;
+  }
+}
+
+.rubygems-logo {
+  width: 2em;
+  height: 2em;
+  margin-left: -5px;
+  display: inline-block;
+}
+
+.resume-link {
+  &:hover {
+    li {
+      background-color: #eeedeb;
+    }
   }
 }

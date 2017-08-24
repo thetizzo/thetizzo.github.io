@@ -7,9 +7,8 @@ url: "https://thetizzo.com"
 avatar: "true"
 permalink: /:categories/:year/:month/:day/:title
 bio: >
-  Hi, my name is Jason &amp; I'm a developer who builds parts of the Internet in mostly Ruby &amp; Rails.  This
-  is my blog which contains my, hopefully well-thought-out, solutions to some of the interesting problems I
-  have encountered.
+  Hi, my name is Jason. I'm a web developer who builds parts of the Internet in mostly Ruby &amp; Rails.  This
+  blog contains my solutions to some of the interesting problems I have encountered.
 
 # Social Links
 social_links:

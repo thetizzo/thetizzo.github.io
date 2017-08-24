@@ -6,11 +6,16 @@
 @import 'sidebar';
 @import 'resume';
 
-a:hover {
+a:hover, button:hover {
   cursor: pointer;
+  text-decoration: none;
 }
 
 body {
-  background-color: #eeedeb;
+  background-color: $base-background-color;
   font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
 }

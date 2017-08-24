@@ -1,14 +1,9 @@
 name: Jason Taylor
 title: Visionary, Genius, Other Superlative
-contact_email: resume@thetizzo.com
+contact_email: hire@thetizzo.com
+github_handle: thetizzo
 
 looking_for_work: no
-
-# sections
-section_experience: true
-section_education: true
-section_projects: true
-section_skills: true
 
 education:
   school: University of Colorado
@@ -108,13 +103,39 @@ projects:
     website: https://rubygems.org/gems/nfl_data
     code: https://github.com/thetizzo/nfl_data
     description: Parse NFL data like a boss
-  - name: This Very Site!
-    website: /
+  - name: My World Wide Website
     code: https://github.com/thetizzo/thetizzo.github.io
     description: Learn more about what it takes to make all the brilliance happen. ;)
 
 skills:
-  - category: Front End
-    names:
-      - JavaScript
-      - CoffeeScript
+  'Front End':
+    - JavaScript
+    - CoffeeScript
+    - Bootstrap
+    - Sass
+    - CSS
+  'Back End':
+    - Ruby
+    - Rails
+    - Jekyll
+    - REST APIs
+    - Postgres
+    - MySQL
+    - Redis
+    - Resque
+    - RabbitMQ
+    - Swift
+  Testing:
+    - RSpec
+    - Minitest
+    - Jenkins
+    - Travis CI
+    - Cucumber
+  Tools:
+    - Capistrano
+    - Git
+    - GitHub
+    - Ubuntu/CentOS
+    - Ansible
+    - HTML
+    - JSON/YAML/XML

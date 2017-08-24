@@ -1,28 +1,34 @@
-{% assign job = include.job %}
+<section>
+  <header>
+    <h5 class="resume-section-title">Experience &amp; Amazing Feats</h5>
+  </header>
 
-<div class="resume-job mb-5">
-  <h3 class="resume-job-company-name">
-    <a href={{ job.company.website }} target="_blank">{{ job.company.name }}</a>
-  </h3>
+  {% for job in resume.jobs %}
+    <div class="resume-card mb-5">
+      <h3 class="resume-card-company-name">
+        <a href={{ job.company.website }} target="_blank">{{ job.company.name }}</a>
+      </h3>
 
-  {% for position in job.positions %}
-    <div class="resume-job-position">
-      <span class="resume-job-position-title">{{ position.title }}</span>
-      <span>({{ position.duration }})</span>
+      {% for position in job.positions %}
+        <div class="resume-card-position">
+          <span class="resume-card-position-title">{{ position.title }}</span>
+          <span>({{ position.duration }})</span>
+        </div>
+      {% endfor %}
+
+      <p class="resume-card-description">{{ job.description }}</p>
+
+      <div class="collapse" id="accomplishments-{{ forloop.index }}">
+        <ul>
+          {% for accomplishment in job.accomplishments %}
+            <li class="resume-card-accomplishment">{{ accomplishment }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="resume-card-show-more justify-content-center" data-toggle="collapse" data-target="#accomplishments-{{ forloop.index }}">
+        <i class="fa fa-angle-double-down fa-2x"></i>
+      </div>
     </div>
   {% endfor %}
-
-  <p class="resume-job-description">{{ job.description }}</p>
-
-  <div class="collapse" id="accomplishments-{{ forloop.index }}">
-    <ul>
-      {% for accomplishment in job.accomplishments %}
-        <li class="resume-job-accomplishment">{{ accomplishment }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-
-  <div class="resume-job-show-more justify-content-center" data-toggle="collapse" data-target="#accomplishments-{{ forloop.index }}">
-    <i class="fa fa-angle-double-down fa-2x"></i>
-  </div>
-</div>
+</section>

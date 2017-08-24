@@ -1,40 +1,7 @@
 {% assign resume = site.data.resume %}
+
 <div class="resume">
-  {% if resume.section_experience %}
-    <section>
-      <header>
-        <h5 class="resume-section-title">Experience</h5>
-      </header>
-
-      {% for job in resume.jobs %}
-        {% include resume/experience_section.html job=job %}
-      {% endfor %}
-    </section>
-  {% endif %}
-
-  {% if resume.section_projects %}
-    <section>
-      <header>
-        <h5 class="resume-section-title">Open Source</h5>
-      </header>
-
-      {% for project in resume.projects %}
-        {% include resume/project_section.html project=project %}
-      {% endfor %}
-    </section>
-  {% endif %}
-
-  {% if resume.section_education %}
-    <section class="mt-5">
-      <header>
-        <h5 class="resume-section-title">Education</h5>
-      </header>
-
-      <div class="resume-job">
-        <h4>{{ resume.education.school }}</h4>
-        <h5>{{ resume.education.degree }}</h5>
-        <p>Graduated in {{ resume.education.graduated }}</p>
-      </div>
-    </section>
-  {% endif %}
+  {% include resume/experience_section.html %}
+  {% include resume/project_section.html %}
+  {% include resume/education_section.html %}
 </div>

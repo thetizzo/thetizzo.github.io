@@ -1,10 +1,16 @@
 .card-sidebar {
-  border: 5px white solid;
+  border: 5px $base-background-color solid;
   border-radius: 0;
-  background-color: inherit;
-  box-shadow: 5px 5px 20px rgba(204,204,204,0.5);
+  background-color: white;
+  box-shadow: $sidebar-box-shadow;
 
   .sidebar-image {
     width: 100%;
+  }
+
+  .card-footer-container {
+    border-top: 5px $base-background-color solid;
+    margin: 0 -1.25rem;
+    padding: 1.25rem 1.25rem 0 1.25rem;
   }
 }

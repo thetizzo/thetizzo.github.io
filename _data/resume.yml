@@ -136,6 +136,6 @@ skills:
     - Git
     - GitHub
     - Ubuntu/CentOS
-    - Ansible
+    - Ansible/Salt
     - HTML
     - JSON/YAML/XML

@@ -28,4 +28,5 @@ gems:
   - jekyll-gist
 
 destination: public
-exclude: ["CNAME", "Rakefile", "README.md", "public"]
+
+exclude: ["CNAME", "Rakefile", "README.md", "public", "Gemfile", "Gemfile.lock"]

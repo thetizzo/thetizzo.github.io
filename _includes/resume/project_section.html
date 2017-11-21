@@ -1,26 +1,26 @@
 <section>
-  <h5 class="resume-section-title">Open Source</h5>
+  <h5>Open Source</h5>
 
-  <div class="card-deck">
+  <div>
     {% for project in resume.projects %}
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">{{ project.name }}</h4>
-          <p class="card-text">{{ project.description }}</p>
-          <ul class="list-group list-group-flush">
-            <a href="{{ project.code }}" target="_blank" class="resume-link">
-              <li class="list-group-item">
-                  <i class="fa fa-github fa-2x github-black"></i>
-                  <span class="align-text-bottom">Code on GitHub</span>
+      <div>
+        <div>
+          <h4>{{ project.name }}</h4>
+          <p>{{ project.description }}</p>
+          <ul>
+            <a href="{{ project.code }}" target="_blank">
+              <li>
+                  <i class="fa fa-github fa-2x"></i>
+                  <span>Code on GitHub</span>
               </li>
             </a>
             {% if project.website %}
-              <a href="{{ project.website }}" target="_blank" class="resume-link">
-                <li class="list-group-item">
-                  <div class="rubygems-logo">
-                    {% include resume/rubygems_logo.svg %}
+              <a href="{{ project.website }}" target="_blank">
+                <li>
+                  <div>
+                    {% include svg/rubygems_logo.svg %}
                   </div>
-                  <span class="align-text-bottom" style="line-height: 38px;">Install Gem</span>
+                  <span>Install Gem</span>
                 </li>
               </a>
             {% endif %}

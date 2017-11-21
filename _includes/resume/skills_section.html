@@ -1,13 +1,13 @@
 {% assign resume = site.data.resume %}
-<div class="mt-4">
-  <h5 class="resume-section-title"><small>Skills To Pay The Bills</small></h5>
+<div>
+  <h5><small>Skills To Pay The Bills</small></h5>
 
-  <div class="resume-card">
-    <div class="row">
+  <div>
+    <div>
       {% for skill_set in resume.skills %}
-        <div class="col-6">
-          <h5 class="blue">{{ skill_set[0] }}</h5>
-          <ul class="list-unstyled">
+        <div>
+          <h5>{{ skill_set[0] }}</h5>
+          <ul>
             {% for skill in skill_set[1] %}
               <li>{{ skill }}</li>
             {% endfor %}

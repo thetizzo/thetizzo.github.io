@@ -5,10 +5,10 @@ layout: default
   <section>
   {% include post_title.html title=post.title date=post.date %}
 
-    <p class="text-justify">{{ post.excerpt }}</p>
+    <p>{{ post.excerpt }}</p>
 
-    <div class="row justify-content-center">
-      <a href="{{post.url}}" class="btn btn-outline-primary">Continue Reading</a>
+    <div>
+      <a href="{{post.url}}">Continue Reading</a>
     </div>
   </section>
   <hr/>

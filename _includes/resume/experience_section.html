@@ -1,32 +1,32 @@
 <section>
   <header>
-    <h5 class="resume-section-title">Experience &amp; Amazing Feats</h5>
+    <h5>Experience &amp; Amazing Feats</h5>
   </header>
 
   {% for job in resume.jobs %}
-    <div class="resume-card mb-5">
-      <h3 class="resume-card-company-name">
+    <div>
+      <h3>
         <a href={{ job.company.website }} target="_blank">{{ job.company.name }}</a>
       </h3>
 
       {% for position in job.positions %}
-        <div class="resume-card-position">
-          <span class="resume-card-position-title">{{ position.title }}</span>
+        <div>
+          <span>{{ position.title }}</span>
           <span>({{ position.duration }})</span>
         </div>
       {% endfor %}
 
-      <p class="resume-card-description">{{ job.description }}</p>
+      <p>{{ job.description }}</p>
 
-      <div class="collapse" id="accomplishments-{{ forloop.index }}">
+      <div>
         <ul>
           {% for accomplishment in job.accomplishments %}
-            <li class="resume-card-accomplishment">{{ accomplishment }}</li>
+            <li>{{ accomplishment }}</li>
           {% endfor %}
         </ul>
       </div>
 
-      <div class="resume-card-show-more justify-content-center" data-toggle="collapse" data-target="#accomplishments-{{ forloop.index }}">
+      <div>
         <i class="fa fa-angle-double-down fa-2x"></i>
       </div>
     </div>

@@ -1,27 +1,27 @@
-<div class="card card-sidebar">
-  <div class="card-body">
-    <div class="card-block">
-      <h5 class="card-title">ABOUT ME</h5>
-      <p class="mt-3">{{ site.bio }}</p>
+<div>
+  <div>
+    <div>
+      <h5>ABOUT ME</h5>
+      <p>{{ site.bio }}</p>
     </div>
-    <div class="card-block card-footer-container">
-      <h5 class="card-title">FIND ME ON THE INTERNETS</h5>
+    <div>
+      <h5>FIND ME ON THE INTERNETS</h5>
       {% if site.social_links %}
-        <nav class="nav justify-content-left">
-          <a href="{{ site.social_links.github_url }}" class="nav-link" style="padding-left:0;" target="_blank" title="Find me on GitHub">
-            <i class="fa fa-github fa-2x github-black"></i>
+        <nav>
+          <a href="{{ site.social_links.github_url }}" target="_blank" title="Find me on GitHub">
+            <i class="fa fa-github fa-2x"></i>
           </a>
-          <a href="{{ site.social_links.twitter_url }}" class="nav-link" target="_blank" title="Find me on Twitter">
+          <a href="{{ site.social_links.twitter_url }}" target="_blank" title="Find me on Twitter">
             <i class="fa fa-twitter fa-2x"></i>
           </a>
-          <a href="{{ site.social_links.linkedin_url }}" class="nav-link" target="_blank" title="Find me on LinkedIn">
-            <i class="fa fa-linkedin-square fa-2x linkedin-blue"></i>
+          <a href="{{ site.social_links.linkedin_url }}" target="_blank" title="Find me on LinkedIn">
+            <i class="fa fa-linkedin-square fa-2x"></i>
           </a>
-          <a href="mailto:{{ site.data.resume.contact_email }}" class="nav-link" target="_blank" title="Email Me">
-            <i class="fa fa-envelope-o fa-2x linkedin-blue"></i>
+          <a href="mailto:{{ site.data.resume.contact_email }}" target="_blank" title="Email Me">
+            <i class="fa fa-envelope-o fa-2x"></i>
           </a>
-          <a href="/feed.xml" class="nav-link" target="_blank" title="Follow my RSS feed">
-            <i class="fa fa-rss fa-2x rss-orange"></i>
+          <a href="/feed.xml" target="_blank" title="Follow my RSS feed">
+            <i class="fa fa-rss fa-2x"></i>
           </a>
         </nav>
       {% endif %}
@@ -30,7 +30,7 @@
 </div>
 
 {% if page.url == '/resume' %}
-  <button type="button" class="mt-4 btn btn-dark btn-block" data-toggle="download-pdf">
+  <button type="button" data-toggle="download-pdf">
     Download my resume
   </button>
 

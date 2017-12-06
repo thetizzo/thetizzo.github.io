@@ -1,17 +1,76 @@
 ---
 ---
 
-@import 'variables';
+// These are official brand colors according to their respective websites
+$twitter-blue: #55acee;
+$linkedin-blue: #0077b5;
+$rss-orange: #F26522;
+$github-black: #000;
+$pdf-red: #ea0000;
 
-a:hover, button:hover {
-  cursor: pointer;
-  text-decoration: none;
+$base-background-color: #eeedeb;
+
+$base-box-shadow: 0 0 14px rgba(0,0,0,.24);
+$sidebar-box-shadow: 0 0 8px rgba(0,0,0,.24);
+
+
+html {
+  line-height: 1.5;
+  font-size: 18px;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.flexbox-container {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 1.2em;
+  min-width: 14em;
+  max-width: 14em;
+  background-color: #e5712a;
+}
+
+.content {
+  flex: 2 1 auto;
+  padding: 3rem;
+}
+
+.post {
+  max-width: 50rem;
+}
+
+@media (min-width: 48em) {
+  .flexbox-container {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
 }

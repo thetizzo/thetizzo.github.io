@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -11,33 +10,21 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}">
 
-    <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
-
-    <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/application.css">
-
-    <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
   </head>
   <body>
-    {% include header.html %}
-
-    <div>
-      <div>
-        <div>
-          {{ content }}
-        </div>
-        <div>
-          {% include sidebar.html %}
-        </div>
+    <div class="flexbox-container">
+      <div class="sidebar">
+        {% include sidebar.html %}
+      </div>
+      <div class="content">
+        {{ content }}
       </div>
     </div>
 
-    {% include footer.html %}
-
-    <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/8cfd104077.js" async></script>
 
     {% if layout.js_includes %}

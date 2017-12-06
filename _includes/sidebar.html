@@ -1,32 +1,28 @@
 <div>
-  <div>
-    <div>
-      <h5>ABOUT ME</h5>
-      <p>{{ site.bio }}</p>
-    </div>
-    <div>
-      <h5>FIND ME ON THE INTERNETS</h5>
-      {% if site.social_links %}
-        <nav>
-          <a href="{{ site.social_links.github_url }}" target="_blank" title="Find me on GitHub">
-            <i class="fa fa-github fa-2x"></i>
-          </a>
-          <a href="{{ site.social_links.twitter_url }}" target="_blank" title="Find me on Twitter">
-            <i class="fa fa-twitter fa-2x"></i>
-          </a>
-          <a href="{{ site.social_links.linkedin_url }}" target="_blank" title="Find me on LinkedIn">
-            <i class="fa fa-linkedin-square fa-2x"></i>
-          </a>
-          <a href="mailto:{{ site.data.resume.contact_email }}" target="_blank" title="Email Me">
-            <i class="fa fa-envelope-o fa-2x"></i>
-          </a>
-          <a href="/feed.xml" target="_blank" title="Follow my RSS feed">
-            <i class="fa fa-rss fa-2x"></i>
-          </a>
-        </nav>
-      {% endif %}
-    </div>
-  </div>
+<img src="" alt="Logo" />
+<h5>ABOUT ME</h5>
+<p>{{ site.bio }}</p>
+<div>
+  <h5>FIND ME ON THE INTERNETS</h5>
+  {% if site.social_links %}
+    <nav>
+      <a href="{{ site.social_links.github_url }}" target="_blank" title="Find me on GitHub">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+      <a href="{{ site.social_links.twitter_url }}" target="_blank" title="Find me on Twitter">
+        <i class="fa fa-twitter fa-2x"></i>
+      </a>
+      <a href="{{ site.social_links.linkedin_url }}" target="_blank" title="Find me on LinkedIn">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+      </a>
+      <a href="mailto:{{ site.data.resume.contact_email }}" target="_blank" title="Email Me">
+        <i class="fa fa-envelope-o fa-2x"></i>
+      </a>
+      <a href="/feed.xml" target="_blank" title="Follow my RSS feed">
+        <i class="fa fa-rss fa-2x"></i>
+      </a>
+    </nav>
+  {% endif %}
 </div>
 
 {% if page.url == '/resume' %}
@@ -36,3 +32,4 @@
 
   {% include resume/skills_section.html %}
 {% endif %}
+</div>

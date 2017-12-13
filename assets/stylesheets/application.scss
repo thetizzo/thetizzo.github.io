@@ -8,11 +8,15 @@ $rss-orange: #F26522;
 $github-black: #000;
 $pdf-red: #ea0000;
 
-$base-background-color: #eeedeb;
+/* RGB */
+$color1: #93a3b1;
+$color2: #282f44;
+$color3: #403d58;
+$color4: #3581b8;
+$color5: #ffffff;
 
-$base-box-shadow: 0 0 14px rgba(0,0,0,.24);
-$sidebar-box-shadow: 0 0 8px rgba(0,0,0,.24);
-
+$sidebar-width: 15em;
+$content-width: 50em;
 
 html {
   line-height: 1.5;
@@ -20,8 +24,8 @@ html {
 }
 
 body {
+  background-color: $color5;
   font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
@@ -32,11 +36,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
+  color: $color2;
 }
 
 a {
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -52,25 +58,37 @@ a:hover {
 }
 
 .sidebar {
+  background-color: $color4;
+  color: $color2;
   flex: 1;
   padding: 1.2em;
-  min-width: 14em;
-  max-width: 14em;
-  background-color: #e5712a;
+  min-width: $sidebar-width;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  font-size: 1.3em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .content {
   flex: 2 1 auto;
-  padding: 3rem;
-}
-
-.post {
-  max-width: 50rem;
+  padding: 0 3em;
+  max-width: $content-width
 }
 
 @media (min-width: 48em) {
   .flexbox-container {
     -webkit-flex-direction: row;
     flex-direction: row;
+  }
+
+  .sidebar {
+    max-width: $sidebar-width;
   }
 }

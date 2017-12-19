@@ -1,28 +1,42 @@
+<a href="/" title="Home">
+  <i class="fas fa-home fa-3x"></i>
+</a>
+
 <h3>ABOUT ME</h5>
 <p>{{ site.bio }}</p>
 <h3>FIND ME ON THE INTERNETS</h5>
 {% if site.social_links %}
   <ul class="sidebar-links">
-    <li><a href="{{ site.social_links.github_url }}" target="_blank" title="Find me on GitHub">
-      <i class="fa fa-github"></i>
-      GitHub
-    </a></li>
-    <li><a href="{{ site.social_links.twitter_url }}" target="_blank" title="Find me on Twitter">
-      <i class="fa fa-twitter"></i>
-      Twitter
-    </a></li>
-    <li><a href="{{ site.social_links.linkedin_url }}" target="_blank" title="Find me on LinkedIn">
-      <i class="fa fa-linkedin-square"></i>
-      LinkedIn
-    </a></li>
-    <li><a href="mailto:{{ site.data.resume.contact_email }}" target="_blank" title="Email Me">
-      <i class="fa fa-envelope-o"></i>
-      Email
-    </a></li>
-    <li><a href="/feed.xml" target="_blank" title="Follow my RSS feed">
-      <i class="fa fa-rss"></i>
-      Follow on RSS
-    </a></li>
+    <li class="sidebar-link">
+      <a href="{{ site.social_links.github_url }}" target="_blank" title="Find me on GitHub">
+        <i class="fab fa-github"></i>
+        GitHub
+      </a>
+    </li>
+    <li class="sidebar-link">
+      <a href="{{ site.social_links.twitter_url }}" target="_blank" title="Find me on Twitter">
+        <i class="fab fa-twitter"></i>
+        Twitter
+      </a>
+    </li>
+    <li class="sidebar-link">
+      <a href="{{ site.social_links.linkedin_url }}" target="_blank" title="Find me on LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+        LinkedIn
+      </a>
+    </li>
+    <li class="sidebar-link">
+      <a href="mailto:{{ site.data.resume.contact_email }}" target="_blank" title="Email Me">
+        <i class="far fa-envelope"></i>
+        Email
+      </a>
+    </li>
+    <li class="sidebar-link">
+      <a href="/feed.xml" target="_blank" title="Follow my RSS feed">
+        <i class="fas fa-rss"></i>
+        RSS
+      </a>
+    </li>
   </ul>
 {% endif %}
 

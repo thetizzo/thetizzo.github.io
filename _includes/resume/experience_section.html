@@ -18,15 +18,13 @@
 
       <p>{{ job.description }}</p>
 
-      <div>
-        <ul>
-          {% for accomplishment in job.accomplishments %}
-            <li>{{ accomplishment }}</li>
-          {% endfor %}
-        </ul>
-      </div>
+      <ul>
+        {% for accomplishment in job.accomplishments %}
+          <li>{{ accomplishment }}</li>
+        {% endfor %}
+      </ul>
 
-      <div>
+      <div class="center">
         <i class="fa fa-angle-double-down fa-2x"></i>
       </div>
     </div>

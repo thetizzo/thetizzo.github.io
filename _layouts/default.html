@@ -28,9 +28,10 @@
     <script defer src="/assets/javascripts/fontawesome/fontawesome-all.js"></script>
 
     {% if layout.js_includes %}
-      <script src="/assets/javascripts/pdfmake/pdfmake.min.js" async></script>
-      <script src="/assets/javascripts/pdfmake/vfs_fonts.js" async></script>
-      <script src="/assets/javascripts/resume.js" async></script>
+      <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script defer src="/assets/javascripts/pdfmake/pdfmake.min.js"></script>
+      <script defer src="/assets/javascripts/pdfmake/vfs_fonts.js"></script>
+      <script defer src="/assets/javascripts/resume.js"></script>
     {% endif %}
   </body>
 </html>

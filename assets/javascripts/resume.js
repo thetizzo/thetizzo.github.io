@@ -1,18 +1,6 @@
 "use strict";
 
 $(document).ready(function(event) {
-  // $('.collapse').on('click', function (e) {
-  //   var clicked = $(document).find("[data-target='#" + $(e.target).attr('id') + "']").children().first();
-  //   clicked.removeClass("fa-angle-double-down");
-  //   clicked.addClass("fa-angle-double-up");
-  // });
-  //
-  // $('.collapse').on('click', function (e) {
-  //   var clicked = $(document).find("[data-target='#" + $(e.target).attr('id') + "']").children().first();
-  //   clicked.removeClass("fa-angle-double-up");
-  //   clicked.addClass("fa-angle-double-down");
-  // });
-
   var generateResume = function() {
     var resumeContent = $.parseJSON($('#resumeJson').text());
 

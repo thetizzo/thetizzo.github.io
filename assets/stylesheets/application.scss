@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   cursor: pointer;
   text-decoration: none;
-  color: inherit;
+  color: $color5;
 }
 
 a:hover {
@@ -51,6 +51,13 @@ a:hover {
   @media (max-width: $small-screen-max-width) {
     margin-bottom: 0;
   }
+}
+
+.highlighter-rouge {
+  padding: .2rem .4rem;
+  font-size: 90%;
+  color: #bd4147;
+  border-radius: .25rem;
 }
 
 .flexbox-container {

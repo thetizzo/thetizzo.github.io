@@ -12,6 +12,11 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/application.css">
+
+    {% if layout.resume %}
+      <link rel="stylesheet" type="text/css" href="/assets/stylesheets/resume.css">
+    {% endif %}
+
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
   </head>
@@ -27,7 +32,7 @@
 
     <script defer src="/assets/javascripts/fontawesome/fontawesome-all.js"></script>
 
-    {% if layout.js_includes %}
+    {% if layout.resume %}
       <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
       <script defer src="/assets/javascripts/pdfmake/pdfmake.min.js"></script>
       <script defer src="/assets/javascripts/pdfmake/vfs_fonts.js"></script>

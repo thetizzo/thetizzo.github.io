@@ -1,7 +1,5 @@
 <section>
-  <header>
-    <h5>Experience &amp; Amazing Feats</h5>
-  </header>
+  {% include resume/section_header.html text='Experience &amp; Amazing Feats'%}
 
   {% for job in resume.jobs %}
     <div>
@@ -11,8 +9,8 @@
 
       {% for position in job.positions %}
         <div>
-          <span>{{ position.title }}</span>
-          <span>({{ position.duration }})</span>
+          <span><strong>{{ position.title }}</strong></span>
+          <span><small>({{ position.duration }})</small></span>
         </div>
       {% endfor %}
 

@@ -20,9 +20,9 @@ jobs:
       - title: Senior Software Engineer &amp; Architect
         duration: Apr 2012 &mdash; Mar 2015
     description:
-      At MobileCause, I worked with a small engineering team to build
-      a mobile fundraising platform that helped nonprofit organizations
-      increase donations &amp; donor engagement.
+      At MobileCause, I work with a team to build a fundraising platform that helps nonprofit organizations
+      increase donations &amp; donor engagement.  I'm one of the senior members of this team and I spend time
+      working in all parts of the stack which includes Rails, MySQL, and RabbitMQ.
     accomplishments:
       - Led upgrade of the Rails stack from Rails 3.2 to Rails 4. This included upgrading the test
         framework (RSpec 2.x to 3.x) &amp; organizing the upgrade changes so that they could be made

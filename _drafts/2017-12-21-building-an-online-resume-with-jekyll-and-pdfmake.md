@@ -1,3 +1,10 @@
+---
+layout: post
+title:  Building An Online Resume With Jekyll & pdfmake
+category: howto
+date: 2017-12-21
+---
+
 Recently it dawned on me that I am a web developer but I was still manually maintaining my resume in a Word document.  This was less than ideal because it was difficult to version the document and did little to show off any of my relevant skills in web development. To solve this problem I decided that I should build an online version of my resume which I could use to show prospective employers that I can, in fact, build things on the Internet.
 
 I started off by grabbing all the existing data from my current resume and manually building it into HTML so that I could put it into my site. I then had a new problem. If I had to update my resume for any reason, I now had to make that update in two places; once on the web page and once for the Word document.

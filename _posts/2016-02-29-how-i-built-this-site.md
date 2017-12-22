@@ -5,7 +5,7 @@ category: howto
 date: 2016-02-29
 ---
 
-One day recently, I decided to start a blog. I've tried this several times in the past but the project always seems to die when it comes to figuring out what technology to use or how to host it.
+Once upon a time, I decided to start a blog. I've tried this several times in the past but the project always seems to die when it comes to figuring out what technology to use or how to host it.
 
 I’ve tried several platforms; Wordpress, Blogger, and even building the Classic Rails Blog™️ more than once. All of those solutions seem to require a ton of work just to maintain the site.  What I really want is something that is easy to set up, host, and will allow me to spend time on more interesting problems.
 
@@ -45,7 +45,7 @@ This theme is set up to be it's own standalone site so in order to integrate it 
 
 {% gist thetizzo/16b1f9fda138d26f0db0058da429fcd2 %}
 
-That's really it.  In Jekyll, anything at the top of a file between the dashes is called {% include external_link.html link='https://jekyllrb.com/docs/frontmatter/' text='Front Matter' %} and can be used to pass variables and defaults into a page.  
+That's really it.  In Jekyll, anything at the top of a file between the dashes is called {% include external_link.html link='https://jekyllrb.com/docs/frontmatter/' text='Front Matter' %} and can be used to pass variables and defaults into a page.
 
 Since I'm using a theme, I just need the front matter for `resume.html` to point to the `_layouts/resume.html` layout file which will end up being the place where the bulk of the page structure is.
 

@@ -1,0 +1,26 @@
+.button {
+  border: 2px solid $color4;
+  border-radius: 2em;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: $color4;
+    border-color: $color5;
+    text-decoration: none;
+  }
+
+  &-outline {
+    margin-bottom: 2em;
+    padding: 0.2em 5em;
+    &:hover { color: $color5; }
+  }
+
+  &-sidebar {
+    background-color: $color1;
+    color: $color2;
+    display: block;
+    font-size: 1.3em;
+    margin-bottom: 0.2em;
+  }
+}

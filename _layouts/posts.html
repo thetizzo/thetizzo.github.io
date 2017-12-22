@@ -3,13 +3,12 @@ layout: default
 ---
 {% for post in site.posts %}
   <section>
-  {% include post_title.html title=post.title date=post.date %}
-
+    {% include post_title.html title=post.title date=post.date %}
     <p>{{ post.excerpt }}</p>
-
-    <div>
-      <a href="{{post.url}}">Continue Reading</a>
-    </div>
+    <div class="center"><a href="{{ post.url }}" class="button button-outline">Keep Reading</a></div>
   </section>
-  <hr/>
+
+  {% unless post == site.posts.last %}
+    <hr>
+  {% endunless %}
 {% endfor %}

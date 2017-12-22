@@ -1,6 +1,7 @@
 ---
 ---
 
+// Variables
 @import 'colors';
 
 $sidebar-width: 15em;
@@ -8,7 +9,9 @@ $content-width: 50em;
 $small-screen-max-width: 767px;
 $large-screen-min-width: 768px;
 
+// Styles
 @import 'utilities';
+@import 'buttons';
 
 html {
   line-height: 1.5;
@@ -36,10 +39,15 @@ a {
   cursor: pointer;
   text-decoration: none;
   color: $color5;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-a:hover {
-  text-decoration: underline;
+hr {
+  margin-top: 2em;
+  opacity: 0.25;
 }
 
 .avatar {
@@ -74,29 +82,6 @@ a:hover {
   flex: 1;
   padding: 1.2em;
   min-width: $sidebar-width;
-}
-
-.sidebar-links {
-  list-style: none;
-  padding: 0;
-  font-size: 1.3em;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
-.sidebar-link {
-  background-color: $color4;
-  color: $color2;
-  border-radius: 2em;
-  text-align: center;
-  margin-bottom: 0.2em;
-
-  &:hover {
-    background-color: $color1;
-  }
 }
 
 .content {

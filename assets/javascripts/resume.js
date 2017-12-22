@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).ready(function(event) {
+$(document).ready(function() {
   var generateResume = function() {
     var resumeContent = $.parseJSON($('#resumeJson').text());
 

@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.hide {
+  display: none;
+}
+
 @media (max-width: $small-screen-max-width) {
   .hidden-phone {
     display: none;

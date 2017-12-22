@@ -16,13 +16,13 @@
 
       <p>{{ job.description }}</p>
 
-      <ul>
+      <ul class="hide" id="accomplishments-{{ forloop.index }}">
         {% for accomplishment in job.accomplishments %}
           <li>{{ accomplishment }}</li>
         {% endfor %}
       </ul>
 
-      <div class="center">
+      <div class="center" data-toggle="collapse" data-target="#accomplishments-{{ forloop.index }}">
         <i class="fa fa-angle-double-down fa-2x"></i>
       </div>
     </div>

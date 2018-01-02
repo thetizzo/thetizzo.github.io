@@ -6,6 +6,14 @@
   display: none;
 }
 
+.vertical-align {
+  vertical-align: super;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
 @media (max-width: $small-screen-max-width) {
   .hidden-phone {
     display: none;

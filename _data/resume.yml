@@ -98,14 +98,19 @@ projects:
   - name: CardConnect Gem
     website: https://rubygems.org/gems/cardconnect
     code: https://github.com/mobilecause/cardconnect
-    description: CardConnect API Ruby Wrapper
+    description:
+      CardConnect API Ruby Client -- A client-side interface to the
+      <a href="https://developer.cardconnect.com/cardconnect-api">CardConnect payment gateway API</a>
+      that makes integration with a Ruby or Rails project much simpler.
   - name: NflData Gem
     website: https://rubygems.org/gems/nfl_data
     code: https://github.com/thetizzo/nfl_data
-    description: Parse NFL data like a boss
+    description:
+      Parse NFL data like a boss -- A library for finding information like weekly player
+      statistics, team schedules, and more from NFL.com.
   - name: My World Wide Website
     code: https://github.com/thetizzo/thetizzo.github.io
-    description: Learn more about what it takes to make all the brilliance happen. ;)
+    description: Learn more about what it takes to make all the brilliance happen with Jekyll and GitHub Pages. ;)
 
 skills:
   'Front End':

@@ -2,8 +2,8 @@
   {% include resume/section_header.html text='Education'%}
 
   <div>
+    <h4>{{ resume.education.degree }}</h4>
+    <p class="vertical-align">Graduated in {{ resume.education.graduated }} from:</p>
     {% include svg/UC_Boulder_logo.svg %}
-    <h5>{{ resume.education.degree }}</h5>
-    <p>Graduated in {{ resume.education.graduated }}</p>
   </div>
 </section>

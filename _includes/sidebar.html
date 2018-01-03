@@ -5,8 +5,16 @@
 <div class="hidden-phone">
   <h3>ABOUT ME</h5>
   <p>{{ site.bio }}</p>
-  <h3>FIND ME ON THE INTERNETS</h5>
+
+  {% if layout.resume %}
+    <a class="button button-sidebar" title="Download my resume" data-toggle="download-pdf">
+      <i class="fas fa-download"></i>
+      Resume PDF
+    </a>
+  {% endif %}
+
   {% if site.social_links %}
+    <h3>FIND ME ON THE INTERNETS</h5>
     <a href="{{ site.social_links.github_url }}" class="button button-sidebar" target="_blank" title="Find me on GitHub">
       <i class="fab fa-github"></i>
       GitHub

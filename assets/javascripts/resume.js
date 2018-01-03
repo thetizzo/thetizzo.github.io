@@ -110,9 +110,9 @@ $(document).ready(function() {
       content.push({
         stack: [
           { text: project['name'], style: 'project_heading' },
-          { text: project['description'], margin: [0, 0, 0, 0] }
+          { text: project['description'], margin: [0, 5, 0, 0] }
         ],
-        margin: [0, 10, 0, 5]
+        margin: [0, 15, 0, 5]
       });
 
       var items = []

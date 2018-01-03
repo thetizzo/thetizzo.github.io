@@ -5,16 +5,16 @@ category: howto
 date: 2018-01-02
 ---
 
-One day it dawned on me that I am a web developer but I was still manually maintaining my resume in a Word document.  This was less than ideal because it was difficult to version the document and did little to show off any of my relevant skills in web development. To solve this problem I decided that I should build an online version of my resume which I could use to show prospective employers that I can, in fact, build things on the Internet.
+One day it dawned on me, I am a web developer but I was still manually maintaining my resume in a Word document.  This was not ideal because it was difficult to keep versions and did little to show off any of my relevant skills in web development. To solve this problem I decided to build an online version of my resume which I could use to show prospective employers that I can, in fact, build things on the Internet.
 
-I started off by grabbing all the existing data from my current resume and manually building it into HTML so that I could put it into my site. I then had a new problem. If I had to update my resume for any reason, I now had to make that update in two places; once on the web page and once for the Word document.
+My first step was to grab all the existing data from my Word based resume and manually build it into HTML so that I could put it on my site. This worked great but when I had to update my resume there were now two copies of it to maintain, one in Word and one in HTML.
 
 At this point I took a step back and thought about what my requirements really were. I needed the following:
 
 * One source of data to rule them all
-* Ability to render different formats (HTML, PDF)
-* PDF needs to be generated automatically from the Jekyll data so it's always up to date
-* PDF need to be generated client side since my site is GitHub Pages based so it can't be done on the server
+* Support essential formats (HTML, PDF)
+* Generate PDF automatically so it's always up to date
+* Generate PDF on client side since my site is on GitHub Pages so it can't be done on the server
 
 Enter [Jekyll Data Files](https://jekyllrb.com/docs/datafiles/) and [pdfmake](http://pdfmake.org/#/) to save the day!
 
@@ -27,7 +27,7 @@ At this point it was trivially easy to use this data to generate my resume becau
 
 {% gist thetizzo/53ffda1d1fe2e3ec1f5b7ca2e4fa385c %}
 
-At this point I had a working web page for my resume of but I still needed to make a downloadable format available.
+At this point I had a working web page for my resume of but I still needed to make the PDF.
 
 ## pdfmake
 Since I run my Jekyll site on GitHub Pages, I am restricted in terms of the amount of server side processing that I can do so I had to find a library that was capable of generating the PDF on the client side. I tried out several JavaScript libraries capable of converting JSON into PDF in the browser.  The winner ended up being `pdfmake` because it has good documentation and was the easiest for me to get up and running.

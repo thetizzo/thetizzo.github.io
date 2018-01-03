@@ -1,3 +1,12 @@
 .resume-section-header {
   color: $color2;
 }
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills-element {
+  flex-grow: 1;
+}

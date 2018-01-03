@@ -100,7 +100,7 @@ projects:
     code: https://github.com/mobilecause/cardconnect
     description:
       CardConnect API Ruby Client -- A client-side interface to the
-      <a href="https://developer.cardconnect.com/cardconnect-api">CardConnect payment gateway API</a>
+      <a href="https://developer.cardconnect.com/cardconnect-api" target="_blank">CardConnect payment gateway API</a>
       that makes integration with a Ruby or Rails project much simpler.
   - name: NflData Gem
     website: https://rubygems.org/gems/nfl_data

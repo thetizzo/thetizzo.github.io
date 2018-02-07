@@ -3,8 +3,6 @@ title: Senior Software Engineer
 contact_email: hire@thetizzo.com
 github_handle: thetizzo
 
-looking_for_work: no
-
 education:
   school: University of Colorado
   degree: Bachelor of Science in Electrical &amp; Computer Engineering
@@ -127,6 +125,7 @@ skills:
     - REST APIs
     - Postgres
     - MySQL
+    - AWS S3
     - Redis
     - Resque
     - RabbitMQ
@@ -141,6 +140,8 @@ skills:
     - Capistrano
     - Git
     - GitHub
+    - Heroku
+    - Digital Ocean
     - Ubuntu/CentOS
     - Ansible/Salt
     - HTML

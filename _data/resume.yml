@@ -127,6 +127,7 @@ skills:
     - AWS S3
     - Redis
     - Resque
+    - Sidekiq
     - RabbitMQ
     - Swift
   Testing:
@@ -134,7 +135,6 @@ skills:
     - Minitest
     - Jenkins
     - Travis CI
-    - Cucumber
   Tools:
     - Capistrano
     - Git

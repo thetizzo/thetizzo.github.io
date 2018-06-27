@@ -3,11 +3,7 @@
 
 // Variables
 @import 'colors';
-
-$sidebar-width: 15em;
-$content-width: 50em;
-$small-screen-max-width: 767px;
-$large-screen-min-width: 768px;
+@import 'variables';
 
 // Styles
 @import 'utilities';

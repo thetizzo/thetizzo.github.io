@@ -14,8 +14,18 @@
   margin-right: 15px;
 }
 
+.mt-15 {
+  margin-top: 15px;
+}
+
 @media (max-width: $small-screen-max-width) {
-  .hidden-phone {
+  .hidden-screen-sm {
+    display: none;
+  }
+}
+
+@media (min-width: $large-screen-min-width) {
+  .hidden-screen-lg {
     display: none;
   }
 }

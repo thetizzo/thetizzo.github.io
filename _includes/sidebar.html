@@ -2,7 +2,16 @@
   <img src="/assets/images/avatar.png" alt="avatar" class= "avatar" width="100px" height="100px">
 </a>
 
-<div class="hidden-phone">
+<div class="hidden-screen-lg mt-15">
+  {% if layout.resume %}
+    <a class="button button-sidebar" title="Download my resume" data-toggle="download-pdf">
+      <i class="fas fa-download"></i>
+      Resume PDF
+    </a>
+  {% endif %}
+</div>
+
+<div class="hidden-screen-sm">
   <h3>ABOUT ME</h5>
   <p>{{ site.bio }}</p>
 

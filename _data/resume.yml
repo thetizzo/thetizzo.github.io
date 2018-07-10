@@ -19,18 +19,18 @@ jobs:
         duration: Apr 2012 &mdash; Mar 2015
     description:
       At MobileCause, I work with a team to build a fundraising platform that helps nonprofit organizations
-      increase donations &amp; donor engagement.  I'm one of the senior members of this team and I spend time
-      working in all parts of the stack which includes Rails, MySQL, and RabbitMQ.
+      increase donations &amp; donor engagement. I'm one of the senior members of this team &amp; I spend time
+      working in all parts of the stack which includes Rails, MySQL, &amp; RabbitMQ.
     accomplishments:
-      - Led upgrade of the Rails stack from Rails 3.2 to Rails 4. This included upgrading the test
+      - Led the effort to upgrade the Rails stack from Rails 3.2 to Rails 4. This included upgrading the test
         framework (RSpec 2.x to 3.x) &amp; organizing the upgrade changes so that they could be made
-        incrementally to avoid merging and regression issues that accompany long running branches.
+        incrementally to avoid merging &amp; regression issues that accompany long running branches.
+      - Transitioned the CI system from a single node Jenkins CI to Travis CI. This improved build
+        speed &amp; visibility for the team because we were able to introduce Pull Request builds &amp;
+        concurrent builds into our workflow.
       - Diagnosed &amp; solved performance issues that allowed the application to properly handle increased
-        load during heavy traffic spikes.  The fixes included improving performance in every part of the stack,
-        from view rendering, to workers, to database query optimization.
-      - Produced a Rails application that empowered nonprofits to run
-        fundraising campaigns with configurable donation forms, fundraising
-        reports, SMS messaging, &amp; donor management.
+        load during periods of heavy traffic. This included improving performance in every part of the stack,
+        from view rendering, to offloading tasks to workers, to database query optimization.
       - Upgraded the UI in the Rails application from custom CSS to
         <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
         which increased the maintainability of the site as well as reduced time
@@ -105,10 +105,10 @@ projects:
     code: https://github.com/thetizzo/nfl_data
     description:
       Parse NFL data like a boss -- A library for finding information like weekly player
-      statistics, team schedules, and more from NFL.com.
+      statistics, team schedules, &amp; more from NFL.com.
   - name: My World Wide Website
     code: https://github.com/thetizzo/thetizzo.github.io
-    description: Learn more about what it takes to make all the brilliance happen with Jekyll and GitHub Pages. ;)
+    description: Learn more about what it takes to make all the brilliance happen with Jekyll &amp; GitHub Pages. ;)
 
 skills:
   'Front End':

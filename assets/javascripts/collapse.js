@@ -1,15 +1,24 @@
 "use strict";
 
-$(document).ready(function() {
-  $('[data-toggle=collapse]').on('click', function(e) {
-    var clicked = $(this);
-    var collapse = $(clicked.data('target'));
-    var clicked_icon = clicked.children().first();
+document.addEventListener("DOMContentLoaded", function() {
+  var collapsible = document.querySelectorAll("[data-toggle=collapse]")
 
-    // Toggle Display of Accomplishments
-    collapse.slideToggle('fast', 'linear');
+  Array.prototype.forEach.call(collapsible, function(el, i) {
+    el.addEventListener("click", function(event) {
+      var clicked = event.currentTarget;
+      var collapse = document.querySelector(clicked.getAttribute("data-target"));
+      var clicked_icon = clicked.children[0];
 
-    // Change Icon
-    clicked_icon.toggleClass("fa-angle-double-up fa-angle-double-down");
+      // Toggle Display of Accomplishments
+      if(collapse.style.display === "block") {
+        collapse.style.display = "none";
+      } else {
+        collapse.style.display = "block";
+      }
+
+      // Change Icon
+      clicked_icon.classList.toggle("fa-angle-double-up")
+      clicked_icon.classList.toggle("fa-angle-double-down")
+    });
   });
 });

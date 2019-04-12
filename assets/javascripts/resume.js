@@ -36,6 +36,9 @@ $(document).ready(function() {
     };
 
     var list = function(items) {
+      if (items === undefined) {
+        return {};
+      }
       return { ul: items, margin: [20, 0, 20, 0] };
     };
 
@@ -79,11 +82,7 @@ $(document).ready(function() {
     content.push(sectionHeading('Experience & Amazing Feats'));
 
     $.each(resumeContent['jobs'], function(i, job) {
-      if(job['company']['name'] === 'Avaya') {
-        content.push({ text: job['company']['name'], style: 'company_name', pageBreak: 'before' });
-      } else {
-        content.push({ text: job['company']['name'], style: 'company_name' });
-      }
+      content.push({ text: job['company']['name'], style: 'company_name' });
 
       $.each(job['positions'], function(i, position) {
         content.push({

@@ -10,6 +10,15 @@ education:
 
 jobs:
   - company:
+      name: Intelivideo
+      website: https://www.intelivideo.com
+    positions:
+      - title: Lead Engineer
+        duration: Feb 2019 &mdash; Present
+    description:
+      At Intelivideo, I'm leading a team of engineers to build an business to business platform that
+      enables companies and content providers to provide over-the-top streaming video subscription services.
+  - company:
       name: MobileCause
       website: https://www.mobilecause.com/
     positions:

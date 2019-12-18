@@ -14,10 +14,26 @@ jobs:
       website: https://www.intelivideo.com
     positions:
       - title: Lead Engineer
-        duration: Feb 2019 &mdash; Present
+        duration: Feb 2019 &mdash; Jun 2019
+      - title: Director of Engineering
+        duration: Jun 2019 &mdash; Present
     description:
-      At Intelivideo, I'm leading a team of engineers to build an business to business platform that
-      enables companies and content providers to provide over-the-top streaming video subscription services.
+      At Intelivideo, I am leading a team of engineers to build and maintain a Video On Demand (VoD) platform that enables subscription based
+      VoD offerings for Health and Wellness companies.
+    accomplishments:
+      - Led team to adoption of reliable development processes including code review, GitHub PR flow, CI tests & deploys,
+        QA in staging environment, and branch management.
+      - Built staging environment for company's core applications that included a Rails application and two satellite services.
+      - Stabilized core application in production by adding monitoring, decommissioning unused features, and reducing complexity.
+      - Reduced operating costs for the platform by removing unused services and improving performance to reduce the infrastructure necessary to run
+        the platform.
+      - Reclaimed lost knowledge about how to build and run all parts of the platform.
+      - Led team in developing and delivery many new features on the platform including multiple CRM integrations, a payment processor integration.
+      - Helped migration several new customers from custom built platforms onto ours in a way that was transparent for users.
+      - Improved reliablity for deploys to production across the platform which included reducing deploy related outages by a significant percentage.
+      - Interfaced with remote Native Apps team in order to provide understanding and feedback for how to use a largely undocumented API.
+      - Interfaced with remote Native Apps team in order to provide understanding and feedback for how to use a largely undocumented API.
+
   - company:
       name: MobileCause
       website: https://www.mobilecause.com/
@@ -134,7 +150,8 @@ skills:
     - REST APIs
     - Postgres
     - MySQL
-    - AWS S3
+    - AWS
+    - Docker
     - Redis
     - Resque
     - Sidekiq
@@ -145,6 +162,7 @@ skills:
     - Minitest
     - Jenkins
     - Travis CI
+    - Circle CI
   Tools:
     - Capistrano
     - Git

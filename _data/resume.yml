@@ -24,14 +24,15 @@ jobs:
       - Led team to adoption of reliable development processes including code review, GitHub PR flow, CI tests & deploys,
         QA in staging environment, and branch management.
       - Built staging environment for company's core applications that included a Rails application and two satellite services.
-      - Stabilized core application in production by adding monitoring, decommissioning unused features, and reducing complexity.
+      - Stabilized core application in production by adding monitoring, decommissioning unused features, and reducing complexity and technical debt.
       - Reduced operating costs for the platform by removing unused services and improving performance to reduce the infrastructure necessary to run
         the platform.
-      - Reclaimed lost knowledge about how to build and run all parts of the platform.
-      - Led team in developing and delivery many new features on the platform including multiple CRM integrations, a payment processor integration.
-      - Helped migration several new customers from custom built platforms onto ours in a way that was transparent for users.
-      - Improved reliablity for deploys to production across the platform which included reducing deploy related outages by a significant percentage.
-      - Interfaced with remote Native Apps team in order to provide understanding and feedback for how to use a largely undocumented API.
+      - Reclaimed lost knowledge about how to build and run all parts of the platform and created documentation so this knowledge could be shared.
+      - Led team in developing and delivering many new features on the platform including multiple CRM integrations, a payment processor integration,
+        and playlist functionality.
+      - Led migration of several new customers from custom built platforms onto ours in a way that was transparent for users and preserved customers
+        data integrity.
+      - Improved reliablity for deploys to production across the platform which included reducing deploy related outages.
       - Interfaced with remote Native Apps team in order to provide understanding and feedback for how to use a largely undocumented API.
 
   - company:

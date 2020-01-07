@@ -103,7 +103,9 @@ $(document).ready(function() {
     });
 
     // Open Source
-    content.push(sectionHeading('Open Source Projects'));
+    var openSourceHeading = sectionHeading('Open Source Projects');
+    openSourceHeading['pageBreak'] = 'before';
+    content.push(openSourceHeading);
 
     $.each(resumeContent['projects'], function(i, project) {
       content.push({
@@ -139,9 +141,7 @@ $(document).ready(function() {
     });
 
     // Skills
-    var skillsHeading = sectionHeading('Skills To Pay The Bills');
-    skillsHeading['pageBreak'] = 'before';
-    content.push(skillsHeading);
+    content.push(sectionHeading('Skills To Pay The Bills'));
 
     var skillsTable = [[],[]];
 

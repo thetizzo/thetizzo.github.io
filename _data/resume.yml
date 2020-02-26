@@ -137,6 +137,7 @@ skills:
   'Front End':
     - JavaScript
     - CoffeeScript
+    - NPM/Yarn
     - Bootstrap
     - Sass
     - CSS

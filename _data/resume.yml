@@ -1,5 +1,5 @@
 name: Jason Taylor
-title: Senior Software Engineer
+title: Principal Software Engineer
 contact_email: hire@thetizzo.com
 github_handle: thetizzo
 
@@ -10,11 +10,22 @@ education:
 
 jobs:
   - company:
+      name: TextUs Services
+      website: https://textus.com/
+    positions:
+      - title: Principal Software Engineer
+        duration: Apr 2020 &mdash; Present
+    description:
+      At TextUs, I am the lead DevOps engineer working to enhance and improve our business text
+      messaging platform which helps businesses engage their customers via SMS messaging.
+    accomplishments:
+      - Currently crushing it
+  - company:
       name: Intelivideo
       website: https://www.intelivideo.com
     positions:
       - title: Director of Engineering
-        duration: Jun 2019 &mdash; Present
+        duration: Jun 2019 &mdash; Apr 2020
       - title: Lead Engineer
         duration: Feb 2019 &mdash; Jun 2019
     description:

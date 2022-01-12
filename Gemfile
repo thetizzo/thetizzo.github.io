@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
 
-# Helps versions stay in sync with what GitHub Pages is running in production
-# since it is not always the "latest"
-require 'json'
-require 'open-uri'
-versions = JSON.parse(::URI.open('https://pages.github.com/versions.json').read)
+gem 'jekyll', '~> 4.2'
 
-ruby versions['ruby']
-
-gem 'github-pages', versions['github-pages']
+group :jekyll_plugins do
+  gem 'jekyll-timeago', '~> 0.14'
+  gem 'jekyll-gist', '~> 1.5'
+end

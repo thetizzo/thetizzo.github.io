@@ -19,18 +19,9 @@ social_links:
   linkedin_url:          "https://www.linkedin.com/in/thetizzo"
   resume_url:            "/resume"
 
-# Build settings
-markdown: kramdown
-
-sass:
-  sass_dir: _sass
-  style: compressed
-
 plugins:
   - jekyll-gist
   - jekyll-timeago
   - jekyll-postcss
 
-destination: public
-
-exclude: ["CNAME", "Rakefile", "README.md", "public", "Gemfile", "Gemfile.lock"]
+exclude: ["Rakefile", "README.md"]

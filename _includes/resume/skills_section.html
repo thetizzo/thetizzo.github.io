@@ -2,11 +2,11 @@
 <div>
   {% include resume/section_header.html text='Skills To Pay The Bills'%}
 
-  <div class="skills-container">
+  <div>
     {% for skill_set in resume.skills %}
-      <div class="skills-element">
+      <div>
         <h5>{{ skill_set[0] }}</h5>
-        <ul class="list-unstyled">
+        <ul>
           {% for skill in skill_set[1] %}
             <li>{{ skill }}</li>
           {% endfor %}

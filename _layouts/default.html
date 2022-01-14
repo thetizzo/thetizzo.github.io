@@ -1,43 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% include head.html %}
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/application.css">
-
-    {% if layout.resume %}
-      <link rel="stylesheet" type="text/css" href="/assets/stylesheets/resume.css">
-    {% endif %}
-
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-  </head>
   <body>
-    <div class="flexbox-container">
-      <div class="sidebar">
-        {% include sidebar.html %}
-      </div>
-      <div class="content">
-        {{ content }}
-      </div>
-    </div>
+    {% include sidebar.html %}
+    {{ content }}
 
     <script src="https://kit.fontawesome.com/dc100cba58.js" crossorigin="anonymous"></script>
-    
-    {% if layout.resume %}
+
+    <!-- {% if layout.resume %}
       <script defer src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script defer src="/vendor/pdfmake/pdfmake.min.js"></script>
       <script defer src="/vendor/pdfmake/vfs_fonts.js"></script>
       <script defer src="/assets/javascripts/resume.js"></script>
       <script defer src="/assets/javascripts/collapse.js"></script>
-    {% endif %}
+    {% endif %} -->
   </body>
 </html>

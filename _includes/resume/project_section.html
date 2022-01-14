@@ -6,16 +6,16 @@
       <div>
         <h3>{{ project.name }}</h3>
         <p>{{ project.description }}</p>
-        <a href="{{ project.code }}" target="_blank" class="mr-15">
-          <i class="fab fa-github fa-2x github-black"></i>
-          <span class="vertical-align">Code on GitHub</span>
+        <a href="{{ project.code }}" target="_blank">
+          <i class="fab fa-github fa-2x"></i>
+          <span>Code on GitHub</span>
         </a>
         {% if project.website %}
           <a href="{{ project.website }}" target="_blank">
             <span class="svg-inline--fa fa-w-16 fa-2x">
               {% include svg/rubygems_logo.svg %}
             </span>
-            <span class="vertical-align">Install Gem</span>
+            <span>Install Gem</span>
           </a>
         {% endif %}
       </div>

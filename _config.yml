@@ -28,6 +28,8 @@ sass:
 
 plugins:
   - jekyll-gist
+  - jekyll-timeago
+  - jekyll-postcss
 
 destination: public
 

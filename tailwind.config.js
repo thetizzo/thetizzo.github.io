@@ -7,6 +7,9 @@ module.exports = {
   ],
   mode: 'jit',
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
   plugins: [

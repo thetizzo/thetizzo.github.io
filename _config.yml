@@ -1,5 +1,3 @@
-
-# Site settings
 title: Jason Taylor - Developer Extraordinaire
 description: >
   This a fancy blog that is for fancy code.
@@ -24,4 +22,7 @@ plugins:
   - jekyll-timeago
   - jekyll-postcss
 
-exclude: ["Rakefile", "README.md"]
+postcss:
+  cache: false
+
+exclude: ["Rakefile", "README.md", "package.json", "package-lock.json", "postcss.config.js", "tailwind.config.js"]

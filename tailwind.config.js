@@ -5,6 +5,7 @@ module.exports = {
     './_posts/*.md',
     './*.html',
   ],
+  mode: 'jit',
   theme: {
     extend: {},
   },

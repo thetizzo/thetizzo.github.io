@@ -14,12 +14,15 @@ jobs:
       website: https://textus.com/
     positions:
       - title: Principal Software Engineer
-        duration: Apr 2020 &mdash; Present
+        duration: Apr 2020 &mdash; Oct 2021
+      - title: DevOps Lead
+        duration: Oct 2020 &mdash; Present
     description:
       At TextUs, I am the lead DevOps engineer working to enhance and improve our business text
       messaging platform which helps businesses engage their customers via SMS messaging.
     accomplishments:
       - Currently crushing it
+
   - company:
       name: Intelivideo
       website: https://www.intelivideo.com

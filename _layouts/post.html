@@ -3,6 +3,9 @@ layout: default
 ---
 
 <div>
-  {% include post_title.html title=page.title date=page.date %}
-  {{ content }}
+  <h1 class="text-4xl">{{ page.title }}</h1>
+  <time datetime="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+  <div class="mt-5 text-xl leading-relaxed list-disc">
+    {{ content }}
+  </div>
 </div>

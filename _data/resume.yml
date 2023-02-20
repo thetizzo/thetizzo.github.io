@@ -5,18 +5,19 @@ github_handle: thetizzo
 
 education:
   school: University of Colorado
-  degree: Bachelor of Science in Electrical &amp; Computer Engineering
+  degree: B.S. in Electrical &amp; Computer Engineering
   graduated: December 2005
 
 jobs:
   - company:
       name: TextUs Services
       website: https://textus.com/
+    abridged: false
     positions:
+      - title: DevOps Lead
+        duration: Oct 2021 &mdash; Present
       - title: Principal Software Engineer
         duration: Apr 2020 &mdash; Oct 2021
-      - title: DevOps Lead
-        duration: Oct 2020 &mdash; Present
     description:
       At TextUs, I am the lead DevOps engineer working to enhance and improve our business text
       messaging platform which helps businesses engage their customers via SMS messaging.
@@ -26,6 +27,7 @@ jobs:
   - company:
       name: Intelivideo
       website: https://www.intelivideo.com
+    abridged: false
     positions:
       - title: Director of Engineering
         duration: Jun 2019 &mdash; Apr 2020
@@ -42,13 +44,15 @@ jobs:
       - Reduced operating costs for the platform by removing unused services and improving performance to reduce the infrastructure necessary to run
         the platform.
       - Inventoried and documented each deployable service in the existing platform to increase ease of maintainability and knowledge base of the team.
-      - Led team in development and delivery of new features, including multiple CRM integrations, payment processor integration, playlist functionality, and migration of new customer's data.
+      - Led team in development and delivery of new features, including multiple CRM integrations, payment processor integration, 
+        playlist functionality, and migration of new customer's data.
       - Improved reliablity for deploys to production across the platform which included reducing deploy related outages.
       - Interfaced with remote Native Apps team in order to provide understanding and feedback for how to use a largely undocumented API.
 
   - company:
       name: MobileCause
       website: https://www.mobilecause.com/
+    abridged: false
     positions:
       - title: Senior Architect
         duration: Apr 2016 &mdash; Sept 2018
@@ -56,53 +60,55 @@ jobs:
         duration: Apr 2012 &mdash; Mar 2015
     description:
       At MobileCause, I worked with a team to build a fundraising platform that helps nonprofit organizations
-      increase donations &amp; donor engagement. I was one of the senior members of this team &amp; I spent time
+      increase donations and donor engagement. I was one of the senior members of this team and spent time
       working on all parts of the stack which included Rails, MySQL, &amp; RabbitMQ.
     accomplishments:
       - Led the effort to upgrade the Rails stack from Rails 3.2 to Rails 4. This included upgrading the test
-        framework (RSpec 2.x to 3.x) &amp; organizing the upgrade changes so that they could be made
-        incrementally to avoid merging &amp; regression issues that accompany long running branches.
+        framework (RSpec 2.x to 3.x) and organizing the upgrade changes so that they could be made
+        incrementally to avoid merge and regression issues that accompany long running branches.
       - Transitioned the CI system from a single node Jenkins CI to Travis CI. This improved build
-        speed &amp; visibility for the team because we were able to introduce Pull Request builds &amp;
+        speed and visibility for the team because we were able to introduce Pull Request builds and
         concurrent builds into our workflow.
-      - Diagnosed &amp; solved performance issues that allowed the application to properly handle increased
+      - Diagnosed and solved performance issues that allowed the application to properly handle increased
         load during periods of heavy traffic. This included improving performance in every part of the stack,
         from view rendering, to offloading tasks to workers, to database query optimization.
       - Upgraded the UI in the Rails application from custom CSS to
         <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
         which increased the maintainability of the site as well as reduced time
-        &amp; effort needed to build new pages.
+        and effort needed to build new pages.
       - Implemented a RabbitMQ based message queue to handle certain jobs
         asynchronously (sending emails, processing file uploads) to improve
         the performance of the system.
-      - Wrote &amp; open-sourced an API integration wrapper for the
-        <a href="http://www.cardconnect.com/" target="_blank">CardConnect</a>
-        API in Ruby. See Projects section below for more details.
+      - Wrote and open-sourced an API integration wrapper for the
+        <a href="http://www.cardconnect.com/" target="_blank">CardConnect API</a>
+        in Ruby.
 
   - company:
       name: Tendril
       website: https://www.tendrilinc.com/
+    abridged: true
     positions:
       - title: Senior Software Engineer
         duration: Mar 2015 &mdash; Mar 2016
     description:
-      At Tendril, I worked on a Rails application that enables energy providers to
-      engage their customers by encouraging them to save more energy &amp;
-      providing actionable feedback on how to accomplish that goal.
+      At Tendril, I worked on a Rails application that enabled energy providers to 
+      engage their customers on their energy footprint to help them reduce energy 
+      consumption and save money.
     accomplishments:
       - Reduced technical debt within the web portal's code base.
-        This included increasing test coverage, improving error handling, &amp;
+        This included increasing test coverage, improving error handling, and
         improving performance.
-      - Led the effort to build automated configuration &amp; deploy scripts
+      - Led the effort to build automated configuration and deploy scripts
         for the web portal via <a href="http://www.ansible.com/" target="_blank">Ansible</a>.
       - Primary developer on the Ruby based API client that interacts with
         the Java microservices back end of the system via a REST API.
       - Member of the Site Reliability Guild which was formed to address
-        stability &amp; scaling issues across the whole system.
+        stability and scaling issues across the whole system.
 
   - company:
       name: Avaya
       website: http://www.avaya.com/usa/
+    abridged: true
     positions:
       - title: Application Manager
         duration: Jan 2007 &mdash; Apr 2012
@@ -110,24 +116,24 @@ jobs:
         duration: June 2005 &mdash; Jan 2007
     description:
       At Avaya, I worked on a sales tool that provided configuration details,
-      price estimation, &amp; design assurance for large scale telecommunications systems.
+      price estimation, and design assurance for large scale telecommunications systems.
     accomplishments:
       - Developer for the Product Model Wrapper. This involved working on an MFC
-        based application written in C++, &amp; working on the interface between
-        the product model API &amp; the application.
-      - Lead developer on 4 product models &amp; developer on 20 product
-        models. This involved estimating level of effort for development
-        work, managing &amp; maintaining separate code bases throughout
-        multiple release cycles, working with Systems Engineers &amp; other
-        developers to ensure the successful deployment of models, &amp;
+        based application written in C++, and working on the interface between
+        the product model API and the application.
+      - Lead developer on 4 product models and developer on 20 product
+        models. this involved estimating level of effort for development
+        work, managing and maintaining separate code bases throughout
+        multiple release cycles, working with systems engineers and other
+        developers to ensure the successful deployment of models, and 
         managing regression test suites for each model.
       - Onboarded new developers by mentoring them on processes,
-        code architecture, &amp; understanding functional specifications, as well as managing
-        computer environment setup &amp; installation.
+        code architecture, and understanding functional specifications, as well as managing
+        computer environment setup and installation.
       - Maintained a homegrown suite of development tools used by a team of 11 developers.
         This suite included a UI rendering engine for product model UIs,
-        integration between a COM based engine wrapper &amp; the .NET UI
-        &amp; testing tools. This was written in VB.Net using Visual Studio 2008.
+        integration between a COM based engine wrapper and the .NET UI
+        and testing tools. This was written in VB.Net using Visual Studio 2008.
 
 projects:
   - name: CardConnect Gem
@@ -142,10 +148,10 @@ projects:
     code: https://github.com/thetizzo/nfl_data
     description:
       Parse NFL data like a boss -- A library for finding information like weekly player
-      statistics, team schedules, &amp; more from NFL.com.
+      statistics, team schedules, and more from NFL.com.
   - name: My World Wide Website
     code: https://github.com/thetizzo/thetizzo.github.io
-    description: Learn more about what it takes to make all the brilliance happen with Jekyll &amp; GitHub Pages. ;)
+    description: Learn more about what it takes to make all the brilliance happen with Jekyll and GitHub Pages. ;)
 
 skills:
   'Front End':

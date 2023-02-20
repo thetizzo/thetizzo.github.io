@@ -1,8 +1,62 @@
 {% assign resume = site.data.resume %}
 
 <div>
-  {% include resume/experience_section.html %}
-  {% include resume/project_section.html %}
-  {% include resume/education_section.html %}
-  {% include resume/skills_section.html %}
+  <section id="experience" class="mb-5">
+    {% include resume/section_header.html text='Experience &amp; Amazing Feats'%}
+
+    {% for job in resume.jobs %}
+      <div class="mb-5">
+        <h2 class="text-2xl mb-1">
+          <a href={{ job.company.website }} target="_blank">{{ job.company.name }}</a>
+        </h2>
+
+        <div class="mb-1">
+          {% for position in job.positions %}
+            <div>
+              <span><strong>{{ position.title }}</strong></span>
+              <span><small>({{ position.duration }})</small></span>
+            </div>
+          {% endfor %}
+        </div>
+
+        <p>{{ job.description }}</p>
+
+        {% if job.accomplishments and job.abridged != true %}
+          <ul class="list-disc list-outside pl-10">
+            {% for accomplishment in job.accomplishments %}
+              <li>{{ accomplishment }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+
+  <section id="education" class="mb-5">
+    {% include resume/section_header.html text='Education'%}
+
+    <div>
+      <h2 class="text-2xl">University of Colorado - Boulder</h2>
+      <div>
+        <span><strong>{{ resume.education.degree }}</strong></span>
+        <span><small>({{ resume.education.graduated }})</small></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    {% include resume/section_header.html text='Skills To Pay The Bills'%}
+
+    <div>
+      {% for skill_set in resume.skills %}
+        <div>
+          <h5>{{ skill_set[0] }}</h5>
+          <ul>
+            {% for skill in skill_set[1] %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
 </div>

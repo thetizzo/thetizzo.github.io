@@ -1,11 +1,11 @@
 module.exports = {
   content: [
-    './_includes/**/*.html',
-    './_layouts/**/*.html',
-    './_posts/*.md',
-    './*.html',
+    "./_includes/**/*.html",
+    "./_layouts/**/*.html",
+    "./_posts/*.md",
+    "./*.html",
   ],
-  mode: 'jit',
+  mode: "jit",
   theme: {
     container: {
       center: true,
@@ -13,6 +13,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
 }

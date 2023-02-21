@@ -22,6 +22,9 @@ plugins:
   - jekyll-timeago
   - jekyll-postcss
 
+kramdown:
+  syntax_highlighter: none
+
 postcss:
   cache: false
 

@@ -15,7 +15,7 @@ I’ve tried several platforms; Wordpress, Blogger, and even building the Classi
 
 Fortunately, GitHub Pages has support for {% include external_link.html link='http://jekyllrb.com/' text='Jekyll' %} which is a static site generator with support for writing blogs in Markdown.
 
-Here's what I had to do to make this work:
+Here's what I had to do to make this work.
 
 ## Setting up a GitHub Page
 
@@ -29,7 +29,11 @@ For personal GitHub Pages, the site will automatically be served using the maste
 
 To get Jekyll set up I ran these 3 steps:
 
-{% gist thetizzo/d6e1ae4afa504144964c8913af28819b %}
+```shell
+gem install jekyll
+jekyll new thetizzo.github.io
+jekyll serve
+```
 
 At this point you can go to `localhost:4000` and see the default Jekyll site.
 
@@ -43,7 +47,11 @@ I found {% include external_link.html link='https://github.com/jglovier/resume-t
 
 This theme is set up to be it's own standalone site so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was `resume.html` which looks like this:
 
-{% gist thetizzo/16b1f9fda138d26f0db0058da429fcd2 %}
+```yaml
+---
+layout: resume
+---
+```
 
 That's really it.  In Jekyll, anything at the top of a file between the dashes is called {% include external_link.html link='https://jekyllrb.com/docs/frontmatter/' text='Front Matter' %} and can be used to pass variables and defaults into a page.
 
@@ -51,14 +59,15 @@ Since I'm using a theme, I just need the front matter for `resume.html` to point
 
 I then copied over the rest of the theme to the appropriate places, making sure to namespace all the files to keep the two different themes (default and resume) separate until I was ready to combine them.  It looked something like this:
 
-```
-    resume-template -> my_project
+```shell
+resume-template -> my_project
 
-    {% raw %}_config.yml contents{% endraw %} -> {% raw %}_config.yml{% endraw %}
-    {% raw %}_layouts/resume.html{% endraw %} -> {% raw %}_layouts/resume.html{% endraw %}
-    {% raw %}css/main.scss{% endraw %} -> {% raw %}css/resume-main.scss{% endraw %}
-    {% raw %}_sass/*.scss{% endraw %} -> {% raw %}_sass/resume-*.scss{% endraw %}
-    {% raw %}_includes/*.html{% endraw %} -> {% raw %}_includes/resume-*.html{% endraw %}
+_config.yml contents -> _config.yml
+_layouts/resume.html -> _layouts/resume.html
+css/main.scss -> css/resume-main.scss
+_sass/*.scss -> _sass/resume-*.scss
+_includes/*.html -> _includes/resume-*.html
+_includes/*.html -> _includes/resume-*.html
 ```
 
 I was then able to build a resume page using this theme while leaving the rest of the existing site alone. Once that was finished, I merged the styles from the resume page into the default layout by removing the default theme styles and removing the namespace for the resume styles and files so they would apply everywhere on the site.
@@ -69,7 +78,9 @@ I personally love {% include external_link.html link='https://fortawesome.github
 
 Font Awesome offers a CDN to serve the assets so including them in a project is super easy.  I simply added the following line to `_includes/head.html`:
 
-{% gist thetizzo/1b780f6ffb8bb82d1bf909889ddb982b %}
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+```
 
 ## Setting up a custom domain
 
@@ -77,25 +88,29 @@ Another nice thing about GitHub Pages is that they offer a super easy way to put
 
 I will let {% include external_link.html link='https://help.github.com/articles/using-a-custom-domain-with-github-pages/' text="GitHub's own instructions" %} speak for themselves on this matter but basically all I had to do was add a CNAME record through my DNS provider for `thetizzo.com` to point at `thetizzo.github.io` and add a file called `CNAME` to the root of the project that {% include external_link.html link='https://github.com/thetizzo/thetizzo.github.io/blob/master/CNAME' text='looks like this.' %}
 
-That's it!
-
 ## Adding Google Analytics
 
 To add Google Analytics to the site I created a file, `_includes/google_analytics.html`, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:
 
-{% gist thetizzo/f4098de568ae498764eedf5a816d5eb9 %}
+```html
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '<your tracking ID number>', 'auto');
+  ga('send', 'pageview');
+</script>
+```
 
 Then included that file in `_includes/head.html`:
 
-{% gist thetizzo/1a6685822a61b6a7eff850c845da7f12 %}
-
-## Adding SSL
-
-This isn't strictly necessary because the code for the site is all public anyway but it's more fun to have an HTTPS site.
-
-I signed up for a {% include external_link.html link='https://www.cloudflare.com/' text='CloudFlare' %} account because they have a {% include external_link.html link='https://www.cloudflare.com/plans/' text='free plan'%} that provides SSL.  This was super easy, they even scraped all my existing DNS records automatically.
-
-For the rest of the set up I followed {% include external_link.html link='https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/' text='this post'%} and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.
+```html
+<!-- some head content -->
+{% raw %}{% include google_analytics.html %}{% endraw %}
+<!-- the rest of the head content -->
+```
 
 ## Have fun!
 

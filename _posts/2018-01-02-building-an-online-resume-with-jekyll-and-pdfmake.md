@@ -25,7 +25,31 @@ To do this you simply add a directory called `_data` to your Jekyll project, the
 
 At this point it was trivially easy to use this data to generate my resume because I could simply loop through the data to build various sections of my resume.  As an example, here is the code that builds the jobs section:
 
-{% gist thetizzo/53ffda1d1fe2e3ec1f5b7ca2e4fa385c %}
+```html
+<!-- _includes/jobs_section.html -->
+{% raw %}{% for job in resume.jobs %}
+  <div>
+    <h3>
+      <a href={{ job.company.website }} target="_blank">{{ job.company.name }}</a>
+    </h3>
+
+    {% for position in job.positions %}
+      <div>
+        <span>{{ position.title }}</span>
+        <span>({{ position.duration }})</span>
+      </div>
+    {% endfor %}
+
+    <p>{{ job.description }}</p>
+
+    <ul>
+      {% for accomplishment in job.accomplishments %}
+        <li>{{ accomplishment }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}{% endraw %}
+```
 
 At this point I had a working web page for my resume of but I still needed to make the PDF.
 
@@ -34,7 +58,12 @@ Since I run my Jekyll site on GitHub Pages, I am restricted in terms of the amou
 
 In order for `pdfmake` to do it's magic though, I needed to get the data for my resume onto the client side in JSON format.  Thankfully this is trivially easy in Jekyll.  I just put it into a hidden div on the same page as the HTML resume and converted the data hash to JSON with Liquid's very handy `jsonify` utility.
 
-{% gist thetizzo/56ebd705e934203276ce82d2b9e4b412 %}
+```html
+<!-- _layouts/resume.html -->
+<div hidden id="resumeJson">
+  {% raw %}{{ site.data.resume | jsonify }}{% endraw %}
+</div>
+```
 
 I then wrote a simple JS function that processes the JSON and builds document definition object that includes styles and formatting that `pdfmake` needs to be able to generate the PDF.  That function can be found [here on GitHub.](https://github.com/thetizzo/thetizzo.github.io/blob/master/assets/javascripts/resume.js)
 

@@ -1,6 +1,4 @@
 <div>
-  <span><a href="/">{{ site.data.resume.name }}</a></span>
-  <span>{{ site.data.resume.title }}</span>
   <span>
     {% if site.social_links %}
       <ul>
@@ -18,15 +16,6 @@
           <a href="{{ site.social_links.linkedin_url }}" target="_blank" title="Find me on LinkedIn">
             <i class="fa fa-linkedin-square fa-2x fa-inverse"></i>
           </a>
-        </li>
-        <li>
-          {% if page.url == '/resume' %}
-            <a data-toggle="download-pdf" title="Download my resume">
-          {% else %}
-            <a href="/resume" title="View my resume">
-          {% endif %}
-              <i class="fa fa-file-pdf-o fa-2x fa-inverse"></i>
-            </a>
         </li>
       </ul>
     {% endif %}

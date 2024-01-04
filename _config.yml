@@ -15,7 +15,6 @@ social_links:
   github_url:            "https://github.com/thetizzo"
   twitter_url:           "https://twitter.com/thetizzo"
   linkedin_url:          "https://www.linkedin.com/in/thetizzo"
-  resume_url:            "/resume"
 
 plugins:
   - jekyll-gist

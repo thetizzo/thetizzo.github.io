@@ -67,4 +67,4 @@ In order for `pdfmake` to do it's magic though, I needed to get the data for my 
 
 I then wrote a simple JS function that processes the JSON and builds document definition object that includes styles and formatting that `pdfmake` needs to be able to generate the PDF.  That function can be found [here on GitHub.](https://github.com/thetizzo/thetizzo.github.io/blob/master/assets/javascripts/resume.js)
 
-And that's pretty much it!  The final product can be found on my site here: [thetizzo.com/resume](/resume)
+And that's pretty much it!

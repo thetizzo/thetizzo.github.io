@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jason Taylor - Developer Extraordinaire</title>
+    <description>This a fancy blog that is for fancy code.
+</description>
+    <link>https://thetizzo.com/</link>
+    <atom:link href="https://thetizzo.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 04 Jan 2024 01:01:36 +0000</pubDate>
+    <lastBuildDate>Thu, 04 Jan 2024 01:01:36 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>Building An Online Resume With Jekyll &amp; pdfmake</title>
+        <description>&lt;p&gt;One day it dawned on me, I am a web developer but I was still manually maintaining my resume in a Word document.  This was not ideal because it was difficult to keep versions and did little to show off any of my relevant skills in web development. To solve this problem I decided to build an online version of my resume which I could use to show prospective employers that I can, in fact, build things on the Internet.&lt;/p&gt;
+
+&lt;p&gt;My first step was to grab all the existing data from my Word based resume and manually build it into HTML so that I could put it on my site. This worked great but when I had to update my resume there were now two copies of it to maintain, one in Word and one in HTML.&lt;/p&gt;
+
+&lt;p&gt;At this point I took a step back and thought about what my requirements really were. I needed the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;One source of data to rule them all&lt;/li&gt;
+  &lt;li&gt;Support essential formats (HTML, PDF)&lt;/li&gt;
+  &lt;li&gt;Generate PDF automatically so it’s always up to date&lt;/li&gt;
+  &lt;li&gt;Generate PDF on client side since my site is on GitHub Pages so it can’t be done on the server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enter &lt;a href=&quot;https://jekyllrb.com/docs/datafiles/&quot;&gt;Jekyll Data Files&lt;/a&gt; and &lt;a href=&quot;http://pdfmake.org/#/&quot;&gt;pdfmake&lt;/a&gt; to save the day!&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-data-files&quot;&gt;Jekyll Data Files&lt;/h2&gt;
+&lt;p&gt;Built into Jekyll is a super handy way to create your own sets of data and make them available to the site as a whole.&lt;/p&gt;
+
+&lt;p&gt;To do this you simply add a directory called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data&lt;/code&gt; to your Jekyll project, then add a file in this directory with the name of the data set you want to represent.  In my case this file is called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;resume.yml&lt;/code&gt;.   This can be referenced elsewhere in the project with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.data.resume&lt;/code&gt;. Jekyll supports JSON, CSV, or YAML formats for these data files.  I used YAML because, for me, it’s the most readable.&lt;/p&gt;
+
+&lt;p&gt;At this point it was trivially easy to use this data to generate my resume because I could simply loop through the data to build various sections of my resume.  As an example, here is the code that builds the jobs section:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/53ffda1d1fe2e3ec1f5b7ca2e4fa385c.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;At this point I had a working web page for my resume of but I still needed to make the PDF.&lt;/p&gt;
+
+&lt;h2 id=&quot;pdfmake&quot;&gt;pdfmake&lt;/h2&gt;
+&lt;p&gt;Since I run my Jekyll site on GitHub Pages, I am restricted in terms of the amount of server side processing that I can do so I had to find a library that was capable of generating the PDF on the client side. I tried out several JavaScript libraries capable of converting JSON into PDF in the browser.  The winner ended up being &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pdfmake&lt;/code&gt; because it has good documentation and was the easiest for me to get up and running.&lt;/p&gt;
+
+&lt;p&gt;In order for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pdfmake&lt;/code&gt; to do it’s magic though, I needed to get the data for my resume onto the client side in JSON format.  Thankfully this is trivially easy in Jekyll.  I just put it into a hidden div on the same page as the HTML resume and converted the data hash to JSON with Liquid’s very handy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jsonify&lt;/code&gt; utility.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/56ebd705e934203276ce82d2b9e4b412.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;I then wrote a simple JS function that processes the JSON and builds document definition object that includes styles and formatting that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pdfmake&lt;/code&gt; needs to be able to generate the PDF.  That function can be found &lt;a href=&quot;https://github.com/thetizzo/thetizzo.github.io/blob/master/assets/javascripts/resume.js&quot;&gt;here on GitHub.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And that’s pretty much it!  The final product can be found on my site here: &lt;a href=&quot;/resume&quot;&gt;thetizzo.com/resume&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
+        <link>https://thetizzo.com/howto/2018/01/02/building-an-online-resume-with-jekyll-and-pdfmake</link>
+        <guid isPermaLink="true">https://thetizzo.com/howto/2018/01/02/building-an-online-resume-with-jekyll-and-pdfmake</guid>
+        
+        
+        <category>howto</category>
+        
+      </item>
+    
+      <item>
+        <title>Authentication with Devise &amp;amp; Turbolinks for iOS</title>
+        <description>&lt;p&gt;I previously published this article with the first version of how I got &lt;a href=&quot;https://github.com/plataformatec/devise&quot; target=&quot;_blank&quot;&gt;Devise 4.2&lt;/a&gt;
+ working with &lt;a href=&quot;https://github.com/turbolinks/turbolinks&quot; target=&quot;_blank&quot;&gt;Turbolinks 5&lt;/a&gt;
+ through an iOS application.  The issue with that implementation was that, since &lt;a href=&quot;https://github.com/turbolinks/turbolinks-ios&quot; target=&quot;_blank&quot;&gt;Turbolinks for iOS&lt;/a&gt;
+ manages a single shared web view, the authentication page shared the same web view in the iOS app with the rest of the pages.  This resulted in some weird navigation behaviors and required altogether too much JavaScript in the Rails side of my app to handle cases like errors on login.&lt;/p&gt;
+
+&lt;p&gt;After doing more research and really reading through the code in &lt;a href=&quot;https://github.com/turbolinks/turbolinks-ios#running-the-demo&quot; target=&quot;_blank&quot;&gt;this Turbolinks iOS demo app&lt;/a&gt;
+ I realized that the much better implementation for this flow is to have the authentication screen be in it’s own web view and to have it share a session with the rest of the app via a WKProcessPool instance that would be available to any other view that will need to be rendered after the user has been authenticated.&lt;/p&gt;
+
+&lt;p&gt;That is a what I’m trying to do here in this post.  If you have any questions please submit a &lt;a href=&quot;https://github.com/thetizzo/thetizzo.github.io/issues&quot; target=&quot;_blank&quot;&gt;GitHub issue to this repo&lt;/a&gt;
+ because this is very much a work in progress for me and maybe we can work through similar issues together. :)&lt;/p&gt;
+
+&lt;p&gt;Here is my current implementation for the authentication process that works on web and in iOS.  It should be noted that most, if not all, of the Swift code in this post was taken from &lt;a href=&quot;https://github.com/turbolinks/turbolinks-ios/tree/master/TurbolinksDemo&quot; target=&quot;_blank&quot;&gt;this Turbolinks iOS demo app&lt;/a&gt;
+ so thank you very much to the &lt;a href=&quot;https://github.com/turbolinks/turbolinks-ios/graphs/contributors&quot; target=&quot;_blank&quot;&gt;people who put that together.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-rails-side&quot;&gt;The Rails Side&lt;/h2&gt;
+
+&lt;p&gt;On the Rails side of this application the basic setup is to move the Devise views into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app/views/users&lt;/code&gt; and set up a custom controller for sessions that will know how to respond to JSON formatted requests.  Devise has an &lt;a href=&quot;https://github.com/plataformatec/devise#configuring-views&quot; target=&quot;_blank&quot;&gt;install generator&lt;/a&gt;
+ that will copy the views for you.&lt;/p&gt;
+
+&lt;p&gt;In this implementation, the login form’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;form_for&lt;/code&gt; does not need to have the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;remote: true&lt;/code&gt; flag because it will &lt;strong&gt;not&lt;/strong&gt; need to send an XHR request when POSTing the form.  I consider this to be a feature of this implementation because it simplifies some of the cases where errors need to be handled.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/5d652ba95d7ab1bae320403e004b081d.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Normally with Devise, when an unauthenticated user tries to navigate to a page Devise will respond with a 302 that redirects the user to the login page.  This will not work in iOS because a 302 means the same web view will be used to show the login page which pushes it onto the stack of navigable views. This is bad because once the user logs in they can hit a back button in the top navigation bar and end up back on the login page even though they are already authenticated.&lt;/p&gt;
+
+&lt;p&gt;Instead, the server should recognize when the user is using the iOS app and change the format of the request to JSON so that Devise will respond with a raw 401 to the client.  Then on the iOS side we can detect the 401 error and display a separate authentication view.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/f27a82abf98622a2d467391f45105c6c.js&quot;&gt; &lt;/script&gt;
+
+&lt;h2 id=&quot;the-ios-side&quot;&gt;The iOS Side&lt;/h2&gt;
+
+&lt;p&gt;On the iOS side of this I basically have 3 view controllers; ApplicationController, AuthenticationController, and MyViewController.&lt;/p&gt;
+
+&lt;p&gt;ApplicationController is the main controller for the application (and well named!).  It holds the host URL for the server and manages the WKProcessPool instance that is used to share a session between the AuthenticationController and MyViewController, which is important if you want your users to stay logged in after they log in.&lt;/p&gt;
+
+&lt;p&gt;ApplicationController acts as a SessionDelegate, so that it can catch errors that may happen when loading Visitable views. It also acts as an AuthenticationControllerDelegate so once the user has authenticated successfully, it can dismiss the AuthenticationController view and load the first page of the app.&lt;/p&gt;
+
+&lt;p&gt;In the SessionDelegate part of ApplicationController there is a method named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;session:didFailRequestForVisitable:withError&lt;/code&gt; that catches any HTTP failures and matches the response code to the case statement to see how it should handle that particular error.  This gives us a place to respond to the 401 and call &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;presentAuthenticationController()&lt;/code&gt; which will render the AuthenticationController view.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/8c8e452c9f013104c210e4008945ee64.js&quot;&gt; &lt;/script&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/b6d302f9a2edb3f896db9e20c50e7df8.js&quot;&gt; &lt;/script&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Never publish a blog post until you’ve lived with your implementation for a bit because you may have to completely rewrite it as a result finding a better implementation. :)&lt;/p&gt;
+
+&lt;p&gt;If you have any questions please submit a &lt;a href=&quot;https://github.com/thetizzo/thetizzo.github.io/issues&quot; target=&quot;_blank&quot;&gt;GitHub issue to this repo.&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
+        <link>https://thetizzo.com/howto/2016/10/03/authentication-with-devise-and-turbolinks-for-iOS</link>
+        <guid isPermaLink="true">https://thetizzo.com/howto/2016/10/03/authentication-with-devise-and-turbolinks-for-iOS</guid>
+        
+        
+        <category>howto</category>
+        
+      </item>
+    
+      <item>
+        <title>How I Built This Site</title>
+        <description>&lt;p&gt;Once upon a time, I decided to start a blog. I’ve tried this several times in the past but the project always seems to die when it comes to figuring out what technology to use or how to host it.&lt;/p&gt;
+
+&lt;p&gt;I’ve tried several platforms; Wordpress, Blogger, and even building the Classic Rails Blog™️ more than once. All of those solutions seem to require a ton of work just to maintain the site.  What I really want is something that is easy to set up, host, and will allow me to spend time on more interesting problems.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-pages-to-the-rescue&quot;&gt;GitHub Pages to the rescue!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;&gt;Github Pages&lt;/a&gt;
+ came to my attention and at first glance it seemed easy to use so I decided to try it out. GitHub offers an automatic page generator for Pages sites that you can access in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Settings &amp;gt; Options &amp;gt; GitHub Pages&lt;/code&gt; but this doesn’t seem to offer as much flexibility for the theme and layout of the site as I wanted.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, GitHub Pages has support for &lt;a href=&quot;http://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt;
+ which is a static site generator with support for writing blogs in Markdown.&lt;/p&gt;
+
+&lt;p&gt;Here’s what I had to do to make this work:&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-a-github-page&quot;&gt;Setting up a GitHub Page&lt;/h2&gt;
+
+&lt;p&gt;The first thing I did to set this up was to create a git repo named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;your-github-username&amp;gt;.github.io&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In my case this was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;thetizzo.github.io&lt;/code&gt;. It is important to make sure that your username is spelled correctly and the name of the repo matches this format or GitHub Pages will not display the site correctly.&lt;/p&gt;
+
+&lt;p&gt;For personal GitHub Pages, the site will automatically be served using the master branch of this repository.  It’s shocking how quickly changes will show up on the actual site once you push them to GitHub.  It often doesn’t take more than a few seconds.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-jekyll&quot;&gt;Setting up Jekyll&lt;/h2&gt;
+
+&lt;p&gt;To get Jekyll set up I ran these 3 steps:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/d6e1ae4afa504144964c8913af28819b.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;At this point you can go to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost:4000&lt;/code&gt; and see the default Jekyll site.&lt;/p&gt;
+
+&lt;h2 id=&quot;integrating-a-theme&quot;&gt;Integrating a theme&lt;/h2&gt;
+
+&lt;p&gt;If you want, you can start writing blogs posts right away, but I wanted to change the theme of the site make it my own. Jekyll lets you build anything so you could use Sass to design the site any way you want or you can download a pre-made theme, which are available from several places.&lt;/p&gt;
+
+&lt;p&gt;I decided to use a pre-made theme because I figured that working through integrating that theme with my site would be a great way to gain a better understanding of how to work with Jekyll.&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&quot;https://github.com/jglovier/resume-template&quot; target=&quot;_blank&quot;&gt;this theme&lt;/a&gt;
+ on &lt;a href=&quot;http://jekyllthemes.org/&quot; target=&quot;_blank&quot;&gt;jekyllthemes.org&lt;/a&gt;
+ and thought it was a nice, clean look that would be a good starting place for my site.&lt;/p&gt;
+
+&lt;p&gt;This theme is set up to be it’s own standalone site so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;resume.html&lt;/code&gt; which looks like this:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/16b1f9fda138d26f0db0058da429fcd2.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;That’s really it.  In Jekyll, anything at the top of a file between the dashes is called &lt;a href=&quot;https://jekyllrb.com/docs/frontmatter/&quot; target=&quot;_blank&quot;&gt;Front Matter&lt;/a&gt;
+ and can be used to pass variables and defaults into a page.&lt;/p&gt;
+
+&lt;p&gt;Since I’m using a theme, I just need the front matter for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;resume.html&lt;/code&gt; to point to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/resume.html&lt;/code&gt; layout file which will end up being the place where the bulk of the page structure is.&lt;/p&gt;
+
+&lt;p&gt;I then copied over the rest of the theme to the appropriate places, making sure to namespace all the files to keep the two different themes (default and resume) separate until I was ready to combine them.  It looked something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    resume-template -&amp;gt; my_project
+
+    _config.yml contents -&amp;gt; _config.yml
+    _layouts/resume.html -&amp;gt; _layouts/resume.html
+    css/main.scss -&amp;gt; css/resume-main.scss
+    _sass/*.scss -&amp;gt; _sass/resume-*.scss
+    _includes/*.html -&amp;gt; _includes/resume-*.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I was then able to build a resume page using this theme while leaving the rest of the existing site alone. Once that was finished, I merged the styles from the resume page into the default layout by removing the default theme styles and removing the namespace for the resume styles and files so they would apply everywhere on the site.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-font-awesome-with-jekyll&quot;&gt;Using Font Awesome with Jekyll&lt;/h2&gt;
+
+&lt;p&gt;I personally love &lt;a href=&quot;https://fortawesome.github.io/Font-Awesome/&quot; target=&quot;_blank&quot;&gt;Font Awesome.&lt;/a&gt;
+ If you haven’t heard of Font Awesome, it’s a set of icons that you can easily include in your site.  They are included as a font to your site so you can easily customize them with CSS.&lt;/p&gt;
+
+&lt;p&gt;Font Awesome offers a CDN to serve the assets so including them in a project is super easy.  I simply added the following line to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/1b780f6ffb8bb82d1bf909889ddb982b.js&quot;&gt; &lt;/script&gt;
+
+&lt;h2 id=&quot;setting-up-a-custom-domain&quot;&gt;Setting up a custom domain&lt;/h2&gt;
+
+&lt;p&gt;Another nice thing about GitHub Pages is that they offer a super easy way to put your own custom domain on the site.  This is nice because it gives you the performance benefits of GitHub’s CDN but also let’s the site have the feel of a completely custom website.&lt;/p&gt;
+
+&lt;p&gt;I will let &lt;a href=&quot;https://help.github.com/articles/using-a-custom-domain-with-github-pages/&quot; target=&quot;_blank&quot;&gt;GitHub’s own instructions&lt;/a&gt;
+ speak for themselves on this matter but basically all I had to do was add a CNAME record through my DNS provider for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;thetizzo.com&lt;/code&gt; to point at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;thetizzo.github.io&lt;/code&gt; and add a file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CNAME&lt;/code&gt; to the root of the project that &lt;a href=&quot;https://github.com/thetizzo/thetizzo.github.io/blob/master/CNAME&quot; target=&quot;_blank&quot;&gt;looks like this.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it!&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-google-analytics&quot;&gt;Adding Google Analytics&lt;/h2&gt;
+
+&lt;p&gt;To add Google Analytics to the site I created a file, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/google_analytics.html&lt;/code&gt;, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/f4098de568ae498764eedf5a816d5eb9.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Then included that file in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/thetizzo/1a6685822a61b6a7eff850c845da7f12.js&quot;&gt; &lt;/script&gt;
+
+&lt;h2 id=&quot;adding-ssl&quot;&gt;Adding SSL&lt;/h2&gt;
+
+&lt;p&gt;This isn’t strictly necessary because the code for the site is all public anyway but it’s more fun to have an HTTPS site.&lt;/p&gt;
+
+&lt;p&gt;I signed up for a &lt;a href=&quot;https://www.cloudflare.com/&quot; target=&quot;_blank&quot;&gt;CloudFlare&lt;/a&gt;
+ account because they have a &lt;a href=&quot;https://www.cloudflare.com/plans/&quot; target=&quot;_blank&quot;&gt;free plan&lt;/a&gt;
+ that provides SSL.  This was super easy, they even scraped all my existing DNS records automatically.&lt;/p&gt;
+
+&lt;p&gt;For the rest of the set up I followed &lt;a href=&quot;https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/&quot; target=&quot;_blank&quot;&gt;this post&lt;/a&gt;
+ and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.&lt;/p&gt;
+
+&lt;h2 id=&quot;have-fun&quot;&gt;Have fun!&lt;/h2&gt;
+
+&lt;p&gt;Hopefully this was helpful.  Good luck and have fun with your new, highly advanced GitHub page.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
+        <link>https://thetizzo.com/howto/2016/02/29/how-i-built-this-site</link>
+        <guid isPermaLink="true">https://thetizzo.com/howto/2016/02/29/how-i-built-this-site</guid>
+        
+        
+        <category>howto</category>
+        
+      </item>
+    
+  </channel>
+</rss>

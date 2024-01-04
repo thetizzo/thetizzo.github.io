@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>How I Built This Site</title>
+    <meta name="description" content="Once upon a time, I decided to start a blog. I’ve tried this several times in the past but the project always seems to die when it comes to figuring out what...">
+
+    <link rel="canonical" href="https://thetizzo.com/howto/2016/02/29/how-i-built-this-site">
+    <link rel="alternate" type="application/rss+xml" title="Jason Taylor - Developer Extraordinaire" href="https://thetizzo.com/feed.xml">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/application.css">
+
+    
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  </head>
+  <body>
+    <div class="flexbox-container">
+      <div class="sidebar">
+        <a href="/" title="Home">
+  <img src="/assets/images/avatar.png" alt="avatar" class= "avatar" width="100px" height="100px">
+</a>
+
+<div class="hidden-screen-lg mt-15">
+  
+</div>
+
+<div class="hidden-screen-sm">
+  <h3>ABOUT ME</h5>
+  <p>Hi, my name is Jason. I'm a web developer who builds things on the Internet in mostly Ruby &amp; Rails.  This blog contains my solutions to some of the interesting problems I have encountered. I hope you find it useful. If you have any questions, please open an issue on the <a href="https://github.com/thetizzo/thetizzo.github.io">Github repo for this site.</a>
+</p>
+
+  
+
+  
+    <h3>FIND ME ON THE INTERNETS</h5>
+    <a href="https://github.com/thetizzo" class="link link-sidebar" target="_blank" title="Find me on GitHub">
+      <i class="fab fa-github"></i>
+      GitHub
+    </a>
+    <a href="https://twitter.com/thetizzo" class="link link-sidebar" target="_blank" title="Find me on Twitter">
+      <i class="fab fa-twitter"></i>
+      Twitter
+    </a>
+    <a href="https://www.linkedin.com/in/thetizzo" class="link link-sidebar" target="_blank" title="Find me on LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+      LinkedIn
+    </a>
+    <a href="/feed.xml" class="link link-sidebar" target="_blank" title="Follow my RSS feed">
+      <i class="fas fa-rss"></i>
+      Subscribe
+    </a>
+  
+</div>
+
+      </div>
+      <div class="content">
+        <div>
+  <h1><a href="">How I Built This Site</a></h1>
+<p><time datetime="2016-02-29 00:00:00 +0000">Feb 29, 2016</time></p>
+
+  <p>Once upon a time, I decided to start a blog. I’ve tried this several times in the past but the project always seems to die when it comes to figuring out what technology to use or how to host it.</p>
+
+<p>I’ve tried several platforms; Wordpress, Blogger, and even building the Classic Rails Blog™️ more than once. All of those solutions seem to require a ton of work just to maintain the site.  What I really want is something that is easy to set up, host, and will allow me to spend time on more interesting problems.</p>
+
+<h2 id="github-pages-to-the-rescue">GitHub Pages to the rescue!</h2>
+
+<p><a href="https://pages.github.com/" target="_blank">Github Pages</a>
+ came to my attention and at first glance it seemed easy to use so I decided to try it out. GitHub offers an automatic page generator for Pages sites that you can access in <code class="language-plaintext highlighter-rouge">Settings &gt; Options &gt; GitHub Pages</code> but this doesn’t seem to offer as much flexibility for the theme and layout of the site as I wanted.</p>
+
+<p>Fortunately, GitHub Pages has support for <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>
+ which is a static site generator with support for writing blogs in Markdown.</p>
+
+<p>Here’s what I had to do to make this work:</p>
+
+<h2 id="setting-up-a-github-page">Setting up a GitHub Page</h2>
+
+<p>The first thing I did to set this up was to create a git repo named <code class="language-plaintext highlighter-rouge">&lt;your-github-username&gt;.github.io</code>.</p>
+
+<p>In my case this was <code class="language-plaintext highlighter-rouge">thetizzo.github.io</code>. It is important to make sure that your username is spelled correctly and the name of the repo matches this format or GitHub Pages will not display the site correctly.</p>
+
+<p>For personal GitHub Pages, the site will automatically be served using the master branch of this repository.  It’s shocking how quickly changes will show up on the actual site once you push them to GitHub.  It often doesn’t take more than a few seconds.</p>
+
+<h2 id="setting-up-jekyll">Setting up Jekyll</h2>
+
+<p>To get Jekyll set up I ran these 3 steps:</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/d6e1ae4afa504144964c8913af28819b.js"> </script>
+
+<p>At this point you can go to <code class="language-plaintext highlighter-rouge">localhost:4000</code> and see the default Jekyll site.</p>
+
+<h2 id="integrating-a-theme">Integrating a theme</h2>
+
+<p>If you want, you can start writing blogs posts right away, but I wanted to change the theme of the site make it my own. Jekyll lets you build anything so you could use Sass to design the site any way you want or you can download a pre-made theme, which are available from several places.</p>
+
+<p>I decided to use a pre-made theme because I figured that working through integrating that theme with my site would be a great way to gain a better understanding of how to work with Jekyll.</p>
+
+<p>I found <a href="https://github.com/jglovier/resume-template" target="_blank">this theme</a>
+ on <a href="http://jekyllthemes.org/" target="_blank">jekyllthemes.org</a>
+ and thought it was a nice, clean look that would be a good starting place for my site.</p>
+
+<p>This theme is set up to be it’s own standalone site so in order to integrate it I started by setting up a new page that would use a separate layout from the rest of the site.  To add a new page to the site you just need to add an HTML file to the project root. In my case this was <code class="language-plaintext highlighter-rouge">resume.html</code> which looks like this:</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/16b1f9fda138d26f0db0058da429fcd2.js"> </script>
+
+<p>That’s really it.  In Jekyll, anything at the top of a file between the dashes is called <a href="https://jekyllrb.com/docs/frontmatter/" target="_blank">Front Matter</a>
+ and can be used to pass variables and defaults into a page.</p>
+
+<p>Since I’m using a theme, I just need the front matter for <code class="language-plaintext highlighter-rouge">resume.html</code> to point to the <code class="language-plaintext highlighter-rouge">_layouts/resume.html</code> layout file which will end up being the place where the bulk of the page structure is.</p>
+
+<p>I then copied over the rest of the theme to the appropriate places, making sure to namespace all the files to keep the two different themes (default and resume) separate until I was ready to combine them.  It looked something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    resume-template -&gt; my_project
+
+    _config.yml contents -&gt; _config.yml
+    _layouts/resume.html -&gt; _layouts/resume.html
+    css/main.scss -&gt; css/resume-main.scss
+    _sass/*.scss -&gt; _sass/resume-*.scss
+    _includes/*.html -&gt; _includes/resume-*.html
+</code></pre></div></div>
+
+<p>I was then able to build a resume page using this theme while leaving the rest of the existing site alone. Once that was finished, I merged the styles from the resume page into the default layout by removing the default theme styles and removing the namespace for the resume styles and files so they would apply everywhere on the site.</p>
+
+<h2 id="using-font-awesome-with-jekyll">Using Font Awesome with Jekyll</h2>
+
+<p>I personally love <a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome.</a>
+ If you haven’t heard of Font Awesome, it’s a set of icons that you can easily include in your site.  They are included as a font to your site so you can easily customize them with CSS.</p>
+
+<p>Font Awesome offers a CDN to serve the assets so including them in a project is super easy.  I simply added the following line to <code class="language-plaintext highlighter-rouge">_includes/head.html</code>:</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/1b780f6ffb8bb82d1bf909889ddb982b.js"> </script>
+
+<h2 id="setting-up-a-custom-domain">Setting up a custom domain</h2>
+
+<p>Another nice thing about GitHub Pages is that they offer a super easy way to put your own custom domain on the site.  This is nice because it gives you the performance benefits of GitHub’s CDN but also let’s the site have the feel of a completely custom website.</p>
+
+<p>I will let <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank">GitHub’s own instructions</a>
+ speak for themselves on this matter but basically all I had to do was add a CNAME record through my DNS provider for <code class="language-plaintext highlighter-rouge">thetizzo.com</code> to point at <code class="language-plaintext highlighter-rouge">thetizzo.github.io</code> and add a file called <code class="language-plaintext highlighter-rouge">CNAME</code> to the root of the project that <a href="https://github.com/thetizzo/thetizzo.github.io/blob/master/CNAME" target="_blank">looks like this.</a></p>
+
+<p>That’s it!</p>
+
+<h2 id="adding-google-analytics">Adding Google Analytics</h2>
+
+<p>To add Google Analytics to the site I created a file, <code class="language-plaintext highlighter-rouge">_includes/google_analytics.html</code>, and put in the code snippet that Google gives you when you sign up for Analytics which looks something like this:</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/f4098de568ae498764eedf5a816d5eb9.js"> </script>
+
+<p>Then included that file in <code class="language-plaintext highlighter-rouge">_includes/head.html</code>:</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/1a6685822a61b6a7eff850c845da7f12.js"> </script>
+
+<h2 id="adding-ssl">Adding SSL</h2>
+
+<p>This isn’t strictly necessary because the code for the site is all public anyway but it’s more fun to have an HTTPS site.</p>
+
+<p>I signed up for a <a href="https://www.cloudflare.com/" target="_blank">CloudFlare</a>
+ account because they have a <a href="https://www.cloudflare.com/plans/" target="_blank">free plan</a>
+ that provides SSL.  This was super easy, they even scraped all my existing DNS records automatically.</p>
+
+<p>For the rest of the set up I followed <a href="https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/" target="_blank">this post</a>
+ and everything went swimmingly.  Once everything was set up it took a couple hours for the SSL to be provisioned and the Page Rules to take affect.</p>
+
+<h2 id="have-fun">Have fun!</h2>
+
+<p>Hopefully this was helpful.  Good luck and have fun with your new, highly advanced GitHub page.</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/dc100cba58.js" crossorigin="anonymous"></script>
+    
+    
+  </body>
+</html>

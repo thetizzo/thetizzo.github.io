@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Building An Online Resume With Jekyll & pdfmake</title>
+    <meta name="description" content="One day it dawned on me, I am a web developer but I was still manually maintaining my resume in a Word document.  This was not ideal because it was difficult...">
+
+    <link rel="canonical" href="https://thetizzo.com/howto/2018/01/02/building-an-online-resume-with-jekyll-and-pdfmake">
+    <link rel="alternate" type="application/rss+xml" title="Jason Taylor - Developer Extraordinaire" href="https://thetizzo.com/feed.xml">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/application.css">
+
+    
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  </head>
+  <body>
+    <div class="flexbox-container">
+      <div class="sidebar">
+        <a href="/" title="Home">
+  <img src="/assets/images/avatar.png" alt="avatar" class= "avatar" width="100px" height="100px">
+</a>
+
+<div class="hidden-screen-lg mt-15">
+  
+</div>
+
+<div class="hidden-screen-sm">
+  <h3>ABOUT ME</h5>
+  <p>Hi, my name is Jason. I'm a web developer who builds things on the Internet in mostly Ruby &amp; Rails.  This blog contains my solutions to some of the interesting problems I have encountered. I hope you find it useful. If you have any questions, please open an issue on the <a href="https://github.com/thetizzo/thetizzo.github.io">Github repo for this site.</a>
+</p>
+
+  
+
+  
+    <h3>FIND ME ON THE INTERNETS</h5>
+    <a href="https://github.com/thetizzo" class="link link-sidebar" target="_blank" title="Find me on GitHub">
+      <i class="fab fa-github"></i>
+      GitHub
+    </a>
+    <a href="https://twitter.com/thetizzo" class="link link-sidebar" target="_blank" title="Find me on Twitter">
+      <i class="fab fa-twitter"></i>
+      Twitter
+    </a>
+    <a href="https://www.linkedin.com/in/thetizzo" class="link link-sidebar" target="_blank" title="Find me on LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+      LinkedIn
+    </a>
+    <a href="/feed.xml" class="link link-sidebar" target="_blank" title="Follow my RSS feed">
+      <i class="fas fa-rss"></i>
+      Subscribe
+    </a>
+  
+</div>
+
+      </div>
+      <div class="content">
+        <div>
+  <h1><a href="">Building An Online Resume With Jekyll & pdfmake</a></h1>
+<p><time datetime="2018-01-02 00:00:00 +0000">Jan 2, 2018</time></p>
+
+  <p>One day it dawned on me, I am a web developer but I was still manually maintaining my resume in a Word document.  This was not ideal because it was difficult to keep versions and did little to show off any of my relevant skills in web development. To solve this problem I decided to build an online version of my resume which I could use to show prospective employers that I can, in fact, build things on the Internet.</p>
+
+<p>My first step was to grab all the existing data from my Word based resume and manually build it into HTML so that I could put it on my site. This worked great but when I had to update my resume there were now two copies of it to maintain, one in Word and one in HTML.</p>
+
+<p>At this point I took a step back and thought about what my requirements really were. I needed the following:</p>
+
+<ul>
+  <li>One source of data to rule them all</li>
+  <li>Support essential formats (HTML, PDF)</li>
+  <li>Generate PDF automatically so it’s always up to date</li>
+  <li>Generate PDF on client side since my site is on GitHub Pages so it can’t be done on the server</li>
+</ul>
+
+<p>Enter <a href="https://jekyllrb.com/docs/datafiles/">Jekyll Data Files</a> and <a href="http://pdfmake.org/#/">pdfmake</a> to save the day!</p>
+
+<h2 id="jekyll-data-files">Jekyll Data Files</h2>
+<p>Built into Jekyll is a super handy way to create your own sets of data and make them available to the site as a whole.</p>
+
+<p>To do this you simply add a directory called <code class="language-plaintext highlighter-rouge">_data</code> to your Jekyll project, then add a file in this directory with the name of the data set you want to represent.  In my case this file is called <code class="language-plaintext highlighter-rouge">resume.yml</code>.   This can be referenced elsewhere in the project with <code class="language-plaintext highlighter-rouge">site.data.resume</code>. Jekyll supports JSON, CSV, or YAML formats for these data files.  I used YAML because, for me, it’s the most readable.</p>
+
+<p>At this point it was trivially easy to use this data to generate my resume because I could simply loop through the data to build various sections of my resume.  As an example, here is the code that builds the jobs section:</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/53ffda1d1fe2e3ec1f5b7ca2e4fa385c.js"> </script>
+
+<p>At this point I had a working web page for my resume of but I still needed to make the PDF.</p>
+
+<h2 id="pdfmake">pdfmake</h2>
+<p>Since I run my Jekyll site on GitHub Pages, I am restricted in terms of the amount of server side processing that I can do so I had to find a library that was capable of generating the PDF on the client side. I tried out several JavaScript libraries capable of converting JSON into PDF in the browser.  The winner ended up being <code class="language-plaintext highlighter-rouge">pdfmake</code> because it has good documentation and was the easiest for me to get up and running.</p>
+
+<p>In order for <code class="language-plaintext highlighter-rouge">pdfmake</code> to do it’s magic though, I needed to get the data for my resume onto the client side in JSON format.  Thankfully this is trivially easy in Jekyll.  I just put it into a hidden div on the same page as the HTML resume and converted the data hash to JSON with Liquid’s very handy <code class="language-plaintext highlighter-rouge">jsonify</code> utility.</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/56ebd705e934203276ce82d2b9e4b412.js"> </script>
+
+<p>I then wrote a simple JS function that processes the JSON and builds document definition object that includes styles and formatting that <code class="language-plaintext highlighter-rouge">pdfmake</code> needs to be able to generate the PDF.  That function can be found <a href="https://github.com/thetizzo/thetizzo.github.io/blob/master/assets/javascripts/resume.js">here on GitHub.</a></p>
+
+<p>And that’s pretty much it!  The final product can be found on my site here: <a href="/resume">thetizzo.com/resume</a></p>
+
+</div>
+
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/dc100cba58.js" crossorigin="anonymous"></script>
+    
+    
+  </body>
+</html>

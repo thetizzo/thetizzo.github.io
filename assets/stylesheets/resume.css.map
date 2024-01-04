@@ -1,0 +1,18 @@
+{
+	"version": 3,
+	"file": "resume.css",
+	"sources": [
+		"resume.scss",
+		"_sass/_colors.scss",
+		"_sass/_variables.scss",
+		"_sass/_resume.scss"
+	],
+	"sourcesContent": [
+		"@import 'colors';\n@import 'variables';\n@import 'resume';\n",
+		"// These are official brand colors according to their respective websites\n$twitter-blue: #55acee;\n$linkedin-blue: #0077b5;\n$rss-orange: #F26522;\n$github-black: #000;\n$pdf-red: #ea0000;\n\n// Coolors Exported Palette - coolors.co/fcfcfc-183d48-78cbee-cbced5-49acb7\n$color1: rgba(252, 252, 252, 1);\n$color2: rgba(24, 61, 72, 1);\n$color3: rgba(120, 203, 238, 1);\n$color4: rgba(203, 206, 213, 1);\n$color5: rgba(73, 172, 183, 1);\n\n// Color classes\n.github-black {\n  color: $github-black;\n}\n",
+		"$sidebar-width: 15em;\n$content-width: 50em;\n$xs-screen-max-width: 320px;\n$small-screen-max-width: 767px;\n$large-screen-min-width: 768px;\n",
+		".resume-section-header {\n  color: $color2;\n}\n\n.skills-container {\n  display: flex;\n  flex-wrap: wrap;\n  flex-direction: row;\n  justify-content: center;\n}\n\n.skills-element {\n  flex-grow: 1;\n  flex-basis: 25%;\n\n  @media (min-width: $xs-screen-max-width) and (max-width: $small-screen-max-width) {\n    flex-basis: 50%;\n  }\n\n  @media (max-width: $xs-screen-max-width) {\n    flex-basis: 100%;\n  }\n}\n\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n"
+	],
+	"names": [],
+	"mappings": "ACeA,AAAA,aAAa,AAAC,CACZ,KAAK,CAZQ,IAAI,CAalB,AEjBD,AAAA,sBAAsB,AAAC,CACrB,KAAK,CFQE,OAAmB,CEP3B,AAED,AAAA,iBAAiB,AAAC,CAChB,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,MAAM,CACxB,AAED,AAAA,eAAe,AAAC,CACd,SAAS,CAAE,CAAC,CACZ,UAAU,CAAE,GAAG,CAShB,AAPC,MAAM,0CAJR,CAAA,AAAA,eAAe,AAAC,CAKZ,UAAU,CAAE,GAAG,CAMlB,CAAA,AAHC,MAAM,mBARR,CAAA,AAAA,eAAe,AAAC,CASZ,UAAU,CAAE,IAAI,CAEnB,CAAA,AAED,AAAA,cAAc,AAAC,CACb,YAAY,CAAE,CAAC,CACf,UAAU,CAAE,IAAI,CACjB"
+}

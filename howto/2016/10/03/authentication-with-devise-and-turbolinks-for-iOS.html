@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Authentication with Devise &amp; Turbolinks for iOS</title>
+    <meta name="description" content="I previously published this article with the first version of how I got Devise 4.2 working with Turbolinks 5 through an iOS application.  The issue with that...">
+
+    <link rel="canonical" href="https://thetizzo.com/howto/2016/10/03/authentication-with-devise-and-turbolinks-for-iOS">
+    <link rel="alternate" type="application/rss+xml" title="Jason Taylor - Developer Extraordinaire" href="https://thetizzo.com/feed.xml">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/application.css">
+
+    
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  </head>
+  <body>
+    <div class="flexbox-container">
+      <div class="sidebar">
+        <a href="/" title="Home">
+  <img src="/assets/images/avatar.png" alt="avatar" class= "avatar" width="100px" height="100px">
+</a>
+
+<div class="hidden-screen-lg mt-15">
+  
+</div>
+
+<div class="hidden-screen-sm">
+  <h3>ABOUT ME</h5>
+  <p>Hi, my name is Jason. I'm a web developer who builds things on the Internet in mostly Ruby &amp; Rails.  This blog contains my solutions to some of the interesting problems I have encountered. I hope you find it useful. If you have any questions, please open an issue on the <a href="https://github.com/thetizzo/thetizzo.github.io">Github repo for this site.</a>
+</p>
+
+  
+
+  
+    <h3>FIND ME ON THE INTERNETS</h5>
+    <a href="https://github.com/thetizzo" class="link link-sidebar" target="_blank" title="Find me on GitHub">
+      <i class="fab fa-github"></i>
+      GitHub
+    </a>
+    <a href="https://twitter.com/thetizzo" class="link link-sidebar" target="_blank" title="Find me on Twitter">
+      <i class="fab fa-twitter"></i>
+      Twitter
+    </a>
+    <a href="https://www.linkedin.com/in/thetizzo" class="link link-sidebar" target="_blank" title="Find me on LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+      LinkedIn
+    </a>
+    <a href="/feed.xml" class="link link-sidebar" target="_blank" title="Follow my RSS feed">
+      <i class="fas fa-rss"></i>
+      Subscribe
+    </a>
+  
+</div>
+
+      </div>
+      <div class="content">
+        <div>
+  <h1><a href="">Authentication with Devise &amp; Turbolinks for iOS</a></h1>
+<p><time datetime="2016-10-03 00:00:00 +0000">Oct 3, 2016</time></p>
+
+  <p>I previously published this article with the first version of how I got <a href="https://github.com/plataformatec/devise" target="_blank">Devise 4.2</a>
+ working with <a href="https://github.com/turbolinks/turbolinks" target="_blank">Turbolinks 5</a>
+ through an iOS application.  The issue with that implementation was that, since <a href="https://github.com/turbolinks/turbolinks-ios" target="_blank">Turbolinks for iOS</a>
+ manages a single shared web view, the authentication page shared the same web view in the iOS app with the rest of the pages.  This resulted in some weird navigation behaviors and required altogether too much JavaScript in the Rails side of my app to handle cases like errors on login.</p>
+
+<p>After doing more research and really reading through the code in <a href="https://github.com/turbolinks/turbolinks-ios#running-the-demo" target="_blank">this Turbolinks iOS demo app</a>
+ I realized that the much better implementation for this flow is to have the authentication screen be in it’s own web view and to have it share a session with the rest of the app via a WKProcessPool instance that would be available to any other view that will need to be rendered after the user has been authenticated.</p>
+
+<p>That is a what I’m trying to do here in this post.  If you have any questions please submit a <a href="https://github.com/thetizzo/thetizzo.github.io/issues" target="_blank">GitHub issue to this repo</a>
+ because this is very much a work in progress for me and maybe we can work through similar issues together. :)</p>
+
+<p>Here is my current implementation for the authentication process that works on web and in iOS.  It should be noted that most, if not all, of the Swift code in this post was taken from <a href="https://github.com/turbolinks/turbolinks-ios/tree/master/TurbolinksDemo" target="_blank">this Turbolinks iOS demo app</a>
+ so thank you very much to the <a href="https://github.com/turbolinks/turbolinks-ios/graphs/contributors" target="_blank">people who put that together.</a></p>
+
+<h2 id="the-rails-side">The Rails Side</h2>
+
+<p>On the Rails side of this application the basic setup is to move the Devise views into <code class="language-plaintext highlighter-rouge">app/views/users</code> and set up a custom controller for sessions that will know how to respond to JSON formatted requests.  Devise has an <a href="https://github.com/plataformatec/devise#configuring-views" target="_blank">install generator</a>
+ that will copy the views for you.</p>
+
+<p>In this implementation, the login form’s <code class="language-plaintext highlighter-rouge">form_for</code> does not need to have the <code class="language-plaintext highlighter-rouge">remote: true</code> flag because it will <strong>not</strong> need to send an XHR request when POSTing the form.  I consider this to be a feature of this implementation because it simplifies some of the cases where errors need to be handled.</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/5d652ba95d7ab1bae320403e004b081d.js"> </script>
+
+<p>Normally with Devise, when an unauthenticated user tries to navigate to a page Devise will respond with a 302 that redirects the user to the login page.  This will not work in iOS because a 302 means the same web view will be used to show the login page which pushes it onto the stack of navigable views. This is bad because once the user logs in they can hit a back button in the top navigation bar and end up back on the login page even though they are already authenticated.</p>
+
+<p>Instead, the server should recognize when the user is using the iOS app and change the format of the request to JSON so that Devise will respond with a raw 401 to the client.  Then on the iOS side we can detect the 401 error and display a separate authentication view.</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/f27a82abf98622a2d467391f45105c6c.js"> </script>
+
+<h2 id="the-ios-side">The iOS Side</h2>
+
+<p>On the iOS side of this I basically have 3 view controllers; ApplicationController, AuthenticationController, and MyViewController.</p>
+
+<p>ApplicationController is the main controller for the application (and well named!).  It holds the host URL for the server and manages the WKProcessPool instance that is used to share a session between the AuthenticationController and MyViewController, which is important if you want your users to stay logged in after they log in.</p>
+
+<p>ApplicationController acts as a SessionDelegate, so that it can catch errors that may happen when loading Visitable views. It also acts as an AuthenticationControllerDelegate so once the user has authenticated successfully, it can dismiss the AuthenticationController view and load the first page of the app.</p>
+
+<p>In the SessionDelegate part of ApplicationController there is a method named <code class="language-plaintext highlighter-rouge">session:didFailRequestForVisitable:withError</code> that catches any HTTP failures and matches the response code to the case statement to see how it should handle that particular error.  This gives us a place to respond to the 401 and call <code class="language-plaintext highlighter-rouge">presentAuthenticationController()</code> which will render the AuthenticationController view.</p>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/8c8e452c9f013104c210e4008945ee64.js"> </script>
+
+<noscript><pre>404: Not Found</pre></noscript>
+<script src="https://gist.github.com/thetizzo/b6d302f9a2edb3f896db9e20c50e7df8.js"> </script>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Never publish a blog post until you’ve lived with your implementation for a bit because you may have to completely rewrite it as a result finding a better implementation. :)</p>
+
+<p>If you have any questions please submit a <a href="https://github.com/thetizzo/thetizzo.github.io/issues" target="_blank">GitHub issue to this repo.</a></p>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/dc100cba58.js" crossorigin="anonymous"></script>
+    
+    
+  </body>
+</html>

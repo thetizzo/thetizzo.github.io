@@ -5,6 +5,10 @@ category: howto
 date: 2018-01-02
 ---
 
+**_UPDATE 2024-01-23:_** Since writing this I have removed this version of my resume from the site. If you're still interested in how this was working, you can find all the resume related code in [this commit from the repo](https://github.com/thetizzo/thetizzo.github.io/commit/bcda711d0d864595d49add2ece1ca2442ab516f3). GL;HF!
+
+**_ORIGINAL POST:_**
+
 One day it dawned on me, I am a web developer but I was still manually maintaining my resume in a Word document.  This was not ideal because it was difficult to keep versions and did little to show off any of my relevant skills in web development. To solve this problem I decided to build an online version of my resume which I could use to show prospective employers that I can, in fact, build things on the Internet.
 
 My first step was to grab all the existing data from my Word based resume and manually build it into HTML so that I could put it on my site. This worked great but when I had to update my resume there were now two copies of it to maintain, one in Word and one in HTML.
@@ -23,7 +27,7 @@ Built into Jekyll is a super handy way to create your own sets of data and make 
 
 To do this you simply add a directory called `_data` to your Jekyll project, then add a file in this directory with the name of the data set you want to represent.  In my case this file is called `resume.yml`.   This can be referenced elsewhere in the project with `site.data.resume`. Jekyll supports JSON, CSV, or YAML formats for these data files.  I used YAML because, for me, it's the most readable.
 
-At this point it was trivially easy to use this data to generate my resume because I could simply loop through the data to build various sections of my resume.  As an example, here is the code that builds the jobs section:
+At this point it was easy to use this data to generate my resume because I could simply loop through the data to build various sections of my resume.  As an example, here is the code that builds the jobs section:
 
 ```html
 <!-- _includes/jobs_section.html -->

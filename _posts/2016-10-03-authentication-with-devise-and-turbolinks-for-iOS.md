@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  Authentication with Devise &amp; Turbolinks for iOS
-category: howto
+lede: Setting up authentication for an iOS app with Devise &amp; Turbolinks.
+tag: howto
 date: 2016-10-03
 ---
 

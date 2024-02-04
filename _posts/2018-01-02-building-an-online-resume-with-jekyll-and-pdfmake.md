@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  Building An Online Resume With Jekyll & pdfmake
-category: howto
+lede: Using Jekyll data files &amp; pdfmake to publish my resume online.
+tag: howto
 date: 2018-01-02
 ---
 

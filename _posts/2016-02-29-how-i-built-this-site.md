@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  How I Built This Site
-category: howto
+lede: How I built this blog with GitHub Pages and Jekyll.
+tag: howto
 date: 2016-02-29
 ---
 

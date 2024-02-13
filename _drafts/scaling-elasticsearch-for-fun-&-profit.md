@@ -1,16 +1,16 @@
 ---
 layout: post
 title:  Scaling Elasticsearch for Fun & Profit
-lede: Walking through my experience scaling an Elasticsearch cluster, discussing all the practical changes I made that led to improved performance on the cluster.
+lede: A walkthrough of my experience scaling an Elasticsearch cluster, discussing all the practical changes I made that led to improved performance for the cluster.
 tag: howto
 date: 2024-01-24
 ---
 
-I have been managing our Elasticsearch cluster at work for over 3 years. This time has been a constant learning experience to say the least. When I started working on this cluster, we were on a cloud provider that gave us a slider for larger and more nodes. The standard practice at the time was to slide the slider up whenever the cluster started acting up[^1]. This would give us "more capacity" for a couple months and then the acting up process would start all over again. This method of scaling also had the notable side effect of generating massive bills. This forced us to look deeper into how to manage the workloads that we were giving it.
+I have been managing an Elasticsearch cluster at work for over 3 years. This time has been a constant learning experience to say the least. When I started working on this cluster, we were using a cloud provider that gave us exactly one tool for scaling up: a slider to provision more nodes and larger nodes. The standard practice at the time was to slide the slider up whenever the cluster started acting up[^1]. This would give us "more capacity" for a couple months and then the acting up process would start all over again. This method of scaling also had the notable side effect of generating massive bills.
 
-This post is a list of everything I tried that gave me positive results or a concept that was important in helping me understand more about how Elasticsearch runs. The list is in no particular order, but I tried to group it by topic to make it easier to read. The most important takeaway you can have from this post is to make sure you are monitoring enough to see what effect each change has on performance as you apply it. This will help you determine what the cluster is struggling with the most and help you prioritize what to try next.
+This post is a list of everything I tried that gave me positive results when the cluster was handling load or a concept that was important in helping me understand more about how Elasticsearch runs. The list is in no particular order, but I tried to group it by topic to make it easier to read. The most important takeaway you can have from this post is to make sure you are monitoring enough to see what effect each change has on performance as you apply it. This will help you determine what the cluster is struggling with the most and help you prioritize what to try next.
 
-At the time of my applying the techniques described below we were using Elasticsearch 6, but I think a lot of this advice is applicable on Elasticsearch 7 as well.
+At the time of my applying the techniques described below we were using Elasticsearch 6, but I think a lot of this advice is applicable on Elasticsearch 7 as well. After version 7.10, Elastic changed licenses for Elasticsearch and it is no longer open source, so buyer beware. :)
 
 ### General Advice
 
@@ -20,7 +20,7 @@ At the time of my applying the techniques described below we were using Elastics
 
 * **Pay someone else to run your cluster**
 
-  We have a vendor run the actual hardware for our cluster. They manage the nodes and provisioning; we manage the data in the cluster. I highly recommend this if you have the budget, running a cluster yourself would 10x the difficulty of managing Elasticsearch in your system. It's worth it to pay someone else for this.
+  We have a vendor who runs the actual hardware for our cluster. They manage the nodes and provisioning; we manage the data in the cluster. I highly recommend this if you have the budget, running a cluster yourself would 10x the difficulty of managing Elasticsearch in your system unless you have someone on your team with this specific expertise. It's worth it to pay someone else for this.
 
 * **Learn the terminology**
 
@@ -28,13 +28,13 @@ At the time of my applying the techniques described below we were using Elastics
 
 * **Be aware of the default settings of the `elasticsearch-transport` library.**
 
-  For example, [the Ruby version retries a request up to 3 times by default](https://github.com/elastic/elasticsearch-ruby/tree/7.16/elasticsearch-transport#retrying-on-failures) if it fails on a connection issue or a timeout. This led to compounding issues on our cluster whenever we had enough load that the cluster started to reject some requests because they would all immediately retry 3 times instead of going through our exponential backoff retry cycle.
+  For example, [the Ruby version retries a request up to 3 times by default](https://github.com/elastic/elasticsearch-ruby/tree/7.16/elasticsearch-transport#retrying-on-failures) if it fails on a connection issue or a timeout. For us, this led to compounding issues on the cluster whenever we had enough load that the cluster started to reject some requests because they would all immediately retry 3 times instead of going through our exponential backoff retry cycle (more on this in a later section).
 
-* **Monitor the Write and Search Queue Size and Rejections**
+* **Monitor the Write and Search queue size and rejections**
 
-  This is the best ["canary in the coal mine"](https://en.wikipedia.org/wiki/Sentinel_species) indicator for when your cluster is starting to struggle handling the amount of requests it is receiving. Each node in your cluster has as Write and Search queue. Incoming requests are automatically queued into these depending on whether they are a write request or a search request and then handled in order.
+  This is the best ["canary in the coal mine"](https://en.wikipedia.org/wiki/Sentinel_species) indicator for when your cluster is starting to struggle. Each node in your cluster has as Write and Search queue. Incoming requests are automatically queued into these depending on whether they are a write requests or a search requests and then handled in order.
 
-  If these queues fill up the cluster will immediately start rejecting requests. When this happens, you will see a spike in the rejections stats that the cluster emits in the metrics. A few of these here and there are normal and will get handled by your retry logic, however if these start to add up, you need intervention or you're going to have a bad time.
+  If these queues fill up the cluster will immediately start rejecting requests with an error. When this happens, you will see a spike in the rejections stats that the cluster emits in the metrics. A few of these here and there are normal and should get handled by your retry logic, however if these start to add up, you need intervention or you're going to have a bad time.
 
 * **Don't put Elasticsearch in the hot path**
 
@@ -47,7 +47,9 @@ At the time of my applying the techniques described below we were using Elastics
 
   Without aliases, managing your indexes will become very difficult without requiring scheduled downtime for your cluster. Aliases give you a way to perform a lot of index maintenance tasks, such as re-indexing, while always having a live index in use by users.
 
-* Be aware of certain settings that can only be changed at index creation time like `number_of_shards` for example. Changing these after the index is created requires creating a whole new index and migrating the data to it. If you have large indexes, this can take several hours.
+* **Some settings can only be changed on index creation**
+
+  Be aware of certain settings that can only be changed at index creation time like `number_of_shards` for example. Changing these after the index is created requires creating a whole new index and migrating the data to it. If you have large indexes, this can take several hours. Switching indexes is when your aliases will come in handy.
 
 * **Avoid using anything other than default index settings.**
 
@@ -55,16 +57,15 @@ At the time of my applying the techniques described below we were using Elastics
 
 * **Indexes that have different workloads on the same cluster is difficult**
 
-  Let's say you have an index that is a mostly static dataset but gets searched all the time, and you have a second index that receives tons of writes but doesn't get searched that much. It can be difficult to tune the cluster well opposite workloads like this. The reason for this is that you essentially have one shared pool of resources on each node, so if you optimize too much for writes, then search performance will become resource constrained and begin to suffer. It's good to be aware of this and always maintain a good balance when tuning.
+  Let's say you have an index that is a mostly static dataset but gets searched all the time, and you have a second index that receives tons of writes but doesn't get searched that much. It can be difficult to tune the cluster well for opposite workloads like this. The reason for this is that you essentially have one shared pool of resources on each node, so if you optimize too much for writes, then search performance will become resource constrained and begin to suffer and vice versa. It's good to be aware of this and always maintain a good balance when tuning.
 
 * **Primary shard vs Replica shards**
 
-  You should set `number_of_shards` to the number of data nodes in your cluster and `number_of_replicas` to `1` to ensure that the index has an even distribution of shards across the cluster. This will result in the index having a primary shard and a replica shard on each node in the cluster which is ideal. For larger indexes you can set `number_of_shards` higher but it should always be a multiple of the number of data nodes in the cluster to ensure that you have even distribution. Having an uneven distribution of shards can unbalance the load between nodes and lead to some nodes running hot while others are under-utilized.
-
+  You should set `number_of_shards` (aka primary shards) to the number of data nodes in your cluster and `number_of_replicas` to `1` to ensure that the index has an even distribution of shards across the cluster. This will result in the index having a primary shard and a replica shard on each node in the cluster which is ideal. For larger indexes you can set `number_of_shards` higher but it should always be a multiple of the number of data nodes in the cluster to ensure that you have even distribution. Having an uneven distribution of shards can unbalance the load between nodes and lead to some nodes running hot while others are under-utilized.
 
 * **~50GB per shard is a good rule of thumb.**
 
-  Aim for ~50GB per shard as a maximum shard size. Shards that are larger than this will become slow to search and index into and other operational tasks the cluster performs in the background (i.e. merges) will become less performant. If your index starts to exceed 50GB per shard, you may want to increase the `number_of_shards` on that index.
+  Aim for ~50GB per shard as a maximum shard size. Shards that are larger than this will become slow to search and write to and other operational tasks the cluster performs in the background (i.e. merges) will become less performant. If your index starts to exceed 50GB per shard, you may want to increase the `number_of_shards` on that index.
 
 
 ### Handling Writes Gracefully
@@ -123,7 +124,9 @@ At the time of my applying the techniques described below we were using Elastics
     * No bloating of deleted documents over time which removes the need to Reindex periodically
     * More CPU resources available for search requests since they aren't being spent on writing whole conversations repeatedly.
 
-* Documents in the index should have as flat a structure as possible.  Having a deeply nested structure doesn't perform well because Elasticsearch separately indexes each node in the document which takes a lot of processing power on write and leads to large, bloated indexes which need more shards, which then makes search slower.
+* **Documents in the index should have a flat structure**
+
+  Documents in the index should have as flat a structure as possible.  Having a deeply nested structure doesn't perform well because Elasticsearch separately indexes each node in the document as a separate document which takes a lot of processing power on write and leads to large, bloated indexes which need more shards, which then makes search slower.
 
 
 ### Monitoring
@@ -150,4 +153,10 @@ Here is the list of metrics I've found helpful to monitor over the years.
 * Queue lag
 * Time to process
 
-[^1]: Acting up, in this case, being defined as the cluster becoming unresponsive due to being unable to process the volume of requests it was receiving at the time. This ultimately cause the site to go down because the web servers would be saturated with requests that were waiting on responses from the unresponsive cluster.
+### Conclusions
+
+So if you've made it this far into reading this, good luck with your cluster! Elasticsearch can run quite well if you are thoughtful about how you structure your data and set up your interactions between the application and cluster well. Our cluster has gone from being a consistent source of outages to stable enough that it "Just Runs" and reaching that point feels like real success. It can be done!
+
+_Footnotes:_
+
+[^1]: Acting up, in this case, being defined as the cluster becoming unresponsive due to being unable to process the volume of requests it was receiving. This ultimately would cause the site to go down because the web servers would be saturated with requests that were waiting on responses from the cluster.

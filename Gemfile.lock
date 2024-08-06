@@ -92,7 +92,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 4.2)
+  jekyll (~> 4.3)
   jekyll-gist (~> 1.5)
   jekyll-postcss (~> 0.5)
   jekyll-timeago (~> 0.15)

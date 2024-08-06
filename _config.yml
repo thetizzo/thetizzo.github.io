@@ -24,3 +24,6 @@ postcss:
   cache: false
 
 exclude: ["Rakefile", "README.md", "package.json", "package-lock.json", "postcss.config.js", "tailwind.config.js"]
+
+include:
+ - _pages

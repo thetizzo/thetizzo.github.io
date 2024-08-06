@@ -2,7 +2,6 @@ title: Jason Taylor - Developer Extraordinaire
 description: >
   This a fancy blog that is for fancy code.
 url: "https://thetizzo.com"
-avatar: "true"
 permalink: /:year/:month/:day/:title
 
 # Social Links

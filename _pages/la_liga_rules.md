@@ -31,6 +31,7 @@ Auction style draft with a $200 Salary Cap
 
 ### Keepers
 
+* You can keep 1 player per year
 * Only players that you drafted during the previous season and are still on your roster are eligible for keepers.
 * Those players cost 25% on top of what you paid for the player the previous season.
 

@@ -14,6 +14,13 @@ permalink: /la_liga_rules
 * Total Points For Champion: $150
 * Last Place: Soccer Trophy
 
+* If you have not paid your La Liga dues by the time playoffs have started, each week in the playoffs you will be deducted 15 points in your weekly score.
+
+#### Soccer Rules
+
+* Opponents of the previous seasons' Soccer "winner" is allowed to rename the Soccer's team for that week
+*
+
 ### Draft
 
 Auction style draft with a $200 Salary Cap

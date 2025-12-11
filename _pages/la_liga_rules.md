@@ -7,11 +7,13 @@ permalink: /la_liga_rules
 
 ### League Fees & Stakes
 
-* $75 league fees and the payouts as follows.
+* $100 league fees and the payouts as follows.
 * 1st place: $375
 * 2nd place: $225
 * 3rd place: $150
-* Total Points For Champion: $150
+* Total Points For Regular Season Champion: $150
+* Weekly Points Leader: $20
+* Soccer Winner: $20
 * Last Place: Soccer Trophy
 
 * If you have not paid your La Liga dues by the time playoffs have started, each week in the playoffs you will be deducted 15 points in your weekly score.
@@ -19,8 +21,13 @@ permalink: /la_liga_rules
 #### Soccer Rules
 
 * Opponents of the previous seasons' Soccer "winner" is allowed to rename the Soccer's team for that week
-*
+* The two teams with the lowest points for after the first two weeks of the playoffs will be the two teams in the kicker bowl.
 
+
+#### Kicker Bowl
+
+* The two highest scoring teams of the first two weeks of the loser bracket will be in the Kicker Bowl to determine the winners of the losers
+  
 ### Draft
 
 Auction style draft with a $200 Salary Cap
@@ -37,7 +44,7 @@ Auction style draft with a $200 Salary Cap
 
 ### Season & Playoffs
 
-* 12 week regular season
+* 14 week regular season
 * 6 team playoff
 * 1 week per round
 * Top four playoff seeds are determined by Head-to-Head record with Total Points For as the tiebreaker

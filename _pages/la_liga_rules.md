@@ -21,7 +21,7 @@ permalink: /la_liga_rules
 #### Soccer Rules
 
 * Opponents of the previous seasons' Soccer "winner" is allowed to rename the Soccer's team for that week
-* The two teams with the lowest points for after the first two weeks of the playoffs will be the two teams in the kicker bowl.
+* The two teams with the lowest points for after the first two weeks of the playoffs will be the two teams in the soccer bowl.
 
 
 #### Kicker Bowl
